@@ -189,6 +189,10 @@ export default function EnterpriseFooter() {
             <Link href="/legal/privacy-policy" className="hover:text-[#D4AF37] underline">
               Privacy Policy
             </Link>
+            <span>•</span>
+            <Link href="/cms/login" className="text-[#D4AF37] hover:underline font-bold font-mono">
+              CMS Portal (IAM)
+            </Link>
           </div>
           <div className="font-mono text-[11px]">
             Statutory Registration: CAC RC-{rcNumber} | Warri, Delta State, Nigeria

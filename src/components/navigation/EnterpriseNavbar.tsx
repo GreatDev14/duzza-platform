@@ -15,7 +15,8 @@ import {
   ChevronDown,
   ArrowRight,
   FileText,
-  Film
+  Film,
+  ShieldCheck
 } from "lucide-react";
 import SpecialClientRequestModal from "@/components/common/SpecialClientRequestModal";
 
@@ -361,14 +362,25 @@ export default function EnterpriseNavbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden p-2 rounded-lg text-[#E2E8F0] hover:text-[#D4AF37] hover:bg-[#0E1B33] border border-[#1B325C] focus:outline-none"
-            aria-label="Toggle navigation menu"
-          >
-            {isOpen ? <X className="w-6 h-6 text-[#D4AF37]" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile Right Controls: Direct CMS Button + Hamburger Menu */}
+          <div className="flex lg:hidden items-center space-x-2">
+            <Link
+              href="/cms/login"
+              className="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-[#0E1B33] text-[#D4AF37] border border-[#D4AF37]/50 text-xs font-mono font-bold tracking-wider hover:bg-[#142547] shadow-[0_0_12px_rgba(212,175,55,0.25)] transition-all cursor-pointer"
+              title="Access Duzza CMS IAM Portal"
+            >
+              <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
+              <span>CMS</span>
+            </Link>
+
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 rounded-lg text-[#E2E8F0] hover:text-[#D4AF37] hover:bg-[#0E1B33] border border-[#1B325C] focus:outline-none"
+              aria-label="Toggle navigation menu"
+            >
+              {isOpen ? <X className="w-6 h-6 text-[#D4AF37]" /> : <Menu className="w-6 h-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -376,6 +388,29 @@ export default function EnterpriseNavbar() {
       {isOpen && (
         <div className="lg:hidden bg-[#091224] border-b border-[#D4AF37]/30 px-4 pt-4 pb-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl">
           <div className="flex flex-col space-y-2">
+            {/* Prominent Mobile CMS Card */}
+            <Link
+              href="/cms/login"
+              onClick={() => setIsOpen(false)}
+              className="p-3.5 rounded-2xl bg-gradient-to-r from-[#0E1B33] via-[#142547] to-[#0E1B33] border border-[#D4AF37]/60 shadow-lg text-white flex items-center justify-between group"
+            >
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 rounded-xl bg-[#D4AF37] text-[#050B18] flex items-center justify-center font-bold shadow-sm">
+                  <ShieldCheck className="w-4 h-4 text-[#050B18]" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-white group-hover:text-[#D4AF37] flex items-center space-x-1.5">
+                    <span>CMS Administrative Portal</span>
+                    <span className="text-[9px] font-mono uppercase px-1.5 py-0.5 rounded bg-[#D4AF37]/20 text-[#D4AF37] border border-[#D4AF37]/40 font-bold">IAM</span>
+                  </div>
+                  <div className="text-[10px] font-mono text-[#CBD5E1]/80">
+                    Admin, Manager & Contributor Sign In
+                  </div>
+                </div>
+              </div>
+              <ArrowRight className="w-4 h-4 text-[#D4AF37] group-hover:translate-x-1 transition-transform" />
+            </Link>
+
             <Link
               href="/"
               onClick={() => setIsOpen(false)}
