@@ -1,0 +1,181 @@
+{
+  "users": [
+    {
+      "id": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "passwordHash": "fa583076a36a658851f8cea26b53c158:76778e7e2cf9d05dec4ca31b3e8ac5455fc1002e6418fe3218f5a97aee25b26ea08f72038d092d633a4ec15a01a0715b130af27619c1f7bea9b56c9efa0bb731",
+      "role": "ADMIN",
+      "status": "ACTIVE",
+      "createdAt": "2026-11-12T21:32:49.759Z",
+      "updatedAt": "2026-11-12T21:32:49.759Z"
+    },
+    {
+      "id": "usr-manager-002",
+      "name": "Mr. Caleb",
+      "email": "duzzacontact@gmail.com",
+      "passwordHash": "772e442dba1bbbad08cfcabc9169d236:f2a22bcee6894b3e7305ae8f3bb7d6d61bd564513b44d012ba1d56ed4d7292c431a0542a1e6f84a6d731fbea35ca2adfdb04a1da9a8a58fe16e814e2f00a32fc",
+      "role": "MANAGER",
+      "status": "ACTIVE",
+      "invitedBy": "lipexbagsalot@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z",
+      "updatedAt": "2026-11-12T21:32:49.759Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log-c9e67416",
+      "timestamp": "2026-11-12T22:47:54.580Z",
+      "userId": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "role": "ADMIN",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "log-00cf8f5d",
+      "timestamp": "2026-11-12T22:10:17.838Z",
+      "userId": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "role": "ADMIN",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-72441fd6",
+      "timestamp": "2026-11-12T22:10:17.608Z",
+      "userId": "usr-manager-002",
+      "name": "Mr. Caleb",
+      "email": "duzzacontact@gmail.com",
+      "role": "MANAGER",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-af8b7b0f",
+      "timestamp": "2026-11-12T22:09:19.079Z",
+      "userId": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "role": "ADMIN",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-08e852b6",
+      "timestamp": "2026-11-12T22:05:43.887Z",
+      "userId": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "role": "ADMIN",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36"
+    },
+    {
+      "id": "log-e3b24b90",
+      "timestamp": "2026-11-12T21:32:57.256Z",
+      "userId": "usr-f6ea011c",
+      "name": "E2E Test Contributor",
+      "email": "e2e.contrib.1794519165422@duzza.com.ng",
+      "role": "CONTRIBUTOR",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-24758ae3",
+      "timestamp": "2026-11-12T21:32:55.853Z",
+      "userId": "usr-manager-002",
+      "name": "Mr. Caleb",
+      "email": "duzzacontact@gmail.com",
+      "role": "MANAGER",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-5e3a1bbe",
+      "timestamp": "2026-11-12T21:32:55.724Z",
+      "userId": "usr-admin-001",
+      "name": "Executive Admin",
+      "email": "lipexbagsalot@gmail.com",
+      "role": "ADMIN",
+      "status": "SUCCESS",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    },
+    {
+      "id": "log-e4df81c1",
+      "timestamp": "2026-11-12T21:32:55.634Z",
+      "userId": "usr-f6ea011c",
+      "name": "E2E Test Contributor",
+      "email": "e2e.contrib.1794519165422@duzza.com.ng",
+      "role": "CONTRIBUTOR",
+      "status": "BLOCKED_PENDING",
+      "ipAddress": "::1",
+      "userAgent": "node"
+    }
+  ],
+  "projects": [
+    {
+      "id": "prj-001",
+      "title": "Warri Port Channel Multibeam Bathymetric Survey",
+      "division": "Duzza Projects",
+      "location": "Warri, Delta State",
+      "description": "High-resolution acoustic seabed charting and pipeline burial depth verification across 42km fairway.",
+      "imageUrl": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80",
+      "createdBy": "Executive Admin",
+      "createdByEmail": "lipexbagsalot@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z"
+    },
+    {
+      "id": "prj-002",
+      "title": "Executive Identity & Global Sports Kit Drop",
+      "division": "Duzza Branding",
+      "location": "Lagos / London",
+      "description": "End-to-end corporate visual identity system and sponsored Meta ad pipeline for international sports merchandise.",
+      "imageUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1000&q=80",
+      "createdBy": "Mr. Caleb",
+      "createdByEmail": "duzzacontact@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z"
+    }
+  ],
+  "images": [
+    {
+      "id": "img-001",
+      "title": "Hydrographic Survey Vessel Alpha",
+      "category": "Marine Geomatics",
+      "url": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80",
+      "uploadedBy": "Executive Admin",
+      "uploadedByEmail": "lipexbagsalot@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z"
+    },
+    {
+      "id": "img-002",
+      "title": "Artisan Sourdough & Bistro Collection",
+      "category": "Duzza Bakery",
+      "url": "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80",
+      "uploadedBy": "Mr. Caleb",
+      "uploadedByEmail": "duzzacontact@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "ntf-001",
+      "title": "Q4 Warri Logistics Base Audit Complete",
+      "message": "All hydrospatial sonar units passed ISO calibration checks. Ready for offshore deployment.",
+      "priority": "IMPORTANT",
+      "createdBy": "Executive Admin",
+      "createdByEmail": "lipexbagsalot@gmail.com",
+      "createdAt": "2026-11-12T21:32:49.759Z"
+    }
+  ]
+}

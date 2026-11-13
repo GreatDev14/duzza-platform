@@ -1,0 +1,43 @@
+{
+  "name": "duzza-platform",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "db:migrate": "ts-node scripts/migrate.ts"
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@radix-ui/react-dialog": "^1.1.2",
+    "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-navigation-menu": "^1.2.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-tabs": "^1.1.1",
+    "@types/three": "^0.187.0",
+    "botid": "^1.5.13",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.1",
+    "ioredis": "^5.4.1",
+    "lucide-react": "^0.460.0",
+    "next": "^15.5.29",
+    "pg": "^8.13.1",
+    "react": "^19.0.0-rc-66855b96-20241106",
+    "react-dom": "^19.0.0-rc-66855b96-20241106",
+    "tailwind-merge": "^2.5.4",
+    "three": "^0.187.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/pg": "^8.11.10",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3"
+  }
+}

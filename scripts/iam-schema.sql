@@ -1,0 +1,59 @@
+-- DUZZA LIMITED CMS - Identity & Access Management (IAM) PostgreSQL Schema
+-- Enforces rigid roles ('ADMIN', 'MANAGER', 'CONTRIBUTOR') and statuses ('PENDING', 'ACTIVE', 'SUSPENDED')
+
+CREATE TABLE IF NOT EXISTS iam_users (
+  id VARCHAR(64) PRIMARY KEY,
+  name VARCHAR(160) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
+  password_hash TEXT NOT NULL,
+  role VARCHAR(20) NOT NULL CHECK (role IN ('ADMIN', 'MANAGER', 'CONTRIBUTOR')) DEFAULT 'CONTRIBUTOR',
+  status VARCHAR(20) NOT NULL CHECK (status IN ('PENDING', 'ACTIVE', 'SUSPENDED')) DEFAULT 'PENDING',
+  invited_by VARCHAR(255),
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS iam_login_audit_logs (
+  id VARCHAR(64) PRIMARY KEY,
+  user_id VARCHAR(64) REFERENCES iam_users(id) ON DELETE SET NULL,
+  name VARCHAR(160) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  role VARCHAR(20) NOT NULL,
+  status VARCHAR(40) NOT NULL CHECK (status IN ('SUCCESS', 'BLOCKED_PENDING', 'BLOCKED_SUSPENDED', 'FAILED_CREDENTIALS')),
+  ip_address VARCHAR(64),
+  user_agent TEXT,
+  timestamp TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS cms_projects (
+  id VARCHAR(64) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  division VARCHAR(80) NOT NULL,
+  location VARCHAR(160) NOT NULL,
+  description TEXT NOT NULL,
+  image_url TEXT,
+  created_by VARCHAR(160) NOT NULL,
+  created_by_email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS cms_images (
+  id VARCHAR(64) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  category VARCHAR(120) NOT NULL,
+  url TEXT NOT NULL,
+  uploaded_by VARCHAR(160) NOT NULL,
+  uploaded_by_email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE IF NOT EXISTS cms_notifications (
+  id VARCHAR(64) PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  message TEXT NOT NULL,
+  priority VARCHAR(20) NOT NULL CHECK (priority IN ('INFO', 'IMPORTANT', 'URGENT')),
+  created_by VARCHAR(160) NOT NULL,
+  created_by_email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
