@@ -12,15 +12,15 @@ const createProjectSchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
   if (!auth.ok) return auth.response;
 
-  const projects = listProjects();
+  const projects = await listProjects();
   return NextResponse.json({ projects }, { status: 200 });
 }
 
 export async function POST(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
   if (!auth.ok) return auth.response;
 
   try {
@@ -33,7 +33,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const project = createProject({
+    const project = await createProject({
       title: parsed.data.title.trim(),
       division: parsed.data.division,
       location: parsed.data.location.trim(),
@@ -53,4 +53,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

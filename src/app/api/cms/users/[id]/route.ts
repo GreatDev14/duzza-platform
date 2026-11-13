@@ -13,7 +13,7 @@ export async function PATCH(
   req: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
   try {
@@ -27,7 +27,7 @@ export async function PATCH(
       );
     }
 
-    const target = findUserById(id);
+    const target = await findUserById(id);
     if (!target) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
@@ -42,7 +42,7 @@ export async function PATCH(
       }
     }
 
-    const updated = updateUser(id, parsed.data);
+    const updated = await updateUser(id, parsed.data);
     return NextResponse.json({ user: updated }, { status: 200 });
   } catch (err: any) {
     return NextResponse.json(
@@ -56,12 +56,12 @@ export async function DELETE(
   req: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
   try {
     const { id } = await context.params;
-    const target = findUserById(id);
+    const target = await findUserById(id);
     if (!target) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
@@ -80,7 +80,7 @@ export async function DELETE(
       );
     }
 
-    const deleted = deleteUserById(id);
+    const deleted = await deleteUserById(id);
     if (!deleted) {
       return NextResponse.json({ error: "User not found" }, { status: 404 });
     }
@@ -93,4 +93,3 @@ export async function DELETE(
     );
   }
 }
-

@@ -6,15 +6,14 @@ export async function DELETE(
   req: NextRequest,
   context: { params: Promise<{ id: string }> }
 ) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
   const { id } = await context.params;
-  const deleted = deleteNotificationById(id);
+  const deleted = await deleteNotificationById(id);
   if (!deleted) {
     return NextResponse.json({ error: "Notification not found" }, { status: 404 });
   }
 
   return NextResponse.json({ message: "Notification deleted successfully" }, { status: 200 });
 }
-

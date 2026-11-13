@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { SESSION_COOKIE_NAME, verifySessionToken } from "./crypto";
-import { findUserById, sanitizeUser } from "./db";
+import { findUserById } from "./db";
 import { PublicIamUser, Role } from "./types";
 
 export interface AuthGuardSuccess {
@@ -15,13 +15,13 @@ export interface AuthGuardFailure {
 
 /**
  * Backend server-side role & status check middleware.
- * Validates signed HTTP-only cookie, checks live DB status === 'ACTIVE',
+ * Validates signed HTTP-only cookie, checks live Postgres status === 'ACTIVE',
  * blocks DELETE operations for CONTRIBUTOR, and enforces rigid role permissions.
  */
-export function requireActiveRole(
+export async function requireActiveRole(
   req: NextRequest,
   allowedRoles: Role[] = ["ADMIN", "MANAGER", "CONTRIBUTOR"]
-): AuthGuardSuccess | AuthGuardFailure {
+): Promise<AuthGuardSuccess | AuthGuardFailure> {
   const token = req.cookies.get(SESSION_COOKIE_NAME)?.value;
   const session = verifySessionToken(token);
 
@@ -35,7 +35,7 @@ export function requireActiveRole(
     };
   }
 
-  const liveUser = findUserById(session.userId);
+  const liveUser = await findUserById(session.userId);
   if (!liveUser) {
     return {
       ok: false,
@@ -53,8 +53,8 @@ export function requireActiveRole(
         {
           error:
             liveUser.status === "PENDING"
-              ? "Access Denied: Your account status is PENDING approval by an ADMIN or MANAGER."
-              : "Access Denied: Your account has been SUSPENDED.",
+              ? "Account pending approval. An ADMIN or MANAGER must activate your account."
+              : "Account suspended. Please contact institutional administration.",
           status: liveUser.status,
         },
         { status: 403 }
@@ -62,28 +62,27 @@ export function requireActiveRole(
     };
   }
 
-  // Strict server-side block: CONTRIBUTOR is NEVER permitted to perform DELETE requests
-  if (req.method === "DELETE" && liveUser.role === "CONTRIBUTOR") {
+  // Rigid Role Enforcement
+  if (!allowedRoles.includes(liveUser.role)) {
     return {
       ok: false,
       response: NextResponse.json(
         {
-          error:
-            "STRICTLY FORBIDDEN: Active CONTRIBUTOR accounts are blocked from deleting projects, images, notifications, or user accounts.",
-          code: "CONTRIBUTOR_DELETE_BLOCKED",
+          error: `Forbidden: Role '${liveUser.role}' is not authorized for this resource.`,
         },
         { status: 403 }
       ),
     };
   }
 
-  if (!allowedRoles.includes(liveUser.role)) {
+  // Server-Side Role Check: CONTRIBUTOR is STRICTLY forbidden from DELETE
+  if (req.method === "DELETE" && liveUser.role === "CONTRIBUTOR") {
     return {
       ok: false,
       response: NextResponse.json(
         {
-          error: `Forbidden: Role '${liveUser.role}' lacks permission for this action. Required: ${allowedRoles.join(" or ")}.`,
-          code: "INSUFFICIENT_ROLE_PRIVILEGE",
+          error:
+            "Strict IAM Role Violation: Active 'CONTRIBUTOR' accounts are strictly forbidden from deleting resources.",
         },
         { status: 403 }
       ),
@@ -92,7 +91,15 @@ export function requireActiveRole(
 
   return {
     ok: true,
-    user: sanitizeUser(liveUser),
+    user: {
+      id: liveUser.id,
+      name: liveUser.name,
+      email: liveUser.email,
+      role: liveUser.role,
+      status: liveUser.status,
+      invitedBy: liveUser.invitedBy,
+      createdAt: liveUser.createdAt,
+      updatedAt: liveUser.updatedAt,
+    },
   };
 }
-

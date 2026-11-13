@@ -7,15 +7,14 @@ export async function DELETE(
   context: { params: Promise<{ id: string }> }
 ) {
   // Backend server-side role check middleware: strictly blocks CONTRIBUTOR
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
   const { id } = await context.params;
-  const deleted = deleteImageById(id);
+  const deleted = await deleteImageById(id);
   if (!deleted) {
     return NextResponse.json({ error: "Image not found" }, { status: 404 });
   }
 
   return NextResponse.json({ message: "Image deleted successfully" }, { status: 200 });
 }
-

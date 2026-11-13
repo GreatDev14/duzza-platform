@@ -6,15 +6,15 @@ import { requireActiveRole } from "@/lib/iam/auth-middleware";
 import { createImage, listImages } from "@/lib/iam/db";
 
 export async function GET(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
   if (!auth.ok) return auth.response;
 
-  const images = listImages();
+  const images = await listImages();
   return NextResponse.json({ images }, { status: 200 });
 }
 
 export async function POST(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER", "CONTRIBUTOR"]);
   if (!auth.ok) return auth.response;
 
   try {
@@ -52,16 +52,14 @@ export async function POST(req: NextRequest) {
       finalUrl = String(body.url || "").trim();
     }
 
-    if (!title || !finalUrl) {
-      return NextResponse.json(
-        { error: "Image title and either an uploaded image file or image URL are required." },
-        { status: 400 }
-      );
+    if (!finalUrl) {
+      finalUrl =
+        "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80";
     }
 
-    const image = createImage({
-      title,
-      category: category || "General",
+    const image = await createImage({
+      title: title || "DUZZA Operations Asset",
+      category,
       url: finalUrl,
       uploadedBy: auth.user.name,
       uploadedByEmail: auth.user.email,
@@ -75,4 +73,3 @@ export async function POST(req: NextRequest) {
     );
   }
 }
-

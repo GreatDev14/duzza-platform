@@ -12,15 +12,15 @@ const inviteUserSchema = z.object({
 });
 
 export async function GET(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
-  const users = listUsers();
+  const users = await listUsers();
   return NextResponse.json({ users }, { status: 200 });
 }
 
 export async function POST(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
   try {
@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const user = createUser({
+    const user = await createUser({
       name: parsed.data.name,
       email: parsed.data.email,
       password: parsed.data.password,

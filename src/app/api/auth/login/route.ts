@@ -44,10 +44,10 @@ export async function POST(req: NextRequest) {
       "127.0.0.1";
     const userAgent = req.headers.get("user-agent") || "Unknown Client";
 
-    const user = findUserByEmail(email);
+    const user = await findUserByEmail(email);
 
     if (!user || !verifyPassword(password, user.passwordHash)) {
-      recordLoginAudit({
+      await recordLoginAudit({
         userId: user ? user.id : null,
         name: user ? user.name : "Unregistered / Unknown",
         email,
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (user.status === "PENDING") {
-      recordLoginAudit({
+      await recordLoginAudit({
         userId: user.id,
         name: user.name,
         email: user.email,
@@ -85,7 +85,7 @@ export async function POST(req: NextRequest) {
     }
 
     if (user.status === "SUSPENDED") {
-      recordLoginAudit({
+      await recordLoginAudit({
         userId: user.id,
         name: user.name,
         email: user.email,
@@ -105,7 +105,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Successful ACTIVE login -> log audit event and issue HTTP-only signed session cookie
-    recordLoginAudit({
+    await recordLoginAudit({
       userId: user.id,
       name: user.name,
       email: user.email,

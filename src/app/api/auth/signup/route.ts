@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Rigid enforcement: all public signups default to CONTRIBUTOR + PENDING status
-    const user = createUser({
+    const user = await createUser({
       name: parsed.data.name,
       email: parsed.data.email,
       password: parsed.data.password,

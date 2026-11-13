@@ -3,10 +3,10 @@ import { requireActiveRole } from "@/lib/iam/auth-middleware";
 import { listLoginAuditLogs } from "@/lib/iam/db";
 
 export async function GET(req: NextRequest) {
-  const auth = requireActiveRole(req, ["ADMIN", "MANAGER"]);
+  const auth = await requireActiveRole(req, ["ADMIN", "MANAGER"]);
   if (!auth.ok) return auth.response;
 
-  const logs = listLoginAuditLogs();
+  const logs = await listLoginAuditLogs();
   return NextResponse.json({ logs }, { status: 200 });
 }
 
