@@ -282,8 +282,7 @@ export default function EquipmentEnquiryModal({
             <button
               type="submit"
               disabled={submitting}
-              style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-              className="btn-brand-primary w-full py-3.5 rounded-xl bg-[#0052FF] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#0041CC] transition-all shadow-md shadow-blue-600/20 disabled:opacity-50 cursor-pointer"
+              className="btn-brand-primary w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-50 cursor-pointer"
             >
               <span className="text-white font-bold">{submitting ? "Transmitting Reservation..." : "Submit Lease Request"}</span>
             </button>

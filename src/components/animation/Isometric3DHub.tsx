@@ -42,20 +42,20 @@ export default function Isometric3DHub() {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
-    // 2. Lighting Setup (Bright corporate blue & white aesthetic)
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
+    // 2. Lighting Setup (Luxury Warm Saddle Brown & Pale Gold aesthetic)
+    const ambientLight = new THREE.AmbientLight(0xfffdf5, 1.3);
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0x0052ff, 1.5);
+    const dirLight = new THREE.DirectionalLight(0xd4af37, 1.8);
     dirLight.position.set(20, 30, 15);
     dirLight.castShadow = true;
     scene.add(dirLight);
 
-    const cyanPointLight = new THREE.PointLight(0x00c2cb, 2.0, 50);
-    cyanPointLight.position.set(-15, 12, 10);
-    scene.add(cyanPointLight);
+    const goldPointLight = new THREE.PointLight(0xf3c966, 2.5, 50);
+    goldPointLight.position.set(-15, 12, 10);
+    scene.add(goldPointLight);
 
-    const softFillLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const softFillLight = new THREE.DirectionalLight(0x8b5a2b, 0.9);
     softFillLight.position.set(-10, -10, -10);
     scene.add(softFillLight);
 
@@ -66,8 +66,8 @@ export default function Isometric3DHub() {
     // Main Floating Island (Chamfered Cylinder or Box)
     const islandGeo = new THREE.CylinderGeometry(14, 15, 1.2, 48);
     const islandMat = new THREE.MeshStandardMaterial({
-      color: 0xf8fafc,
-      roughness: 0.2,
+      color: 0xfaf7f2,
+      roughness: 0.25,
       metalness: 0.1,
     });
     const islandMesh = new THREE.Mesh(islandGeo, islandMat);
@@ -75,28 +75,28 @@ export default function Isometric3DHub() {
     islandMesh.receiveShadow = true;
     baseGroup.add(islandMesh);
 
-    // Outer Glowing Ring
+    // Outer Glowing Ring (Glowing Pale Gold)
     const ringGeo = new THREE.RingGeometry(15.2, 15.6, 64);
     const ringMat = new THREE.MeshBasicMaterial({
-      color: 0x0052ff,
+      color: 0xd4af37,
       side: THREE.DoubleSide,
       transparent: true,
-      opacity: 0.6,
+      opacity: 0.8,
     });
     const ringMesh = new THREE.Mesh(ringGeo, ringMat);
     ringMesh.rotation.x = Math.PI / 2;
     ringMesh.position.y = -0.9;
     baseGroup.add(ringMesh);
 
-    // Coordinate Grid Overlay on Platform
-    const gridHelper = new THREE.GridHelper(24, 16, 0x0052ff, 0xe2e8f0);
+    // Coordinate Grid Overlay on Platform (Brown & Gold grid)
+    const gridHelper = new THREE.GridHelper(24, 16, 0xd4af37, 0xeadccb);
     gridHelper.position.y = -0.38;
     baseGroup.add(gridHelper);
 
     // 4. Central Corporate Core (Prism Tower)
     const coreGeo = new THREE.BoxGeometry(4.5, 7.5, 4.5);
     const coreMat = new THREE.MeshPhysicalMaterial({
-      color: 0xffffff,
+      color: 0xfffcf5,
       metalness: 0.2,
       roughness: 0.1,
       transmission: 0.6,
@@ -110,20 +110,20 @@ export default function Isometric3DHub() {
     coreMesh.castShadow = true;
     baseGroup.add(coreMesh);
 
-    // Core Edge Wireframe
+    // Core Edge Wireframe (Gilded Pale Gold)
     const coreEdges = new THREE.EdgesGeometry(coreGeo);
     const coreEdgeLines = new THREE.LineSegments(
       coreEdges,
-      new THREE.LineBasicMaterial({ color: 0x0052ff, linewidth: 2 })
+      new THREE.LineBasicMaterial({ color: 0xd4af37, linewidth: 2 })
     );
     coreEdgeLines.position.copy(coreMesh.position);
     baseGroup.add(coreEdgeLines);
 
     // 5. Surrounding Satellite Nodes (Divisions)
     const nodeConfigs = [
-      { name: "PROJECTS", angle: 0, r: 9, h: 4.5, color: 0x0052ff, label: "Duzza Projects" },
-      { name: "BRANDING", angle: (Math.PI * 2) / 3, r: 9, h: 4.0, color: 0x10b981, label: "Duzza Branding" },
-      { name: "VENTURES", angle: (Math.PI * 4) / 3, r: 9, h: 3.5, color: 0xf59e0b, label: "Incubating Retail" },
+      { name: "PROJECTS", angle: 0, r: 9, h: 4.5, color: 0x8b5a2b, label: "Duzza Projects" },
+      { name: "BRANDING", angle: (Math.PI * 2) / 3, r: 9, h: 4.0, color: 0xd4af37, label: "Duzza Branding" },
+      { name: "VENTURES", angle: (Math.PI * 4) / 3, r: 9, h: 3.5, color: 0xb88e4f, label: "Incubating Retail" },
     ];
 
     const nodeMeshes: { group: THREE.Group; name: string }[] = [];
@@ -185,10 +185,10 @@ export default function Isometric3DHub() {
       baseGroup.add(pipeMesh);
     });
 
-    // 6. Floating Energy Conduit Particles (Traveling along pipelines)
+    // 6. Floating Energy Conduit Particles (Traveling along pipelines with Glowing Pale Gold)
     const particleCount = 24;
     const particleGeo = new THREE.SphereGeometry(0.28, 16, 16);
-    const particleMat = new THREE.MeshBasicMaterial({ color: 0x00c2cb });
+    const particleMat = new THREE.MeshBasicMaterial({ color: 0xf3c966 });
     const pulseParticles: { mesh: THREE.Mesh; pathIndex: number; progress: number; speed: number }[] = [];
 
     for (let i = 0; i < particleCount; i++) {
@@ -314,60 +314,60 @@ export default function Isometric3DHub() {
         onMouseLeave={() => setIsHovered(false)}
       />
 
-      {/* Floating 3D HUD Badges */}
-      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
-        <div className="flex items-center space-x-2 text-xs font-bold text-navy-950">
-          <Activity className="w-3.5 h-3.5 text-brandBlue-600 animate-pulse" />
+      {/* Floating 3D HUD Badges (Warm Saddle Brown & Pale Gold) */}
+      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-lg shadow-[#8B5A2B]/10 space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
+        <div className="flex items-center space-x-2 text-xs font-bold text-[#241409]">
+          <Activity className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
           <span>Interactive Holding Architecture</span>
         </div>
-        <span className="text-[10px] font-mono text-slate-500 block">Move cursor to tilt 3D platform • Scroll to scrub</span>
+        <span className="text-[10px] font-mono text-[#8B5A2B]/80 block">Move cursor to tilt 3D platform • Scroll to scrub</span>
       </div>
 
-      {/* Interactive Division Pills (Bottom Overlay - Explicit Contrast) */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+      {/* Interactive Division Pills (Bottom Overlay - Warm Saddle Brown & Pale Gold Glow) */}
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-md shadow-[#8B5A2B]/10">
         <button
           onClick={() => setActiveNode("PROJECTS")}
-          style={activeNode === "PROJECTS" ? { backgroundColor: "#0052FF", color: "#FFFFFF" } : {}}
+          style={activeNode === "PROJECTS" ? { backgroundColor: "#8B5A2B", color: "#FFFFFF" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "PROJECTS"
-              ? "bg-[#0052FF] text-white shadow-sm"
-              : "bg-transparent text-slate-600 hover:text-navy-950 hover:bg-slate-100"
+              ? "bg-[#8B5A2B] text-white shadow-sm"
+              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
           }`}
         >
-          <Compass className="w-3 h-3 shrink-0" />
+          <Compass className="w-3 h-3 shrink-0 text-[#F3C966]" />
           <span className="truncate">Duzza Projects</span>
         </button>
 
         <button
           onClick={() => setActiveNode("BRANDING")}
-          style={activeNode === "BRANDING" ? { backgroundColor: "#059669", color: "#FFFFFF" } : {}}
+          style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#241409" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "BRANDING"
-              ? "bg-[#059669] text-white shadow-sm"
-              : "bg-transparent text-slate-600 hover:text-navy-950 hover:bg-slate-100"
+              ? "bg-[#D4AF37] text-[#241409] shadow-sm font-extrabold"
+              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
           }`}
         >
-          <Sparkles className="w-3 h-3 shrink-0" />
+          <Sparkles className="w-3 h-3 shrink-0 text-[#8B5A2B]" />
           <span className="truncate">Duzza Branding</span>
         </button>
 
         <button
           onClick={() => setActiveNode("VENTURES")}
-          style={activeNode === "VENTURES" ? { backgroundColor: "#D97706", color: "#FFFFFF" } : {}}
+          style={activeNode === "VENTURES" ? { backgroundColor: "#B88E4F", color: "#FFFFFF" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "VENTURES"
-              ? "bg-[#D97706] text-white shadow-sm"
-              : "bg-transparent text-slate-600 hover:text-navy-950 hover:bg-slate-100"
+              ? "bg-[#B88E4F] text-white shadow-sm"
+              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
           }`}
         >
-          <Layers className="w-3 h-3 shrink-0" />
+          <Layers className="w-3 h-3 shrink-0 text-white" />
           <span className="truncate">Retail Ventures</span>
         </button>
       </div>
 
       {/* Floating Precision Tag */}
-      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-mono font-bold shadow-sm">
-        <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#8B5A2B] text-[10px] font-mono font-bold shadow-sm">
+        <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
         <span>LIVE TELEMETRY</span>
       </div>
     </div>

@@ -180,7 +180,7 @@ export default function DuzzaProjectsPage() {
       {/* 1. SECTOR HERO (CLEAN LIGHT BLUE & WHITE)                            */}
       {/* -------------------------------------------------------------------- */}
       <section className="relative py-20 lg:py-28 border-b border-slate-200 bg-gradient-to-b from-brandBlue-50/40 via-white to-white overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0052FF_1px,transparent_1px)] [background-size:28px_28px]" />
+        <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:28px_28px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">

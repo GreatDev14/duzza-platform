@@ -9,61 +9,77 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        // Luxury Warm Earth & Pale Gold Theme Mapping
         brandBlue: {
-          50: "#F0F7FF",
-          100: "#E0EFFF",
-          200: "#BAE0FD",
-          300: "#7DD3FC",
-          400: "#38BDF8",
-          500: "#0284C7",
-          600: "#0052FF",
-          700: "#0041CC",
-          800: "#08338F",
-          900: "#0A2558",
-          950: "#06122C",
+          50: "#FDFBF7",
+          100: "#F7F2E7",
+          200: "#EFE5CE",
+          300: "#E2CFAB",
+          400: "#D4B37F",
+          500: "#B88E4F", // Pale burnished gold
+          600: "#8B5A2B", // Signature Deep Warm Saddle Brown
+          700: "#6E431F", // Rich Espresso Earth
+          800: "#523117", // Dark Roast Umber
+          900: "#3B2210", // Deepest Warm Mahogany
+          950: "#241409", // Deep Obsidian Brown
         },
         navy: {
-          800: "#1E293B",
-          900: "#0F172A",
-          950: "#0A1120",
+          800: "#3E2718",
+          900: "#2A180E",
+          950: "#1C1008",
         },
-        seaTurquoise: "#00C2CB",
-        seaBlue: "#0077B6",
+        seaTurquoise: "#D4AF37", // Harmonized metallic accents
+        seaBlue: "#A67C37",
         sand: "#F5EBE1",
         theme: {
           bg: "#FFFFFF",
-          surface: "#F8FAFC",
+          surface: "#FAF8F5",
           card: "#FFFFFF",
-          cardHover: "#F1F5F9",
-          border: "#E2E8F0",
-          borderHover: "#CBD5E1",
+          cardHover: "#F6F2EC",
+          border: "#EADCCB",
+          borderHover: "#D8C3A5",
         },
         gold: {
-          light: "#FDE68A",
-          DEFAULT: "#D97706",
-          dark: "#B45309",
+          light: "#FDF4DC",
+          pale: "#EED9B3",
+          DEFAULT: "#D4AF37", // Iconic Glowing Pale Gold
+          glow: "#F3C966",
+          dark: "#AA8022",
+        },
+        brown: {
+          50: "#FAF7F2",
+          100: "#F3ECE1",
+          200: "#E5D7C3",
+          300: "#CDB697",
+          400: "#B0926C",
+          500: "#8B5A2B", // Warm saddle brown
+          600: "#6E431F",
+          700: "#543317",
+          800: "#3D2310",
+          900: "#2A180B",
+          950: "#1B0E06",
         },
         projects: {
-          slate: "#F8FAFC",
-          orange: "#EA580C",
-          orangeGlow: "#F97316",
-          cyan: "#0284C7",
+          slate: "#FDFBF7",
+          orange: "#C2782A",
+          orangeGlow: "#E0933C",
+          cyan: "#8B5A2B",
         },
         branding: {
-          obsidian: "#0F172A",
-          lime: "#65A30D",
-          limeGlow: "#84CC16",
-          emerald: "#059669",
+          obsidian: "#1C1008",
+          lime: "#D4AF37",
+          limeGlow: "#F3C966",
+          emerald: "#8B5A2B",
         },
         fashion: {
-          burgundy: "#9F1239",
-          rose: "#F43F5E",
-          champagne: "#FFF1F2",
+          burgundy: "#5E2519",
+          rose: "#9E5338",
+          champagne: "#FAF5ED",
         },
         bakery: {
-          espresso: "#451A03",
-          amber: "#D97706",
-          honey: "#B45309",
+          espresso: "#2A180B",
+          amber: "#D4AF37",
+          honey: "#8B5A2B",
         },
       },
       fontFamily: {
@@ -73,8 +89,9 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "blue-glow": "radial-gradient(circle at 50% 30%, rgba(0, 82, 255, 0.08) 0%, transparent 60%)",
-        "ocean-pattern": "linear-gradient(180deg, #E0F2FE 0%, #FFFFFF 100%)",
+        "blue-glow": "radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 60%)",
+        "gold-glow": "radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.22) 0%, rgba(139, 90, 43, 0.08) 50%, transparent 75%)",
+        "ocean-pattern": "linear-gradient(180deg, #FDF7EB 0%, #FFFFFF 100%)",
       },
       animation: {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",

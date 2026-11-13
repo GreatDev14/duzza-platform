@@ -135,11 +135,10 @@ export default function CorporateHomePage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/projects"
-                  style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                  className="btn-brand-primary gsap-hub-action px-7 py-4 rounded-xl bg-[#0052FF] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#0041CC] transition-all shadow-md shadow-blue-600/25 flex items-center space-x-2 group cursor-pointer"
+                  className="btn-brand-primary gsap-hub-action px-7 py-4 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 group cursor-pointer"
                 >
                   <span className="text-white font-bold">Request an Engineering Quote</span>
-                  <ArrowRight className="w-4 h-4 text-white group-hover:translate-x-1.5 transition-transform" />
+                  <ArrowRight className="w-4 h-4 text-[#F3C966] group-hover:translate-x-1.5 transition-transform" />
                 </Link>
 
                 <Link

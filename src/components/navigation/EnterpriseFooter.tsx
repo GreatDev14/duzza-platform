@@ -10,25 +10,25 @@ export default function EnterpriseFooter() {
   const currentYear = 2026;
 
   return (
-    <footer className="bg-[#0A2558] text-white font-sans relative overflow-hidden">
-      {/* World Map Background Silhouette (Image 1 Style) */}
+    <footer className="bg-[#241409] text-[#FAF8F5] font-sans relative overflow-hidden border-t border-[#8B5A2B]/40">
+      {/* Warm Ambient Gold Constellation Silhouette */}
       <div 
-        className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:20px_20px]" 
+        className="absolute inset-0 opacity-15 pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:20px_20px]" 
       />
 
       {/* Top Statutory & Compliance Banner */}
-      <div className="bg-[#06183B] border-b border-blue-900/60 py-3.5 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#1C1008] border-b border-[#8B5A2B]/40 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-xs font-mono">
-          <div className="flex items-center space-x-2 text-blue-200">
-            <Building className="w-4 h-4 text-blue-400" />
+          <div className="flex items-center space-x-2 text-[#EED9B3]">
+            <Building className="w-4 h-4 text-[#D4AF37]" />
             <span>
               <strong className="text-white">INCORPORATED UNDER CAMA 2020:</strong> DUZZA LIMITED (CAC Certified)
             </span>
-            <span className="text-blue-300 font-bold ml-2">| RC: {rcNumber}</span>
+            <span className="text-[#F3C966] font-bold ml-2">| RC: {rcNumber}</span>
           </div>
-          <div className="flex items-center space-x-6 text-blue-300">
+          <div className="flex items-center space-x-6 text-[#EED9B3]">
             <span className="flex items-center space-x-1.5">
-              <MapPin className="w-3.5 h-3.5 text-blue-400" />
+              <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>Base: {operationalBase}</span>
             </span>
             <span className="flex items-center space-x-1.5">
@@ -45,26 +45,28 @@ export default function EnterpriseFooter() {
           {/* Col 1: Group Identity & Trust Profile */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center space-x-3">
-              <div className="w-9 h-9 rounded-xl bg-white p-0.5 flex items-center justify-center font-display font-black text-brandBlue-600 text-lg shadow-md">
-                DZ
+              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#8B5A2B] to-[#D4AF37] p-0.5 flex items-center justify-center font-display font-black text-[#241409] text-lg shadow-[0_0_15px_rgba(212,175,55,0.4)]">
+                <div className="w-full h-full bg-[#FAF8F5] rounded-[10px] flex items-center justify-center text-[#8B5A2B] font-bold">
+                  DZ
+                </div>
               </div>
               <span className="font-display font-bold text-xl text-white tracking-wider">
                 DUZZA LIMITED
               </span>
             </div>
 
-            <p className="text-sm text-blue-200/80 leading-relaxed max-w-md font-light">
+            <p className="text-sm text-[#EFE5CE]/90 leading-relaxed max-w-md font-light">
               A diversified multi-sector holding company operating active subsidiaries across Heavy Engineering, 
               Oil & Gas, Marine Hydrospatial Survey, and Executive Brand Identity, alongside emerging lifestyle divisions.
             </p>
 
-            <div className="pt-2 text-xs space-y-2 text-blue-300 font-mono">
+            <div className="pt-2 text-xs space-y-2 text-[#EED9B3] font-mono">
               <p className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                 <span>{registeredOffice}</span>
               </p>
               <p className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 text-blue-400 shrink-0" />
+                <Mail className="w-4 h-4 text-[#D4AF37] shrink-0" />
                 <a href="mailto:duzzacontact@gmail.com" className="hover:text-white transition-colors">
                   duzzacontact@gmail.com
                 </a>
@@ -74,10 +76,10 @@ export default function EnterpriseFooter() {
 
           {/* Col 2: Duzza Projects */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-300 font-mono">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37] font-mono">
               Duzza Projects
             </h4>
-            <ul className="space-y-2 text-sm text-blue-100">
+            <ul className="space-y-2 text-sm text-[#EFE5CE]">
               <li>
                 <Link href="/projects" className="hover:text-white transition-colors">
                   General Contracting
@@ -99,8 +101,8 @@ export default function EnterpriseFooter() {
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-sky-300 hover:underline font-semibold">
-                  Request RFQ Proposal →
+                <Link href="/projects" className="text-[#F3C966] hover:underline font-semibold flex items-center space-x-1">
+                  <span>Request RFQ Proposal →</span>
                 </Link>
               </li>
             </ul>
@@ -108,10 +110,10 @@ export default function EnterpriseFooter() {
 
           {/* Col 3: Duzza Branding */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-300 font-mono">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37] font-mono">
               Duzza Branding
             </h4>
-            <ul className="space-y-2 text-sm text-blue-100">
+            <ul className="space-y-2 text-sm text-[#EFE5CE]">
               <li>
                 <Link href="/branding" className="hover:text-white transition-colors">
                   Executive Identity
@@ -146,41 +148,41 @@ export default function EnterpriseFooter() {
                 </a>
               </li>
               <li>
-                <Link href="/branding#brief-section" className="text-sky-300 hover:underline font-semibold">
+                <Link href="/branding#brief-section" className="text-[#F3C966] hover:underline font-semibold">
                   Submit Creative Brief →
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 4: Newsletter & Direct Dispatch (Image 1 Style) */}
+          {/* Col 4: Newsletter & Direct Dispatch */}
           <div className="space-y-3">
-            <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-300 font-mono">
+            <h4 className="text-xs font-semibold uppercase tracking-wider text-[#D4AF37] font-mono">
               Get Our Newsletter
             </h4>
-            <p className="text-xs text-blue-200/80 leading-relaxed font-light">
+            <p className="text-xs text-[#EFE5CE]/80 leading-relaxed font-light">
               Receive quarterly project updates, marine survey equipment availability, and brand releases.
             </p>
             <div className="flex items-center space-x-1 pt-1">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full bg-white text-slate-900 rounded-lg px-3 py-2 text-xs placeholder-slate-400 focus:outline-none"
+                className="w-full bg-[#FAF8F5] text-stone-900 rounded-lg px-3 py-2 text-xs placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#D4AF37]"
               />
               <button
-                className="px-3.5 py-2 rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-bold text-xs uppercase tracking-wider transition-colors shrink-0"
+                className="px-3.5 py-2 rounded-lg bg-gradient-to-r from-[#8B5A2B] to-[#D4AF37] hover:from-[#6E431F] hover:to-[#B88E4F] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-[#D4AF37]/20 shrink-0 cursor-pointer"
               >
                 Send
               </button>
             </div>
-            <p className="text-[11px] text-blue-300/80 font-mono pt-1">
+            <p className="text-[11px] text-[#EED9B3]/80 font-mono pt-1">
               We respect your data per NDPA 2023. Zero spam.
             </p>
           </div>
         </div>
 
         {/* Bottom Legal Copyright */}
-        <div className="pt-10 mt-10 border-t border-blue-900/60 flex flex-col sm:flex-row items-center justify-between text-xs text-blue-300/80 gap-4">
+        <div className="pt-10 mt-10 border-t border-[#8B5A2B]/40 flex flex-col sm:flex-row items-center justify-between text-xs text-[#EED9B3]/80 gap-4">
           <div className="flex items-center space-x-2">
             <span>© {currentYear} DUZZA LIMITED. All rights reserved.</span>
             <span>•</span>

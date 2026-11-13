@@ -129,8 +129,7 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
             <div className="pt-2 flex justify-center">
               <button
                 onClick={handleReset}
-                style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                className="btn-brand-primary px-6 py-3 rounded-xl bg-[#0052FF] text-white font-bold text-xs uppercase tracking-wider hover:bg-[#0041CC] transition-colors shadow-md cursor-pointer"
+                className="btn-brand-primary px-6 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
               >
                 Done
               </button>
@@ -245,11 +244,10 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
               <button
                 type="submit"
                 disabled={loading}
-                style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                className="btn-brand-primary px-7 py-3 rounded-xl bg-[#0052FF] hover:bg-[#0041CC] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-blue-600/25 flex items-center space-x-2 cursor-pointer disabled:opacity-50"
+                className="btn-brand-primary px-7 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 cursor-pointer disabled:opacity-50"
               >
                 <span className="text-white font-bold">{loading ? "Transmitting..." : "Submit Special Request"}</span>
-                <Send className="w-3.5 h-3.5 text-white" />
+                <Send className="w-3.5 h-3.5 text-[#F3C966]" />
               </button>
             </div>
           </form>

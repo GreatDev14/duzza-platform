@@ -86,36 +86,36 @@ export default function CorporateWelcomeScreen() {
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="fixed inset-0 z-[999999] flex items-center justify-center overflow-hidden font-sans select-none bg-white/98 backdrop-blur-2xl transition-opacity"
+      className="fixed inset-0 z-[999999] flex items-center justify-center overflow-hidden font-sans select-none bg-[#FAF8F5]/98 backdrop-blur-2xl transition-opacity"
     >
-      {/* Subtle Corporate Geometric Background */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none bg-[radial-gradient(#0052FF_1.2px,transparent_1.2px)] [background-size:24px_24px]" />
+      {/* Subtle Warm Amber Gold Grid */}
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#D4AF37_1.2px,transparent_1.2px)] [background-size:24px_24px]" />
       
-      {/* Ambient Corporate Glow */}
-      <div className="absolute -top-40 -left-40 w-96 h-96 bg-brandBlue-100/60 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-sky-100/60 rounded-full blur-3xl pointer-events-none" />
+      {/* Ambient Warm Earth & Gold Glow */}
+      <div className="absolute -top-40 -left-40 w-96 h-96 bg-[#D4AF37]/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-[#8B5A2B]/15 rounded-full blur-3xl pointer-events-none" />
 
       {/* Main Corporate Card */}
       <div
         ref={cardRef}
-        className="relative z-20 max-w-lg w-full mx-6 p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 shadow-2xl text-center space-y-6 flex flex-col items-center transition-transform duration-150 ease-out"
+        className="relative z-20 max-w-lg w-full mx-6 p-8 sm:p-12 rounded-3xl bg-white border border-[#EADCCB] shadow-2xl shadow-[#8B5A2B]/15 text-center space-y-6 flex flex-col items-center transition-transform duration-150 ease-out"
         style={{ transformStyle: "preserve-3d" }}
       >
         {/* Statutory Pill */}
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-slate-50 border border-slate-200 text-xs font-mono text-slate-700 shadow-xs">
-          <span className="w-2 h-2 rounded-full bg-brandBlue-600 animate-pulse" />
-          <span className="font-bold text-navy-950">DUZZA LIMITED</span>
-          <span className="text-slate-300">•</span>
-          <span className="text-slate-500 font-medium">CAMA 2020 RC-7149208</span>
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#FAF8F5] border border-[#EADCCB] text-xs font-mono text-[#6E431F] shadow-sm">
+          <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+          <span className="font-bold text-[#241409]">DUZZA LIMITED</span>
+          <span className="text-[#CDB697]">•</span>
+          <span className="text-[#8B5A2B] font-medium">CAMA 2020 RC-7149208</span>
         </div>
 
-        {/* Corporate Monogram */}
-        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-brandBlue-600 via-brandBlue-700 to-navy-950 p-0.5 shadow-xl flex items-center justify-center">
-          <div className="w-full h-full bg-white rounded-[14px] flex flex-col items-center justify-center shadow-inner">
-            <span className="font-display font-black text-2xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-brandBlue-600 to-navy-950">
+        {/* Corporate Monogram (Brown & Glowing Gold) */}
+        <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-[#8B5A2B] via-[#B88E4F] to-[#241409] p-0.5 shadow-xl shadow-[#D4AF37]/30 flex items-center justify-center">
+          <div className="w-full h-full bg-[#FAF8F5] rounded-[14px] flex flex-col items-center justify-center shadow-inner">
+            <span className="font-display font-black text-2xl tracking-tighter text-transparent bg-clip-text bg-gradient-to-br from-[#8B5A2B] via-[#B88E4F] to-[#D4AF37]">
               DZ
             </span>
-            <span className="text-[7px] font-mono font-bold tracking-widest text-brandBlue-600 -mt-0.5">
+            <span className="text-[7px] font-mono font-bold tracking-widest text-[#B88E4F] -mt-0.5">
               HOLDING
             </span>
           </div>
@@ -123,34 +123,34 @@ export default function CorporateWelcomeScreen() {
 
         {/* Corporate Title */}
         <div className="space-y-2">
-          <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-navy-950 tracking-tight leading-tight">
+          <h1 className="font-display font-extrabold text-3xl sm:text-4xl text-[#241409] tracking-tight leading-tight">
             DUZZA LIMITED
           </h1>
-          <p className="text-xs sm:text-sm text-slate-600 max-w-sm mx-auto leading-relaxed font-light">
+          <p className="text-xs sm:text-sm text-[#523117]/80 max-w-sm mx-auto leading-relaxed font-light">
             Diversified Nigerian Enterprise Conglomerate uniting Heavy Marine & Civil Contracting, Oil & Gas Logistics, and Executive Branding.
           </p>
         </div>
 
         {/* 4 Pillars Micro Badges */}
-        <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-[11px] font-mono text-slate-700">
-          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 font-medium">Marine Geomatics</span>
-          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 font-medium">Civil Engineering</span>
-          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 font-medium">Executive Branding</span>
-          <span className="px-2.5 py-1 rounded-md bg-slate-50 border border-slate-200 font-medium">Emerging Ventures</span>
+        <div className="flex flex-wrap items-center justify-center gap-2 pt-1 text-[11px] font-mono text-[#6E431F]">
+          <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#EADCCB] font-medium">Marine Geomatics</span>
+          <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#EADCCB] font-medium">Civil Engineering</span>
+          <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#EADCCB] font-medium">Executive Branding</span>
+          <span className="px-2.5 py-1 rounded-md bg-[#FAF8F5] border border-[#EADCCB] font-medium">Emerging Ventures</span>
         </div>
 
         {/* Progress Bar & Counter */}
         <div className="w-full space-y-2 pt-2">
-          <div className="flex items-center justify-between text-[11px] font-mono text-slate-500">
-            <span className="text-brandBlue-700 font-semibold flex items-center space-x-1">
+          <div className="flex items-center justify-between text-[11px] font-mono text-[#8B5A2B]">
+            <span className="text-[#6E431F] font-semibold flex items-center space-x-1">
               <span>Entering Portal</span>
             </span>
-            <span className="font-bold text-navy-950">{timeLeft}s</span>
+            <span className="font-bold text-[#241409]">{timeLeft}s</span>
           </div>
-          <div className="h-1.5 w-full bg-slate-100 rounded-full overflow-hidden border border-slate-200">
+          <div className="h-1.5 w-full bg-[#F3ECE1] rounded-full overflow-hidden border border-[#EADCCB]">
             <div
-              className="h-full bg-[#0052FF] rounded-full transition-all duration-75"
-              style={{ width: `${progress}%`, backgroundColor: "#0052FF" }}
+              className="h-full bg-gradient-to-r from-[#8B5A2B] via-[#D4AF37] to-[#F3C966] rounded-full transition-all duration-75 shadow-[0_0_10px_rgba(212,175,55,0.8)]"
+              style={{ width: `${progress}%` }}
             />
           </div>
         </div>
@@ -158,10 +158,10 @@ export default function CorporateWelcomeScreen() {
         {/* Instant Skip Button */}
         <button
           onClick={handleExit}
-          className="group inline-flex items-center space-x-1.5 text-xs font-mono font-bold uppercase tracking-wider text-slate-400 hover:text-brandBlue-600 transition-colors pt-1 cursor-pointer"
+          className="group inline-flex items-center space-x-1.5 text-xs font-mono font-bold uppercase tracking-wider text-[#B0926C] hover:text-[#8B5A2B] transition-colors pt-1 cursor-pointer"
         >
           <span>Enter Portal Now</span>
-          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform text-[#D4AF37]" />
         </button>
       </div>
     </div>

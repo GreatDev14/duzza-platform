@@ -16,7 +16,7 @@ export default function EnterpriseOperationsGlobe3D() {
     let height = container.clientHeight || 460;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8fafc);
+    scene.background = new THREE.Color(0xfaf7f2);
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
     camera.position.set(0, 1.5, 13.5);
@@ -30,15 +30,15 @@ export default function EnterpriseOperationsGlobe3D() {
     renderer.domElement.style.height = "100%";
     container.appendChild(renderer.domElement);
 
-    // Lighting
-    const ambient = new THREE.AmbientLight(0xffffff, 1.5);
+    // Lighting (Warm Ambient Gold & Saddle Brown)
+    const ambient = new THREE.AmbientLight(0xfffdf5, 1.6);
     scene.add(ambient);
 
-    const keyLight = new THREE.DirectionalLight(0x0052ff, 1.8);
+    const keyLight = new THREE.DirectionalLight(0xd4af37, 2.0);
     keyLight.position.set(8, 10, 10);
     scene.add(keyLight);
 
-    const fillLight = new THREE.DirectionalLight(0x38bdf8, 1.2);
+    const fillLight = new THREE.DirectionalLight(0x8b5a2b, 1.3);
     fillLight.position.set(-8, -5, 6);
     scene.add(fillLight);
 
@@ -46,35 +46,35 @@ export default function EnterpriseOperationsGlobe3D() {
     const globeGroup = new THREE.Group();
     scene.add(globeGroup);
 
-    // 1. Inner Core Sphere (Crisp Translucent Corporate Blue)
+    // 1. Inner Core Sphere (Translucent Warm Sand & Pale Gold)
     const coreGeo = new THREE.IcosahedronGeometry(3.2, 2);
     const coreMat = new THREE.MeshStandardMaterial({
-      color: 0xe0efff,
+      color: 0xf5ebe1,
       roughness: 0.25,
-      metalness: 0.15,
+      metalness: 0.2,
       transparent: true,
-      opacity: 0.85,
+      opacity: 0.9,
       flatShading: true,
     });
     const coreMesh = new THREE.Mesh(coreGeo, coreMat);
     globeGroup.add(coreMesh);
 
-    // 2. Outer Geodesic Wireframe Cage
+    // 2. Outer Geodesic Wireframe Cage (Glowing Pale Gold)
     const wireGeo = new THREE.IcosahedronGeometry(3.26, 2);
     const wireMat = new THREE.MeshBasicMaterial({
-      color: 0x0052ff,
+      color: 0xd4af37,
       wireframe: true,
       transparent: true,
-      opacity: 0.32,
+      opacity: 0.45,
     });
     const wireMesh = new THREE.Mesh(wireGeo, wireMat);
     globeGroup.add(wireMesh);
 
-    // 3. Three Tilted Orbital Rings + Satellites
+    // 3. Three Tilted Orbital Rings + Satellites (Brown, Gold & Burnished Amber)
     const ringConfigs = [
-      { radius: 4.4, tiltX: 0.55, tiltZ: 0.2, color: 0x0052ff, speed: 0.012 },
-      { radius: 5.0, tiltX: -0.45, tiltZ: 0.7, color: 0x059669, speed: -0.009 },
-      { radius: 5.5, tiltX: 0.85, tiltZ: -0.4, color: 0x0284c7, speed: 0.007 },
+      { radius: 4.4, tiltX: 0.55, tiltZ: 0.2, color: 0x8b5a2b, speed: 0.012 },
+      { radius: 5.0, tiltX: -0.45, tiltZ: 0.7, color: 0xd4af37, speed: -0.009 },
+      { radius: 5.5, tiltX: 0.85, tiltZ: -0.4, color: 0xf3c966, speed: 0.007 },
     ];
 
     const satellites: { pivot: THREE.Group; speed: number }[] = [];
@@ -209,71 +209,71 @@ export default function EnterpriseOperationsGlobe3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl sm:rounded-3xl bg-slate-50 border border-slate-200/90 shadow-2xl overflow-hidden select-none">
+    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl sm:rounded-3xl bg-[#FAF8F5] border border-[#EADCCB] shadow-2xl shadow-[#8B5A2B]/10 overflow-hidden select-none">
       {/* Centered 3D Canvas */}
       <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top Overlay Header */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
-        <div className="px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md flex items-center space-x-2">
-          <Globe2 className="w-4 h-4 text-[#0052FF]" />
+        <div className="px-3.5 py-2 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-md flex items-center space-x-2">
+          <Globe2 className="w-4 h-4 text-[#D4AF37]" />
           <div>
-            <span className="text-[11px] font-bold text-slate-900 block leading-tight">
+            <span className="text-[11px] font-bold text-[#241409] block leading-tight">
               Global Operations Network
             </span>
-            <span className="text-[10px] font-mono text-slate-500 block">
+            <span className="text-[10px] font-mono text-[#8B5A2B]/80 block">
               Drag to orbit 360° • Warri → International
             </span>
           </div>
         </div>
 
-        <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[10px] font-mono font-bold shadow-sm">
-          <Radio className="w-3 h-3 text-emerald-600 animate-pulse" />
+        <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-[#8B5A2B] text-[10px] font-mono font-bold shadow-sm">
+          <Radio className="w-3 h-3 text-[#D4AF37] animate-pulse" />
           <span>NETWORK ONLINE</span>
         </div>
       </div>
 
       {/* Bottom Interactive Telemetry Pills */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-md">
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-md shadow-[#8B5A2B]/10">
         <button
           type="button"
           onClick={() => setActiveSector("MARINE")}
-          style={activeSector === "MARINE" ? { backgroundColor: "#0052FF", color: "#FFFFFF" } : {}}
+          style={activeSector === "MARINE" ? { backgroundColor: "#8B5A2B", color: "#FFFFFF" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "MARINE"
-              ? "bg-[#0052FF] text-white shadow-sm"
-              : "text-slate-600 hover:bg-slate-100"
+              ? "bg-[#8B5A2B] text-white shadow-sm"
+              : "text-stone-600 hover:bg-[#FAF8F5]"
           }`}
         >
-          <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+          <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#F3C966]" />
           <span className="truncate">Marine Base</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveSector("CIVIL")}
-          style={activeSector === "CIVIL" ? { backgroundColor: "#059669", color: "#FFFFFF" } : {}}
+          style={activeSector === "CIVIL" ? { backgroundColor: "#D4AF37", color: "#241409" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "CIVIL"
-              ? "bg-[#059669] text-white shadow-sm"
-              : "text-slate-600 hover:bg-slate-100"
+              ? "bg-[#D4AF37] text-[#241409] shadow-sm font-extrabold"
+              : "text-stone-600 hover:bg-[#FAF8F5]"
           }`}
         >
-          <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+          <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#8B5A2B]" />
           <span className="truncate">ISO Standards</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveSector("GLOBAL")}
-          style={activeSector === "GLOBAL" ? { backgroundColor: "#0284C7", color: "#FFFFFF" } : {}}
+          style={activeSector === "GLOBAL" ? { backgroundColor: "#B88E4F", color: "#FFFFFF" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "GLOBAL"
-              ? "bg-[#0284C7] text-white shadow-sm"
-              : "text-slate-600 hover:bg-slate-100"
+              ? "bg-[#B88E4F] text-white shadow-sm"
+              : "text-stone-600 hover:bg-[#FAF8F5]"
           }`}
         >
-          <Globe2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" />
+          <Globe2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-white" />
           <span className="truncate">Global Reach</span>
         </button>
       </div>

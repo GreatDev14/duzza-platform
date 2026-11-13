@@ -56,19 +56,19 @@ export default function CmsLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-b from-[#FAF8F5] via-white to-[#FAF7F2] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-md space-y-6">
         {/* Card */}
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl p-7 sm:p-9 space-y-6">
+        <div className="bg-white rounded-3xl border border-[#EADCCB] shadow-2xl shadow-[#8B5A2B]/10 p-7 sm:p-9 space-y-6">
           <div className="space-y-2 text-center">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-[11px] font-mono font-bold text-[#0052FF]">
-              <ShieldCheck className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#FAF7F2] border border-[#EADCCB] text-[11px] font-mono font-bold text-[#8B5A2B]">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>ZERO-TRUST IAM • DUZZA CMS</span>
             </div>
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-[#241409]">
               CMS Portal Sign In
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500">
+            <p className="text-xs sm:text-sm text-stone-500">
               Role-based access control for Admin, Manager, and Approved Contributors.
             </p>
           </div>
@@ -97,35 +97,35 @@ export default function CmsLoginPage() {
 
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <label className="block text-xs font-mono font-bold text-slate-700 mb-1.5">
+              <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
                 Corporate / Account Email
               </label>
               <div className="relative">
-                <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+                <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                 <input
                   type="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@duzza.com.ng"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-slate-50/50 focus:outline-none focus:border-[#0052FF]"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-xs font-mono font-bold text-slate-700 mb-1.5">
+              <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
                 Password
               </label>
               <div className="relative">
-                <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+                <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                 <input
                   type="password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-slate-50/50 focus:outline-none focus:border-[#0052FF]"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                 />
               </div>
             </div>
@@ -133,23 +133,22 @@ export default function CmsLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-              className="btn-brand-primary w-full py-3.5 rounded-xl bg-[#0052FF] hover:bg-[#0041CC] text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+              className="btn-brand-primary w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
             >
               <span className="text-white font-bold">
                 {loading ? "Verifying IAM Credentials..." : "Sign In to CMS Dashboard"}
               </span>
-              <ArrowRight className="w-4 h-4 text-white" />
+              <ArrowRight className="w-4 h-4 text-[#F3C966]" />
             </button>
           </form>
 
-          <div className="pt-2 text-center text-xs text-slate-500">
+          <div className="pt-2 text-center text-xs text-stone-500">
             New contributor?{" "}
             <Link
               href="/cms/signup"
-              className="font-bold text-[#0052FF] hover:underline inline-flex items-center space-x-1"
+              className="font-bold text-[#8B5A2B] hover:text-[#6E431F] hover:underline inline-flex items-center space-x-1"
             >
-              <UserCheck className="w-3.5 h-3.5" />
+              <UserCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>Request Account Access</span>
             </Link>
           </div>

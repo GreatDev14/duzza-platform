@@ -84,11 +84,10 @@ export default function CmsSignupPage() {
               </div>
               <Link
                 href="/cms/login"
-                style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-[#0052FF] text-white font-bold text-xs uppercase tracking-wider"
+                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider"
               >
                 <span className="text-white">Return to Login</span>
-                <ArrowRight className="w-3.5 h-3.5 text-white" />
+                <ArrowRight className="w-3.5 h-3.5 text-[#F3C966]" />
               </Link>
             </div>
           ) : (
@@ -102,45 +101,45 @@ export default function CmsSignupPage() {
 
               <form onSubmit={handleSignup} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono font-bold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
                     Full Name
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+                    <User className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Chinedu Okafor"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-slate-50/50 focus:outline-none focus:border-[#0052FF]"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
                     Email Address
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+                    <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="staff@duzza.com.ng"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-slate-50/50 focus:outline-none focus:border-[#0052FF]"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-slate-700 mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
                     Password
                   </label>
                   <div className="relative">
-                    <Lock className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
+                    <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
                     <input
                       type="password"
                       required
@@ -148,13 +147,13 @@ export default function CmsSignupPage() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Minimum 4 characters"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-300 text-sm text-slate-900 bg-slate-50/50 focus:outline-none focus:border-[#0052FF]"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
                     />
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 flex items-start space-x-2 text-[11px] text-slate-600">
-                  <ShieldAlert className="w-4 h-4 text-[#0052FF] shrink-0 mt-0.5" />
+                <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-200 flex items-start space-x-2 text-[11px] text-amber-900">
+                  <ShieldAlert className="w-4 h-4 text-[#8B5A2B] shrink-0 mt-0.5" />
                   <span>
                     All new accounts are quarantined in <strong>PENDING</strong> state until
                     approved by Executive Admin or Mr. Caleb (Manager).
@@ -164,21 +163,20 @@ export default function CmsSignupPage() {
                 <button
                   type="submit"
                   disabled={loading}
-                  style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                  className="btn-brand-primary w-full py-3.5 rounded-xl bg-[#0052FF] hover:bg-[#0041CC] text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+                  className="btn-brand-primary w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
                 >
                   <span className="text-white font-bold">
                     {loading ? "Submitting Request..." : "Submit Access Request"}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-white" />
+                  <ArrowRight className="w-4 h-4 text-[#F3C966]" />
                 </button>
               </form>
             </>
           )}
 
-          <div className="pt-2 text-center text-xs text-slate-500">
+          <div className="pt-2 text-center text-xs text-stone-500">
             Already approved?{" "}
-            <Link href="/cms/login" className="font-bold text-[#0052FF] hover:underline">
+            <Link href="/cms/login" className="font-bold text-[#8B5A2B] hover:text-[#6E431F] hover:underline">
               Sign In to CMS
             </Link>
           </div>

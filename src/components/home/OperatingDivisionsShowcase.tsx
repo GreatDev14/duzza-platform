@@ -43,8 +43,8 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA PROJECTS",
     tagline: "Marine Hydrospatial Survey & Heavy Civil Engineering",
     category: "B2B Infrastructure & Geomatics",
-    badgeColor: "bg-brandBlue-50 text-brandBlue-700 border-brandBlue-200",
-    borderColor: "hover:border-brandBlue-400",
+    badgeColor: "bg-[#FAF7F2] text-[#8B5A2B] border-[#EADCCB]",
+    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]",
     description: "Delivering mission-critical bathymetric charting, multibeam sonar surveys, DGPS hydrospatial positioning, oil & gas facility maintenance, and turnkey civil foundations across the Niger Delta.",
     // Real High-Resolution Marine Hydrographic Survey Vessel & Engineering Photography
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85",
@@ -66,8 +66,8 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA BRANDING",
     tagline: "Digital, Merchandising & Executive Branding Agency",
     category: "..a subsidiary of Duzza Limited ®",
-    badgeColor: "bg-emerald-50 text-emerald-800 border-emerald-200",
-    borderColor: "hover:border-emerald-400",
+    badgeColor: "bg-[#FDFBF7] text-[#B88E4F] border-[#EADCCB]",
+    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]",
     description: "High-octane creative production studio engineering magnetic executive identity, scalable corporate design systems, Meta/IG sponsored advertisement pipelines, and global sports merchandise drops.",
     // Real High-Resolution Creative Agency & Executive Design Studio Photography
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85",
@@ -248,11 +248,10 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
 
                       <Link
                         href={biz.primaryLink}
-                        style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
-                        className="btn-brand-primary px-5 py-3 rounded-xl bg-[#0052FF] hover:bg-[#0041CC] text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md shadow-blue-600/25 flex items-center justify-center space-x-2 group/btn shrink-0 cursor-pointer"
+                        className="btn-brand-primary px-5 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 group/btn shrink-0 cursor-pointer"
                       >
                         <span className="text-white font-bold">{biz.primaryLinkText}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-white group-hover/btn:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 text-[#F3C966] group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>

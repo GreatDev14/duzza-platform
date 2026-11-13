@@ -85,18 +85,18 @@ export default function EnterpriseNavbar() {
     >
       <div className="max-w-7xl mx-auto px-3 sm:px-6">
         <div className="flex items-center justify-between gap-2">
-          {/* Corporate Brand Identity Lockup (Crisp Blue & White) */}
+          {/* Corporate Brand Identity Lockup (Warm Earth Brown & Pale Gold Glow) */}
           <Link href="/" className="flex items-center space-x-2 sm:space-x-2.5 group min-w-0 sm:shrink-0">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-brandBlue-600 via-brandBlue-700 to-navy-950 p-0.5 flex items-center justify-center shadow-md group-hover:scale-105 transition-all duration-300 shrink-0">
-              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center font-display font-black text-brandBlue-600 text-sm sm:text-lg tracking-tighter">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#8B5A2B] via-[#B88E4F] to-[#241409] p-0.5 flex items-center justify-center shadow-md shadow-[#8B5A2B]/20 group-hover:scale-105 group-hover:shadow-[0_0_15px_rgba(212,175,55,0.4)] transition-all duration-300 shrink-0">
+              <div className="w-full h-full bg-[#FAF8F5] rounded-[10px] flex items-center justify-center font-display font-black text-[#8B5A2B] group-hover:text-[#D4AF37] text-sm sm:text-lg tracking-tighter transition-colors">
                 DZ
               </div>
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-display font-bold text-sm sm:text-lg tracking-wider text-navy-950 uppercase group-hover:text-brandBlue-600 transition-colors leading-tight truncate sm:whitespace-nowrap">
+              <span className="font-display font-bold text-sm sm:text-lg tracking-wider text-[#241409] uppercase group-hover:text-[#8B5A2B] transition-colors leading-tight truncate sm:whitespace-nowrap">
                 DUZZA LIMITED
               </span>
-              <span className="text-[8px] sm:text-[10px] tracking-widest text-brandBlue-600 uppercase font-mono font-semibold truncate sm:whitespace-nowrap">
+              <span className="text-[8px] sm:text-[10px] tracking-widest text-[#B88E4F] uppercase font-mono font-semibold truncate sm:whitespace-nowrap">
                 CAMA 2020 HOLDING GROUP
               </span>
             </div>
@@ -328,10 +328,10 @@ export default function EnterpriseNavbar() {
                   window.dispatchEvent(new CustomEvent("duzza:replay-welcome"));
                 }
               }}
-              className="inline-flex items-center space-x-1 px-2 py-1.5 text-xs font-semibold rounded-lg bg-sky-50 text-brandBlue-700 border border-sky-200 hover:bg-sky-100 hover:border-brandBlue-300 transition-colors cursor-pointer shrink-0"
+              className="inline-flex items-center space-x-1 px-2 py-1.5 text-xs font-semibold rounded-lg bg-amber-50 text-[#8B5A2B] border border-amber-200 hover:bg-amber-100/70 hover:border-[#D4AF37] transition-all cursor-pointer shrink-0"
               title="Replay 3-second corporate welcome screen"
             >
-              <Film className="w-3.5 h-3.5 text-brandBlue-600 animate-pulse" />
+              <Film className="w-3.5 h-3.5 text-[#B88E4F] animate-pulse" />
               <span className="text-[11px] font-mono hidden xl:inline">Intro (3s)</span>
             </button>
 
@@ -340,7 +340,7 @@ export default function EnterpriseNavbar() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-slate-100 text-slate-700 border border-slate-200 hover:bg-slate-200 transition-colors shrink-0"
+              className="inline-flex items-center space-x-1 px-2.5 py-1.5 text-xs font-semibold uppercase tracking-wider rounded-lg bg-stone-100 text-stone-700 border border-stone-200 hover:bg-stone-200 transition-colors shrink-0"
               title="Chat with Duzza Holding on WhatsApp"
             >
               <PhoneCall className="w-3.5 h-3.5 text-emerald-600" />
@@ -348,17 +348,16 @@ export default function EnterpriseNavbar() {
             </a>
 
             {/* Subtle Divider */}
-            <div className="h-4 w-px bg-slate-200 mx-0.5 shrink-0" />
+            <div className="h-4 w-px bg-stone-200 mx-0.5 shrink-0" />
 
-            {/* Primary High-Contrast Quote CTA (Guaranteed Inside Viewport) */}
+            {/* Primary High-Contrast Quote CTA (Brown with Glowing Gold Accents) */}
             <Link
               href="/projects#equipment-catalog"
-              style={{ backgroundColor: "#0052FF", color: "#FFFFFF" }}
               title="Request an Engineering, Marine Survey, or Equipment Lease Quote"
-              className="btn-brand-primary inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-xl bg-[#0052FF] text-white hover:bg-[#0041CC] shadow-md shadow-blue-600/20 transition-all shrink-0 cursor-pointer"
+              className="btn-brand-primary inline-flex items-center space-x-1.5 px-3.5 py-2 text-xs font-bold uppercase tracking-wider rounded-xl transition-all shrink-0 cursor-pointer"
             >
               <span className="text-white font-bold whitespace-nowrap">Request Quote</span>
-              <ArrowRight className="w-3.5 h-3.5 text-white" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#F3C966]" />
             </Link>
           </div>
 
@@ -480,23 +479,23 @@ export default function EnterpriseNavbar() {
                   window.dispatchEvent(new CustomEvent("duzza:replay-welcome"));
                 }
               }}
-              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-sky-50 border border-sky-200 text-brandBlue-700 font-bold text-sm"
+              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-amber-50 border border-amber-200 text-[#8B5A2B] font-bold text-sm"
             >
-              <Film className="w-4 h-4 text-brandBlue-600 animate-pulse" />
+              <Film className="w-4 h-4 text-[#B88E4F] animate-pulse" />
               <span>Watch 3s Corporate Intro</span>
             </button>
             <a
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-slate-100 border border-slate-300 text-navy-950 font-semibold text-sm"
+              className="w-full flex items-center justify-center space-x-2 py-2.5 rounded-lg bg-stone-100 border border-stone-300 text-stone-900 font-semibold text-sm"
             >
               <PhoneCall className="w-4 h-4 text-emerald-600" />
               <span>WhatsApp Warri Operations Desk</span>
             </a>
             <Link
               href="/projects"
-              className="w-full text-center py-2.5 rounded-lg bg-brandBlue-600 text-white font-bold text-sm hover:bg-brandBlue-700 shadow-sm"
+              className="w-full text-center py-2.5 rounded-lg bg-[#8B5A2B] text-white font-bold text-sm hover:bg-[#6E431F] shadow-sm shadow-[#8B5A2B]/20"
             >
               Request Engineering Quote
             </Link>

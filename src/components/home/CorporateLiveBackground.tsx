@@ -32,7 +32,7 @@ export default function CorporateLiveBackground() {
       color: string;
     }
 
-    const colors = ["#0052FF", "#0284C7", "#38BDF8", "#0A2558"];
+    const colors = ["#8B5A2B", "#D4AF37", "#F3C966", "#B88E4F", "#241409"];
 
     const points: Point[] = Array.from({ length: POINT_COUNT }, () => ({
       x: Math.random() * width,
@@ -46,11 +46,11 @@ export default function CorporateLiveBackground() {
       color: colors[Math.floor(Math.random() * colors.length)],
     }));
 
-    // Ambient floating glow orbs
+    // Ambient floating glow orbs (Brown and Pale Gold Radiance)
     const orbs = [
-      { x: width * 0.2, y: height * 0.3, r: 240, color: "rgba(0, 82, 255, 0.04)" },
-      { x: width * 0.8, y: height * 0.6, r: 280, color: "rgba(2, 132, 199, 0.035)" },
-      { x: width * 0.5, y: height * 0.85, r: 200, color: "rgba(56, 189, 248, 0.03)" },
+      { x: width * 0.2, y: height * 0.3, r: 240, color: "rgba(212, 175, 55, 0.08)" },
+      { x: width * 0.8, y: height * 0.6, r: 280, color: "rgba(139, 90, 43, 0.06)" },
+      { x: width * 0.5, y: height * 0.85, r: 200, color: "rgba(243, 201, 102, 0.07)" },
     ];
 
     let tick = 0;
@@ -132,11 +132,11 @@ export default function CorporateLiveBackground() {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxDist) {
-            const alpha = (1 - dist / maxDist) * 0.18;
+            const alpha = (1 - dist / maxDist) * 0.22;
             ctx.beginPath();
             ctx.moveTo(p1.x, p1.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(0, 82, 255, ${alpha})`;
+            ctx.strokeStyle = `rgba(212, 175, 55, ${alpha})`;
             ctx.lineWidth = 0.9;
             ctx.stroke();
           }
