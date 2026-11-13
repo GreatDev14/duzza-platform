@@ -13,9 +13,9 @@ import {
   CheckCircle2, 
   MapPin, 
   Mail, 
-  Instagram,
-  ShieldCheck,
-  Building2
+  Instagram, 
+  ShieldCheck, 
+  Building2 
 } from "lucide-react";
 import Tilt3DCard from "@/components/animation/Tilt3DCard";
 
@@ -43,10 +43,9 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA PROJECTS",
     tagline: "Marine Hydrospatial Survey & Heavy Civil Engineering",
     category: "B2B Infrastructure & Geomatics",
-    badgeColor: "bg-[#FAF7F2] text-[#8B5A2B] border-[#EADCCB]",
-    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]",
+    badgeColor: "bg-[#0E1B33] text-[#38BDF8] border-[#1B325C]",
+    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "Delivering mission-critical bathymetric charting, multibeam sonar surveys, DGPS hydrospatial positioning, oil & gas facility maintenance, and turnkey civil foundations across the Niger Delta.",
-    // Real High-Resolution Marine Hydrographic Survey Vessel & Engineering Photography
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "Multibeam Sonar & Acoustic Seabed Mapping",
@@ -66,10 +65,9 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA BRANDING",
     tagline: "Digital, Merchandising & Executive Branding Agency",
     category: "..a subsidiary of Duzza Limited ®",
-    badgeColor: "bg-[#FDFBF7] text-[#B88E4F] border-[#EADCCB]",
-    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.2)]",
+    badgeColor: "bg-[#0E1B33] text-[#D4AF37] border-[#1B325C]",
+    borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "High-octane creative production studio engineering magnetic executive identity, scalable corporate design systems, Meta/IG sponsored advertisement pipelines, and global sports merchandise drops.",
-    // Real High-Resolution Creative Agency & Executive Design Studio Photography
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "Executive Personal Identity & Speaker Kit Architecture",
@@ -89,10 +87,9 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA FASHION",
     tagline: "Artisanal English Tailoring & Contemporary African Couture",
     category: "Luxury Apparel & Leatherworks",
-    badgeColor: "bg-rose-50 text-rose-700 border-rose-200",
-    borderColor: "hover:border-rose-400",
+    badgeColor: "bg-[#0E1B33] text-[#E5C378] border-[#1B325C]",
+    borderColor: "hover:border-[#E5C378]",
     description: "Where bespoke Savile Row structure fuses with artisanal Nigerian brocade, hand-dyed cotton, and luxury leathercraft. Curated English suits, bespoke contemporary Ankara couture, and statement wearables.",
-    // Real High-Resolution Luxury Tailoring & Couture Fashion Photography
     image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "Bespoke English Tailoring & Structured Suiting",
@@ -112,10 +109,9 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     name: "DUZZA BAKERY & EATERY",
     tagline: "48-Hour Wild Yeast Sourdough & Gourmet Patisserie",
     category: "Culinary Hospitality & Confectionery",
-    badgeColor: "bg-amber-50 text-amber-800 border-amber-200",
-    borderColor: "hover:border-amber-400",
+    badgeColor: "bg-[#0E1B33] text-[#E5C378] border-[#1B325C]",
+    borderColor: "hover:border-[#E5C378]",
     description: "Dedicated to the art of traditional European breadmaking and Nigerian hospitality. Slow-fermented golden sourdough boules, flaky butter viennoiserie, custom celebration cakes, and casual bistro dining.",
-    // Real High-Resolution Mouth-Watering Sourdough & Gourmet Pastry Photography
     image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "48-Hour Cold-Fermented Country Sourdough Crusts",
@@ -138,24 +134,24 @@ interface OperatingDivisionsShowcaseProps {
 
 export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: OperatingDivisionsShowcaseProps) {
   return (
-    <section id="duzza-operating-businesses" className="py-20 lg:py-28 bg-[#140A05] border-b border-[#3D2415] relative overflow-hidden">
+    <section id="duzza-operating-businesses" className="py-20 lg:py-28 bg-[#050B18] border-b border-[#1B325C] relative overflow-hidden">
       {/* Background Ambience */}
-      <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#D4AF37_1.2px,transparent_1.2px)] [background-size:24px_24px]" />
-      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#8B5A2B]/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute inset-0 opacity-[0.04] pointer-events-none bg-[radial-gradient(#38BDF8_1.2px,transparent_1.2px)] [background-size:24px_24px]" />
+      <div className="absolute top-1/4 -right-48 w-96 h-96 bg-[#0284C7]/12 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 relative z-10">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#3D2415] pb-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#1B325C] pb-8">
           <div className="space-y-3 max-w-3xl">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#1C110A] border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] font-bold">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224] border border-[#D4AF37]/35 text-xs font-mono text-[#D4AF37] font-bold">
               <Building2 className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>DUZZA LIMITED • OPERATING CONGLOMERATE DIVISIONS</span>
             </div>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-[#FFF6DE] tracking-tight leading-tight">
+            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight leading-tight">
               All of Duzza’s Businesses Under One Roof.
             </h2>
-            <p className="text-base sm:text-lg text-[#EED9B3]/80 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-[#CBD5E1]/90 leading-relaxed font-light">
               Explore our operating subsidiaries directly. Select any division below to enter its specialized portal, inspect equipment, review portfolios, or submit project briefs.
             </p>
           </div>
@@ -164,9 +160,9 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
           {onOpenSpecialRequest && (
             <button
               onClick={onOpenSpecialRequest}
-              className="px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#D4AF37] to-[#8B5A2B] text-[#140A05] font-bold text-xs uppercase tracking-wider hover:shadow-xl hover:shadow-[#D4AF37]/30 transition-all flex items-center space-x-2 shrink-0 cursor-pointer"
+              className="btn-brand-primary px-6 py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider hover:shadow-xl transition-all flex items-center space-x-2 shrink-0 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-[#140A05] animate-spin" />
+              <Sparkles className="w-4 h-4 text-[#050B18] animate-spin" />
               <span>Special Client Request</span>
             </button>
           )}
@@ -177,10 +173,10 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
           {OPERATING_DIVISIONS.map((biz) => (
             <Tilt3DCard key={biz.id} maxTilt={6} scale={1.01}>
               <div
-                className={`rounded-3xl bg-[#1C110A] border border-[#3D2415] overflow-hidden shadow-2xl hover:shadow-[0_0_35px_rgba(212,175,55,0.25)] ${biz.borderColor} transition-all duration-300 flex flex-col justify-between h-full group`}
+                className={`rounded-3xl bg-[#091224] border border-[#1B325C] overflow-hidden shadow-2xl hover:shadow-[0_0_35px_rgba(212,175,55,0.22)] ${biz.borderColor} transition-all duration-300 flex flex-col justify-between h-full group`}
               >
                 {/* 1. Real High-Definition Photo Container */}
-                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-[#26170E]">
+                <div className="relative h-64 sm:h-72 w-full overflow-hidden bg-[#050B18]">
                   <Image
                     src={biz.image}
                     alt={biz.name}
@@ -189,24 +185,24 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
                     className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     priority={biz.id === "projects" || biz.id === "branding"}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#140A05] via-[#140A05]/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#091224] via-[#091224]/30 to-transparent" />
 
                   {/* Top Badge Overlay */}
                   <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-                    <span className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold border backdrop-blur-md bg-[#1C110A]/90 ${biz.badgeColor}`}>
+                    <span className={`px-3 py-1 rounded-full text-[11px] font-mono font-bold border backdrop-blur-md ${biz.badgeColor}`}>
                       {biz.category}
                     </span>
-                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#140A05]/90 text-[#FFF6DE] border border-[#D4AF37]/30 font-semibold backdrop-blur-md">
+                    <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded-full bg-[#050B18]/90 text-white border border-[#D4AF37]/35 font-semibold backdrop-blur-md">
                       {biz.status}
                     </span>
                   </div>
 
                   {/* Bottom Image Caption */}
                   <div className="absolute bottom-4 left-4 right-4 text-white space-y-1">
-                    <h3 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-[#FFF6DE] drop-shadow-md">
+                    <h3 className="font-display font-extrabold text-2xl sm:text-3xl tracking-tight text-white drop-shadow-md">
                       {biz.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-[#EED9B3] font-medium line-clamp-1 drop-shadow-sm">
+                    <p className="text-xs sm:text-sm text-[#E5C378] font-medium line-clamp-1 drop-shadow-sm">
                       {biz.tagline}
                     </p>
                   </div>
@@ -214,7 +210,7 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
 
                 {/* 2. Business Description & Scope */}
                 <div className="p-6 sm:p-8 space-y-6 flex-1 flex flex-col justify-between">
-                  <p className="text-xs sm:text-sm text-[#EED9B3]/80 leading-relaxed font-light">
+                  <p className="text-xs sm:text-sm text-[#CBD5E1]/90 leading-relaxed font-light">
                     {biz.description}
                   </p>
 
@@ -223,7 +219,7 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#D4AF37] font-bold block">
                       Core Scope & Deliverables
                     </span>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#F5EBE1] font-medium">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#F1F5F9] font-medium">
                       {biz.capabilities.map((cap, i) => (
                         <div key={i} className="flex items-start space-x-2">
                           <CheckCircle2 className="w-3.5 h-3.5 text-[#D4AF37] shrink-0 mt-0.5" />
@@ -234,8 +230,8 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
                   </div>
 
                   {/* Card Action Buttons (Direct Entry) */}
-                  <div className="pt-4 border-t border-[#3D2415] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
-                    <div className="text-[11px] font-mono text-[#EED9B3]/70 font-semibold">
+                  <div className="pt-4 border-t border-[#1B325C] flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+                    <div className="text-[11px] font-mono text-[#94A3B8] font-semibold">
                       {biz.contactNote}
                     </div>
 
@@ -245,7 +241,7 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
                           href={biz.externalLink}
                           target={biz.externalLink.startsWith("http") ? "_blank" : undefined}
                           rel={biz.externalLink.startsWith("http") ? "noopener noreferrer" : undefined}
-                          className="text-xs font-semibold text-[#EED9B3] hover:text-[#D4AF37] transition-colors"
+                          className="text-xs font-semibold text-[#CBD5E1] hover:text-[#D4AF37] transition-colors"
                         >
                           {biz.externalLinkText}
                         </Link>
@@ -253,10 +249,10 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
 
                       <Link
                         href={biz.primaryLink}
-                        className="btn-brand-primary px-5 py-3 rounded-xl text-[#140A05] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 group/btn shrink-0 cursor-pointer"
+                        className="btn-brand-primary px-5 py-3 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 group/btn shrink-0 cursor-pointer"
                       >
-                        <span className="text-[#140A05] font-bold">{biz.primaryLinkText}</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-[#140A05] group-hover/btn:translate-x-1 transition-transform" />
+                        <span className="text-[#050B18] font-bold">{biz.primaryLinkText}</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-[#050B18] group-hover/btn:translate-x-1 transition-transform" />
                       </Link>
                     </div>
                   </div>
@@ -269,4 +265,3 @@ export default function OperatingDivisionsShowcase({ onOpenSpecialRequest }: Ope
     </section>
   );
 }
-

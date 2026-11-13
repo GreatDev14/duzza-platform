@@ -29,7 +29,7 @@ export default function Isometric3DHub() {
 
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x140a05);
+    scene.background = new THREE.Color(0x050b18);
 
     // Isometric Orthographic or Telephoto Perspective Camera
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
@@ -67,7 +67,7 @@ export default function Isometric3DHub() {
     // Main Floating Island (Chamfered Cylinder or Box in Dark Bronze Obsidian)
     const islandGeo = new THREE.CylinderGeometry(14, 15, 1.2, 48);
     const islandMat = new THREE.MeshStandardMaterial({
-      color: 0x1c110a,
+      color: 0x091224,
       roughness: 0.35,
       metalness: 0.3,
     });
@@ -90,14 +90,14 @@ export default function Isometric3DHub() {
     baseGroup.add(ringMesh);
 
     // Coordinate Grid Overlay on Platform (Gilded Grid Lines)
-    const gridHelper = new THREE.GridHelper(24, 16, 0xd4af37, 0x3d2415);
+    const gridHelper = new THREE.GridHelper(24, 16, 0xd4af37, 0x1b325c);
     gridHelper.position.y = -0.38;
     baseGroup.add(gridHelper);
 
     // 4. Central Corporate Core (Prism Tower)
     const coreGeo = new THREE.BoxGeometry(4.5, 7.5, 4.5);
     const coreMat = new THREE.MeshPhysicalMaterial({
-      color: 0x26170e,
+      color: 0x0e1b33,
       metalness: 0.4,
       roughness: 0.15,
       transmission: 0.5,
@@ -316,8 +316,8 @@ export default function Isometric3DHub() {
       />
 
       {/* Floating 3D HUD Badges (Gilded Night Tone) */}
-      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
-        <div className="flex items-center space-x-2 text-xs font-bold text-[#FFF6DE]">
+      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
+        <div className="flex items-center space-x-2 text-xs font-bold text-[#FFFFFF]">
           <Activity className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
           <span>Interactive Holding Architecture</span>
         </div>
@@ -325,49 +325,49 @@ export default function Isometric3DHub() {
       </div>
 
       {/* Interactive Division Pills (Bottom Overlay - Gilded Theme) */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
         <button
           onClick={() => setActiveNode("PROJECTS")}
-          style={activeNode === "PROJECTS" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeNode === "PROJECTS" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "PROJECTS"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <Compass className="w-3 h-3 shrink-0 text-[#140A05]" />
+          <Compass className="w-3 h-3 shrink-0 text-[#050B18]" />
           <span className="truncate">Duzza Projects</span>
         </button>
 
         <button
           onClick={() => setActiveNode("BRANDING")}
-          style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "BRANDING"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <Sparkles className="w-3 h-3 shrink-0 text-[#140A05]" />
+          <Sparkles className="w-3 h-3 shrink-0 text-[#050B18]" />
           <span className="truncate">Duzza Branding</span>
         </button>
 
         <button
           onClick={() => setActiveNode("VENTURES")}
-          style={activeNode === "VENTURES" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeNode === "VENTURES" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "VENTURES"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <Layers className="w-3 h-3 shrink-0 text-[#140A05]" />
+          <Layers className="w-3 h-3 shrink-0 text-[#050B18]" />
           <span className="truncate">Retail Ventures</span>
         </button>
       </div>
 
       {/* Floating Precision Tag */}
-      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-mono font-bold shadow-sm">
+      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#0E1B33] border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-mono font-bold shadow-sm">
         <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
         <span>LIVE TELEMETRY</span>
       </div>

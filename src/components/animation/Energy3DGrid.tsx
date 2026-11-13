@@ -249,31 +249,31 @@ export default function Energy3DGrid() {
   }, []);
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[460px] rounded-3xl bg-gradient-to-b from-white via-slate-50 to-white border border-slate-200 shadow-2xl overflow-hidden group">
+    <div className="relative w-full h-[400px] sm:h-[460px] rounded-3xl bg-gradient-to-b from-[#091224] via-[#050B18] to-[#091224] border border-[#1B325C] shadow-2xl overflow-hidden group">
       {/* 3D Canvas */}
       <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Floating HUD Telemetry */}
-      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg space-y-1.5 pointer-events-none">
-        <div className="flex items-center space-x-2 text-xs font-bold text-navy-950">
-          <Sun className="w-4 h-4 text-amber-500 animate-spin-slow" />
+      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1.5 pointer-events-none">
+        <div className="flex items-center space-x-2 text-xs font-bold text-white">
+          <Sun className="w-4 h-4 text-[#D4AF37] animate-spin-slow" />
           <span>Industrial Solar & Flowstation Infrastructure</span>
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-slate-600">
-          <div>Array Generation: <strong className="text-amber-600">{telemetry.solarOutput}</strong></div>
-          <div>Manifold Pressure: <strong className="text-brandBlue-600">{telemetry.pressure}</strong></div>
-          <div>Liquid Flowrate: <strong className="text-navy-950">{telemetry.flowRate}</strong></div>
-          <div>System Uptime: <strong className="text-emerald-700">{telemetry.efficiency}</strong></div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
+          <div>Array Generation: <strong className="text-[#D4AF37]">{telemetry.solarOutput}</strong></div>
+          <div>Manifold Pressure: <strong className="text-[#38BDF8]">{telemetry.pressure}</strong></div>
+          <div>Liquid Flowrate: <strong className="text-white">{telemetry.flowRate}</strong></div>
+          <div>System Uptime: <strong className="text-[#10B981]">{telemetry.efficiency}</strong></div>
         </div>
       </div>
 
       {/* Bottom Live Safety Badge */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-slate-600 px-3 py-1.5 rounded-xl bg-white/85 backdrop-blur-md border border-slate-200">
-        <span className="flex items-center space-x-1.5 text-emerald-700 font-bold">
-          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-[#94A3B8] px-3 py-1.5 rounded-xl bg-[#091224]/85 backdrop-blur-md border border-[#1B325C]">
+        <span className="flex items-center space-x-1.5 text-[#10B981] font-bold">
+          <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
           <span>ZERO LTI HSE AUDITED RECORD</span>
         </span>
-        <span className="text-[10px] text-slate-500">NUPRC / NIPEX CERTIFIED</span>
+        <span className="text-[10px] text-[#D4AF37]">NUPRC / NIPEX CERTIFIED</span>
       </div>
     </div>
   );

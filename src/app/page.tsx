@@ -90,7 +90,7 @@ export default function CorporateHomePage() {
   );
 
   return (
-    <div ref={containerRef} className="flex flex-col w-full bg-white text-slate-900 selection:bg-brandBlue-600 selection:text-white">
+    <div ref={containerRef} className="flex flex-col w-full bg-[#050B18] text-[#F1F5F9] selection:bg-[#D4AF37] selection:text-[#050B18]">
       {/* -------------------------------------------------------------------- */}
       {/* 1. ULTRA-PROFESSIONAL ENTERPRISE HERO & 3D HOLDING PLATFORM          */}
       {/* -------------------------------------------------------------------- */}
@@ -106,27 +106,31 @@ export default function CorporateHomePage() {
       {/* -------------------------------------------------------------------- */}
       <section
         id="main-corporate-hub"
-        className="relative py-20 lg:py-28 bg-gradient-to-b from-white via-brandBlue-50/20 to-white border-b border-slate-200 overflow-hidden"
+        className="relative py-20 lg:py-28 bg-[#050B18] border-b border-[#1B325C] overflow-hidden"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Ambient Glows */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D4AF37]/10 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-[#38BDF8]/10 rounded-full blur-3xl pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Column: Corporate Positioning */}
             <div className="lg:col-span-6 space-y-6">
-              <div className="gsap-hub-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brandBlue-50 border border-brandBlue-200 text-xs font-mono text-brandBlue-700 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-brandBlue-600 animate-pulse" />
+              <div className="gsap-hub-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224] border border-[#D4AF37]/35 text-xs font-mono text-[#D4AF37] shadow-sm">
+                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
                 <span className="font-bold">INNOVATIVE CORPORATE SOLUTIONS</span>
-                <span className="text-slate-400">•</span>
-                <span className="text-slate-600">CAMA 2020 REGISTERED</span>
+                <span className="text-[#1B325C]">•</span>
+                <span className="text-[#CBD5E1]">CAMA 2020 REGISTERED</span>
               </div>
 
-              <h2 className="gsap-hub-title font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-navy-950 tracking-tight leading-[1.08]">
+              <h2 className="gsap-hub-title font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-[1.08]">
                 Innovative Multi-Sector{" "}
-                <span className="text-gradient-blue font-light">
+                <span className="text-gradient-gold font-light">
                   Engineering & Corporate Solutions.
                 </span>
               </h2>
 
-              <p className="gsap-hub-desc text-base sm:text-lg text-slate-600 leading-relaxed font-light max-w-xl">
+              <p className="gsap-hub-desc text-base sm:text-lg text-[#CBD5E1]/90 leading-relaxed font-light max-w-xl">
                 DUZZA LIMITED operates as a premier Nigerian diversified holding enterprise. We unite mission-critical 
                 civil contracting, subsea hydrographic surveying, and oilfield logistics with an international creative branding engine.
               </p>
@@ -135,17 +139,17 @@ export default function CorporateHomePage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <Link
                   href="/projects"
-                  className="btn-brand-primary gsap-hub-action px-7 py-4 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 group cursor-pointer"
+                  className="btn-brand-primary gsap-hub-action px-7 py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 group cursor-pointer"
                 >
-                  <span className="text-white font-bold">Request an Engineering Quote</span>
-                  <ArrowRight className="w-4 h-4 text-[#F3C966] group-hover:translate-x-1.5 transition-transform" />
+                  <span className="text-[#050B18] font-bold">Request an Engineering Quote</span>
+                  <ArrowRight className="w-4 h-4 text-[#050B18] group-hover:translate-x-1.5 transition-transform" />
                 </Link>
 
                 <Link
                   href="/branding"
-                  className="gsap-hub-action px-6 py-4 rounded-xl bg-white text-navy-950 font-bold text-xs uppercase tracking-wider border border-slate-300 hover:bg-slate-50 hover:border-brandBlue-400 transition-all shadow-sm flex items-center space-x-2 group"
+                  className="gsap-hub-action px-6 py-4 rounded-xl bg-[#091224] text-white font-bold text-xs uppercase tracking-wider border border-[#1B325C] hover:bg-[#0E1B33] hover:border-[#D4AF37] transition-all shadow-sm flex items-center space-x-2 group"
                 >
-                  <Sparkles className="w-4 h-4 text-brandBlue-600 group-hover:rotate-12 transition-transform" />
+                  <Sparkles className="w-4 h-4 text-[#D4AF37] group-hover:rotate-12 transition-transform" />
                   <span>Start a Branding Project</span>
                 </Link>
 
@@ -153,60 +157,62 @@ export default function CorporateHomePage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gsap-hub-action px-4 py-4 rounded-xl bg-slate-100 text-slate-800 font-semibold text-xs uppercase tracking-wider hover:bg-slate-200 border border-slate-200 transition-colors inline-flex items-center space-x-2"
+                  className="gsap-hub-action px-4 py-4 rounded-xl bg-[#0E1B33] text-[#F1F5F9] font-semibold text-xs uppercase tracking-wider hover:bg-[#142547] border border-[#1B325C] transition-colors inline-flex items-center space-x-2"
                 >
-                  <PhoneCall className="w-4 h-4 text-emerald-600" />
+                  <PhoneCall className="w-4 h-4 text-emerald-400" />
                   <span>WhatsApp Warri HQ</span>
                 </a>
               </div>
 
               {/* Enterprise Partner Strip */}
-              <div className="pt-8 border-t border-slate-200/80 space-y-3">
-                <span className="text-xs font-mono uppercase tracking-widest text-slate-400 font-semibold block">
+              <div className="pt-8 border-t border-[#1B325C] space-y-3">
+                <span className="text-xs font-mono uppercase tracking-widest text-[#94A3B8] font-semibold block">
                   Enterprise Operators & Compliance Standards
                 </span>
-                <div className="flex flex-wrap items-center gap-6 opacity-75 grayscale hover:grayscale-0 transition-all text-xs font-bold text-slate-600">
-                  <span className="flex items-center space-x-1 hover:text-navy-950 transition-colors">
-                    <span className="w-2 h-2 bg-brandBlue-600 rounded-sm" />
+                <div className="flex flex-wrap items-center gap-6 text-xs font-bold text-[#CBD5E1]">
+                  <span className="flex items-center space-x-1 text-[#38BDF8] transition-colors">
+                    <span className="w-2 h-2 bg-[#D4AF37] rounded-sm" />
                     <span>NUPRC / NIPEX</span>
                   </span>
-                  <span className="hover:text-navy-950 transition-colors">OSPRI MARINE</span>
-                  <span className="hover:text-navy-950 transition-colors">MICROSOFT PARTNER</span>
-                  <span className="hover:text-navy-950 transition-colors">AMAZON AWS</span>
-                  <span className="hover:text-navy-950 transition-colors">CAC CAMA 2020</span>
+                  <span className="hover:text-white transition-colors">OSPRI MARINE</span>
+                  <span className="hover:text-white transition-colors">MICROSOFT PARTNER</span>
+                  <span className="hover:text-white transition-colors">AMAZON AWS</span>
+                  <span className="hover:text-[#D4AF37] transition-colors">CAC CAMA 2020</span>
                 </div>
               </div>
             </div>
 
             {/* Right Column: Centered 3D Global Operations Network Globe */}
             <div className="lg:col-span-6 relative">
-              <EnterpriseOperationsGlobe3D />
+              <div className="rounded-3xl border border-[#1B325C] bg-[#091224]/80 p-2 shadow-2xl">
+                <EnterpriseOperationsGlobe3D />
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 3. 3D CADASTRAL GEOMATICS & LASER SCANNING ARRAY                      */}
+      {/* 4. 3D CADASTRAL GEOMATICS & LASER SCANNING ARRAY                      */}
       {/* -------------------------------------------------------------------- */}
-      <section id="survey-engineering-section" className="py-24 bg-slate-50 border-b border-slate-200">
+      <section id="survey-engineering-section" className="py-24 bg-[#070E1E] border-b border-[#1B325C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 pb-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#1B325C] pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-brandBlue-600 font-bold block">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                 Duzza Projects • Marine & Land Geomatics
               </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-navy-950 mt-1">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mt-1">
                 Hydrospatial & Cadastral Surveying Solutions
               </h2>
             </div>
-            <p className="text-sm text-slate-600 max-w-md font-light">
+            <p className="text-sm text-[#CBD5E1]/90 max-w-md font-light">
               Equipped with high-precision robotic total stations, multibeam swath sounders, and subsea profilers stationed at Warri Marine Base.
             </p>
           </div>
 
           {/* Interactive 3D Surveying Station & Live Telemetry Module */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xl p-6 sm:p-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-[#091224] rounded-3xl border border-[#1B325C] overflow-hidden shadow-xl p-6 sm:p-10">
             {/* Left: 3D Robotic Total Station & Laser Scanner */}
             <div className="lg:col-span-7">
               <Cadastral3DScanner />
@@ -215,13 +221,13 @@ export default function CorporateHomePage() {
             {/* Right: Operational Statistics & Direct Request */}
             <div className="lg:col-span-5 space-y-8 lg:pl-4">
               <div className="space-y-3">
-                <span className="text-xs font-mono uppercase tracking-wider text-amber-600 font-bold">
+                <span className="text-xs font-mono uppercase tracking-wider text-[#D4AF37] font-bold">
                   Field Precision Engineering
                 </span>
-                <h3 className="font-display font-black text-3xl sm:text-4xl text-navy-950">
+                <h3 className="font-display font-black text-3xl sm:text-4xl text-white">
                   Cadastral, Bathymetric & Topographic Surveys
                 </h3>
-                <p className="text-sm text-slate-600 leading-relaxed font-light">
+                <p className="text-sm text-[#CBD5E1]/90 leading-relaxed font-light">
                   Delivering millimeter boundary accuracy, fairway depth clearance, 
                   and subsea pipeline burial depth verification across Delta State and coastal Nigeria.
                 </p>
@@ -230,33 +236,33 @@ export default function CorporateHomePage() {
               {/* Exact Stats Block with 3D Tilt Cards */}
               <div className="grid grid-cols-3 gap-3 pt-2">
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-navy-950">
+                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">
                       7+
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold block mt-1">
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
                       Years Active
                     </span>
                   </div>
                 </Tilt3DCard>
 
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-brandBlue-600">
+                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-[#D4AF37]">
                       892+
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold block mt-1">
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
                       Surveys Done
                     </span>
                   </div>
                 </Tilt3DCard>
 
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-navy-950">
+                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">
                       650+
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-slate-500 font-semibold block mt-1">
+                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
                       Clients Served
                     </span>
                   </div>
@@ -267,15 +273,15 @@ export default function CorporateHomePage() {
               <div className="pt-2 flex flex-wrap items-center gap-4">
                 <button
                   onClick={() => handleOpenGearModal("EQ-SURV-TS16", "Robotic Total Station & 3D Scanning Array")}
-                  className="px-6 py-3.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2"
+                  className="btn-brand-primary px-6 py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 cursor-pointer"
                 >
                   <span>Order Survey Services</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 text-[#050B18]" />
                 </button>
 
                 <Link
                   href="/projects/equipment"
-                  className="px-5 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-semibold text-xs uppercase tracking-wider border border-slate-300 transition-colors"
+                  className="px-5 py-3.5 rounded-xl bg-[#0E1B33] hover:bg-[#142547] text-[#F1F5F9] font-semibold text-xs uppercase tracking-wider border border-[#1B325C] hover:border-[#D4AF37] transition-colors"
                 >
                   View Equipment Fleet
                 </Link>
@@ -285,24 +291,24 @@ export default function CorporateHomePage() {
 
           {/* 3D Tilt Equipment Grid: Multibeam, GNSS RTK, Chirp SBP, Side-Scan Sonar */}
           <div className="space-y-6">
-            <h4 className="text-xl font-display font-bold text-navy-950">
+            <h4 className="text-xl font-display font-bold text-white">
               Specialized Marine Geomatics Fleet (Warri Mobilization)
             </h4>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {/* Card 1 */}
               <Tilt3DCard maxTilt={10} scale={1.02}>
-                <div className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brandBlue-400 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
+                <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] hover:border-[#D4AF37]/50 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-brandBlue-600 font-bold block">EQ-MBES-7125</span>
-                    <h5 className="font-display font-bold text-base text-navy-950">Reson SeaBat T50-P Multibeam</h5>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light">
+                    <span className="text-[10px] font-mono text-[#D4AF37] font-bold block">EQ-MBES-7125</span>
+                    <h5 className="font-display font-bold text-base text-white">Reson SeaBat T50-P Multibeam</h5>
+                    <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                       190–420 kHz agile multibeam sonar with 1024 beams. 575m max depth soundings for port fairways.
                     </p>
                   </div>
                   <button
                     onClick={() => handleOpenGearModal("EQ-MBES-7125", "Reson SeaBat T50-P Multibeam Echo Sounder")}
-                    className="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-brandBlue-600 hover:text-white text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors"
+                    className="w-full py-2.5 rounded-lg bg-[#0E1B33] hover:bg-[#D4AF37] hover:text-[#050B18] text-[#F1F5F9] text-xs font-semibold uppercase tracking-wider border border-[#1B325C] transition-colors cursor-pointer"
                   >
                     Enquire for Lease →
                   </button>
@@ -311,17 +317,17 @@ export default function CorporateHomePage() {
 
               {/* Card 2 */}
               <Tilt3DCard maxTilt={10} scale={1.02}>
-                <div className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brandBlue-400 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
+                <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] hover:border-[#D4AF37]/50 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-brandBlue-600 font-bold block">EQ-GNSS-R12I</span>
-                    <h5 className="font-display font-bold text-base text-navy-950">Trimble R12i GNSS RTK System</h5>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light">
+                    <span className="text-[10px] font-mono text-[#D4AF37] font-bold block">EQ-GNSS-R12I</span>
+                    <h5 className="font-display font-bold text-base text-white">Trimble R12i GNSS RTK System</h5>
+                    <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                       672 channels multi-constellation receiver with inertial tilt compensation up to 30°.
                     </p>
                   </div>
                   <button
                     onClick={() => handleOpenGearModal("EQ-GNSS-R12I", "Trimble R12i GNSS RTK System")}
-                    className="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-brandBlue-600 hover:text-white text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors"
+                    className="w-full py-2.5 rounded-lg bg-[#0E1B33] hover:bg-[#D4AF37] hover:text-[#050B18] text-[#F1F5F9] text-xs font-semibold uppercase tracking-wider border border-[#1B325C] transition-colors cursor-pointer"
                   >
                     Enquire for Lease →
                   </button>
@@ -330,17 +336,17 @@ export default function CorporateHomePage() {
 
               {/* Card 3 */}
               <Tilt3DCard maxTilt={10} scale={1.02}>
-                <div className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brandBlue-400 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
+                <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] hover:border-[#D4AF37]/50 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-brandBlue-600 font-bold block">EQ-SBP-3000</span>
-                    <h5 className="font-display font-bold text-base text-navy-950">EdgeTech 3100 Sub-Bottom Profiler</h5>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light">
+                    <span className="text-[10px] font-mono text-[#D4AF37] font-bold block">EQ-SBP-3000</span>
+                    <h5 className="font-display font-bold text-base text-white">EdgeTech 3100 Sub-Bottom Profiler</h5>
+                    <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                       Full Spectrum CHIRP sub-seabed geological stratigraphy and pipeline burial depth inspection.
                     </p>
                   </div>
                   <button
                     onClick={() => handleOpenGearModal("EQ-SBP-3000", "EdgeTech 3100 Sub-Bottom Profiler")}
-                    className="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-brandBlue-600 hover:text-white text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors"
+                    className="w-full py-2.5 rounded-lg bg-[#0E1B33] hover:bg-[#D4AF37] hover:text-[#050B18] text-[#F1F5F9] text-xs font-semibold uppercase tracking-wider border border-[#1B325C] transition-colors cursor-pointer"
                   >
                     Enquire for Lease →
                   </button>
@@ -349,17 +355,17 @@ export default function CorporateHomePage() {
 
               {/* Card 4 */}
               <Tilt3DCard maxTilt={10} scale={1.02}>
-                <div className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-brandBlue-400 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
+                <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] hover:border-[#D4AF37]/50 hover:shadow-xl transition-all space-y-4 flex flex-col justify-between h-full">
                   <div className="space-y-2">
-                    <span className="text-[10px] font-mono text-brandBlue-600 font-bold block">EQ-SSS-4200</span>
-                    <h5 className="font-display font-bold text-base text-navy-950">Klein 3900 Side-Scan Sonar</h5>
-                    <p className="text-xs text-slate-600 leading-relaxed font-light">
+                    <span className="text-[10px] font-mono text-[#D4AF37] font-bold block">EQ-SSS-4200</span>
+                    <h5 className="font-display font-bold text-base text-white">Klein 3900 Side-Scan Sonar</h5>
+                    <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                       Dual 445/900 kHz simultaneous high-definition acoustic seafloor seabed classification.
                     </p>
                   </div>
                   <button
                     onClick={() => handleOpenGearModal("EQ-SSS-4200", "Klein 3900 Side-Scan Sonar")}
-                    className="w-full py-2.5 rounded-lg bg-slate-100 hover:bg-brandBlue-600 hover:text-white text-slate-700 text-xs font-semibold uppercase tracking-wider transition-colors"
+                    className="w-full py-2.5 rounded-lg bg-[#0E1B33] hover:bg-[#D4AF37] hover:text-[#050B18] text-[#F1F5F9] text-xs font-semibold uppercase tracking-wider border border-[#1B325C] transition-colors cursor-pointer"
                   >
                     Enquire for Lease →
                   </button>
@@ -371,27 +377,29 @@ export default function CorporateHomePage() {
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 4. 3D ENERGY & SOLAR INFRASTRUCTURE GRID                             */}
+      {/* 5. 3D ENERGY & SOLAR INFRASTRUCTURE GRID                             */}
       {/* -------------------------------------------------------------------- */}
-      <section className="py-24 bg-white border-b border-slate-200 overflow-hidden">
+      <section className="py-24 bg-[#050B18] border-b border-[#1B325C] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left: 3D Interactive Energy & Solar Manifold Model */}
             <div className="lg:col-span-6">
-              <Energy3DGrid />
+              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-xl">
+                <Energy3DGrid />
+              </div>
             </div>
 
             {/* Right: Industrial Description & Scope */}
             <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-brandBlue-600 font-bold block">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold block">
                 Oil & Gas Infrastructure Support
               </span>
 
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-navy-950 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
                 Turnkey Energy Assets & Sustainable Power Deployments
               </h2>
 
-              <p className="text-base text-slate-600 leading-relaxed font-light">
+              <p className="text-base text-[#CBD5E1]/90 leading-relaxed font-light">
                 Providing comprehensive facility support across the Niger Delta oilfields. 
                 From flowstation modifications, structural pipeline tie-in supports, and pressure testing, 
                 to industrial solar arrays and hybrid power systems for remote installations.
@@ -399,24 +407,24 @@ export default function CorporateHomePage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <Tilt3DCard maxTilt={6} scale={1.02}>
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1 h-full">
-                    <span className="text-sm font-bold text-navy-950 flex items-center space-x-2">
-                      <CheckCircle2 className="w-4 h-4 text-brandBlue-600" />
+                  <div className="p-4 rounded-xl bg-[#091224] border border-[#1B325C] space-y-1 h-full">
+                    <span className="text-sm font-bold text-white flex items-center space-x-2">
+                      <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
                       <span>Flowstation Maintenance</span>
                     </span>
-                    <p className="text-xs text-slate-500 font-light">
+                    <p className="text-xs text-[#94A3B8] font-light">
                       Corrosion mitigation, piping fabrication, and certified pressure inspections.
                     </p>
                   </div>
                 </Tilt3DCard>
 
                 <Tilt3DCard maxTilt={6} scale={1.02}>
-                  <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 space-y-1 h-full">
-                    <span className="text-sm font-bold text-navy-950 flex items-center space-x-2">
-                      <Sun className="w-4 h-4 text-amber-500" />
+                  <div className="p-4 rounded-xl bg-[#091224] border border-[#1B325C] space-y-1 h-full">
+                    <span className="text-sm font-bold text-white flex items-center space-x-2">
+                      <Sun className="w-4 h-4 text-[#D4AF37]" />
                       <span>Industrial Solar Arrays</span>
                     </span>
-                    <p className="text-xs text-slate-500 font-light">
+                    <p className="text-xs text-[#94A3B8] font-light">
                       Grid-tied and off-grid hybrid power for remote telecommunication and field stations.
                     </p>
                   </div>
@@ -426,7 +434,7 @@ export default function CorporateHomePage() {
               <div className="pt-2">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-brandBlue-600 hover:text-brandBlue-800 transition-colors"
+                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#D4AF37] hover:text-[#FFF8E7] transition-colors"
                 >
                   <span>Explore Energy Division Capabilities</span>
                   <ArrowRight className="w-4 h-4" />
@@ -438,41 +446,41 @@ export default function CorporateHomePage() {
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 5. 3D HEAVY CIVIL & STRUCTURAL FOUNDATIONS MATRIX                     */}
+      {/* 6. 3D HEAVY CIVIL & STRUCTURAL FOUNDATIONS MATRIX                     */}
       {/* -------------------------------------------------------------------- */}
-      <section className="py-24 bg-slate-50 border-b border-slate-200">
+      <section className="py-24 bg-[#070E1E] border-b border-[#1B325C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Header Banner: Building Strong Foundations (Pristine Light Theme) */}
-          <div className="p-8 sm:p-12 rounded-3xl bg-white border border-slate-200/90 text-navy-950 shadow-md relative overflow-hidden">
+          {/* Header Banner: Building Strong Foundations */}
+          <div className="p-8 sm:p-12 rounded-3xl bg-[#091224] border border-[#1B325C] text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10 max-w-2xl space-y-3">
-              <span className="text-xs font-mono uppercase tracking-widest text-brandBlue-600 font-bold block">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                 General Civil Contracting
               </span>
-              <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight leading-none uppercase text-navy-950">
+              <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight leading-none uppercase text-white">
                 Building Strong Foundations
               </h2>
-              <p className="text-sm sm:text-base text-slate-600 font-light leading-relaxed">
+              <p className="text-sm sm:text-base text-[#CBD5E1]/90 font-light leading-relaxed">
                 Delivering industry-leading civil engineering, shoreline revetments, and heavy industrial concrete works with uncompromised safety and durability.
               </p>
             </div>
 
             {/* Industrial Stat Strip */}
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-slate-200">
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-navy-950">450+</span>
-                <span className="text-xs font-mono uppercase text-slate-500 block mt-1">Building Projects</span>
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-[#1B325C]">
+              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">450+</span>
+                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Building Projects</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-brandBlue-600">29+</span>
-                <span className="text-xs font-mono uppercase text-slate-500 block mt-1">Years Heritage</span>
+              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-[#D4AF37]">29+</span>
+                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Years Heritage</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-navy-950">7K+</span>
-                <span className="text-xs font-mono uppercase text-slate-500 block mt-1">Skilled Team</span>
+              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">7K+</span>
+                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Skilled Team</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-emerald-600">4.9/5</span>
-                <span className="text-xs font-mono uppercase text-slate-500 block mt-1">Client Score</span>
+              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-emerald-400">4.9/5</span>
+                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Client Score</span>
               </div>
             </div>
           </div>
@@ -480,30 +488,32 @@ export default function CorporateHomePage() {
           {/* 3D Foundation Model & Scope */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6">
-              <Civil3DFoundations />
+              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-xl">
+                <Civil3DFoundations />
+              </div>
             </div>
 
             <div className="lg:col-span-6 space-y-6">
-              <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-navy-950">
+              <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white">
                 Turnkey Civil Fabrication & Ground Stabilization
               </h3>
-              <p className="text-sm text-slate-600 leading-relaxed font-light">
+              <p className="text-sm text-[#CBD5E1]/90 leading-relaxed font-light">
                 Our heavy civil division handles complex soil stabilization across riverine delta terrain, 
                 retaining bulkheads for port terminals, and heavy structural foundation slabs for industrial warehouses.
               </p>
 
-              <div className="space-y-3 font-mono text-xs text-slate-700">
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-sm">
+              <div className="space-y-3 font-mono text-xs text-[#CBD5E1]">
+                <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
                   <span>✓ Shore Protection & Deep Piling</span>
-                  <span className="text-orange-600 font-bold">ACTIVE</span>
+                  <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-sm">
+                <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
                   <span>✓ Industrial Concrete Slabs & Footings</span>
-                  <span className="text-orange-600 font-bold">ACTIVE</span>
+                  <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
-                <div className="p-3.5 rounded-xl bg-white border border-slate-200 flex items-center justify-between shadow-sm">
+                <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
                   <span>✓ Turnkey Commercial Facilities</span>
-                  <span className="text-orange-600 font-bold">ACTIVE</span>
+                  <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
               </div>
             </div>
@@ -512,22 +522,22 @@ export default function CorporateHomePage() {
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 6. DUZZA BRANDING — 3D TILT CREATIVE PILLARS                          */}
+      {/* 7. DUZZA BRANDING — 3D TILT CREATIVE PILLARS                          */}
       {/* -------------------------------------------------------------------- */}
-      <section className="py-24 bg-white border-b border-slate-200">
+      <section className="py-24 bg-[#050B18] border-b border-[#1B325C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-slate-200 pb-6">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#1B325C] pb-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-widest text-emerald-600 font-bold block">
+              <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                 Creative Production Division
               </span>
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-navy-950 mt-1">
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white mt-1">
                 Duzza Branding & Sports Media
               </h2>
             </div>
             <Link
               href="/branding"
-              className="px-5 py-2.5 rounded-xl bg-emerald-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-emerald-700 transition-colors shadow-sm shrink-0"
+              className="btn-brand-primary px-5 py-2.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-colors shadow-sm shrink-0"
             >
               Explore Creative Agency →
             </Link>
@@ -535,60 +545,60 @@ export default function CorporateHomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Tilt3DCard maxTilt={12} scale={1.03}>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 hover:border-emerald-500 hover:shadow-xl transition-all h-full flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] space-y-3 hover:border-[#D4AF37] hover:shadow-xl transition-all h-full flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-mono font-bold text-emerald-600 block">PILLAR 01</span>
-                  <h4 className="font-display font-bold text-lg text-navy-950 mt-1">Executive Identity</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed mt-2">
+                  <span className="text-xs font-mono font-bold text-[#D4AF37] block">PILLAR 01</span>
+                  <h4 className="font-display font-bold text-lg text-white mt-1">Executive Identity</h4>
+                  <p className="text-xs text-[#CBD5E1]/80 font-light leading-relaxed mt-2">
                     Personal branding architecture for founders and executives. Speaker kits, bio packaging, and editorial imagery.
                   </p>
                 </div>
-                <div className="pt-3 text-[11px] font-mono text-emerald-700 font-semibold border-t border-slate-200">
+                <div className="pt-3 text-[11px] font-mono text-[#E5C378] font-semibold border-t border-[#1B325C]">
                   2–3 Weeks Sprint →
                 </div>
               </div>
             </Tilt3DCard>
 
             <Tilt3DCard maxTilt={12} scale={1.03}>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 hover:border-emerald-500 hover:shadow-xl transition-all h-full flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] space-y-3 hover:border-[#D4AF37] hover:shadow-xl transition-all h-full flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-mono font-bold text-emerald-600 block">PILLAR 02</span>
-                  <h4 className="font-display font-bold text-lg text-navy-950 mt-1">Corporate Design</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed mt-2">
+                  <span className="text-xs font-mono font-bold text-[#D4AF37] block">PILLAR 02</span>
+                  <h4 className="font-display font-bold text-lg text-white mt-1">Corporate Design</h4>
+                  <p className="text-xs text-[#CBD5E1]/80 font-light leading-relaxed mt-2">
                     Comprehensive brand guidelines, vector asset suites, and scalable design token systems.
                   </p>
                 </div>
-                <div className="pt-3 text-[11px] font-mono text-emerald-700 font-semibold border-t border-slate-200">
+                <div className="pt-3 text-[11px] font-mono text-[#E5C378] font-semibold border-t border-[#1B325C]">
                   3–4 Weeks Sprint →
                 </div>
               </div>
             </Tilt3DCard>
 
             <Tilt3DCard maxTilt={12} scale={1.03}>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 hover:border-emerald-500 hover:shadow-xl transition-all h-full flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] space-y-3 hover:border-[#D4AF37] hover:shadow-xl transition-all h-full flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-mono font-bold text-emerald-600 block">PILLAR 03</span>
-                  <h4 className="font-display font-bold text-lg text-navy-950 mt-1">Sports Media UGC</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed mt-2">
+                  <span className="text-xs font-mono font-bold text-[#D4AF37] block">PILLAR 03</span>
+                  <h4 className="font-display font-bold text-lg text-white mt-1">Sports Media UGC</h4>
+                  <p className="text-xs text-[#CBD5E1]/80 font-light leading-relaxed mt-2">
                     High-volume social reels and matchday promotional creative pipelines for international sports teams.
                   </p>
                 </div>
-                <div className="pt-3 text-[11px] font-mono text-emerald-700 font-semibold border-t border-slate-200">
+                <div className="pt-3 text-[11px] font-mono text-[#E5C378] font-semibold border-t border-[#1B325C]">
                   48-Hour Turnaround →
                 </div>
               </div>
             </Tilt3DCard>
 
             <Tilt3DCard maxTilt={12} scale={1.03}>
-              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-3 hover:border-emerald-500 hover:shadow-xl transition-all h-full flex flex-col justify-between">
+              <div className="p-6 rounded-2xl bg-[#091224] border border-[#1B325C] space-y-3 hover:border-[#D4AF37] hover:shadow-xl transition-all h-full flex flex-col justify-between">
                 <div>
-                  <span className="text-xs font-mono font-bold text-emerald-600 block">PILLAR 04</span>
-                  <h4 className="font-display font-bold text-lg text-navy-950 mt-1">Global Merchandising</h4>
-                  <p className="text-xs text-slate-600 font-light leading-relaxed mt-2">
+                  <span className="text-xs font-mono font-bold text-[#D4AF37] block">PILLAR 04</span>
+                  <h4 className="font-display font-bold text-lg text-white mt-1">Global Merchandising</h4>
+                  <p className="text-xs text-[#CBD5E1]/80 font-light leading-relaxed mt-2">
                     Custom apparel, team kits, luxury packaging, and promotional merchandise engineering.
                   </p>
                 </div>
-                <div className="pt-3 text-[11px] font-mono text-emerald-700 font-semibold border-t border-slate-200">
+                <div className="pt-3 text-[11px] font-mono text-[#E5C378] font-semibold border-t border-[#1B325C]">
                   Sample & Production →
                 </div>
               </div>
@@ -598,15 +608,15 @@ export default function CorporateHomePage() {
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 7. INCUBATING DIVISIONS: FASHION & BAKERY TEASERS                    */}
+      {/* 8. INCUBATING DIVISIONS: FASHION & BAKERY TEASERS                    */}
       {/* -------------------------------------------------------------------- */}
-      <section className="py-20 bg-slate-50 border-b border-slate-200">
+      <section className="py-20 bg-[#070E1E] border-b border-[#1B325C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           <div className="text-center space-y-2 max-w-2xl mx-auto">
-            <span className="text-xs font-mono uppercase tracking-widest text-slate-500 font-semibold">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#94A3B8] font-semibold">
               Emerging Consumer Verticals
             </span>
-            <h2 className="text-3xl font-display font-bold text-navy-950">
+            <h2 className="text-3xl font-display font-bold text-white">
               Incubating Divisions (Coming Soon)
             </h2>
           </div>
@@ -614,19 +624,19 @@ export default function CorporateHomePage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Duzza Fashion */}
             <Tilt3DCard maxTilt={8} scale={1.02}>
-              <div className="p-8 rounded-3xl bg-white border border-rose-200 shadow-sm flex flex-col justify-between space-y-6 h-full">
+              <div className="p-8 rounded-3xl bg-[#091224] border border-[#1B325C] shadow-lg flex flex-col justify-between space-y-6 h-full">
                 <div className="space-y-3">
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-rose-100 text-rose-700 font-bold border border-rose-200">
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#0E1B33] text-[#E5C378] font-bold border border-[#1B325C]">
                     Coming Soon
                   </span>
-                  <h3 className="text-2xl font-display font-bold text-navy-950">Duzza Fashion</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed font-light">
+                  <h3 className="text-2xl font-display font-bold text-white">Duzza Fashion</h3>
+                  <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                     Contemporary English tailoring and artisanal bespoke Ankara couture. Handcrafted leather footwear and luxury accessories.
                   </p>
                 </div>
                 <Link
                   href="/fashion"
-                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-600 hover:underline"
+                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#D4AF37] hover:underline"
                 >
                   <span>Join VIP Fashion Waitlist</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -636,19 +646,19 @@ export default function CorporateHomePage() {
 
             {/* Duzza Bakery */}
             <Tilt3DCard maxTilt={8} scale={1.02}>
-              <div className="p-8 rounded-3xl bg-white border border-amber-200 shadow-sm flex flex-col justify-between space-y-6 h-full">
+              <div className="p-8 rounded-3xl bg-[#091224] border border-[#1B325C] shadow-lg flex flex-col justify-between space-y-6 h-full">
                 <div className="space-y-3">
-                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800 font-bold border border-amber-200">
+                  <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#0E1B33] text-[#E5C378] font-bold border border-[#1B325C]">
                     Coming Soon
                   </span>
-                  <h3 className="text-2xl font-display font-bold text-navy-950">Duzza Bakery & Eatery</h3>
-                  <p className="text-xs text-slate-600 leading-relaxed font-light">
+                  <h3 className="text-2xl font-display font-bold text-white">Duzza Bakery & Eatery</h3>
+                  <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
                     Slow-fermented artisan sourdough loaves, French patisserie, bespoke custom celebration cakes, and casual bistro dining.
                   </p>
                 </div>
                 <Link
                   href="/bakery"
-                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-amber-700 hover:underline"
+                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#D4AF37] hover:underline"
                 >
                   <span>Join Tasting Guestlist</span>
                   <ArrowRight className="w-3.5 h-3.5" />

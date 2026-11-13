@@ -50,7 +50,6 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
       setLoading(false);
       setSubmitted(true);
 
-      // Prepare WhatsApp message URL
       const msg = encodeURIComponent(
         `*SPECIAL CLIENT REQUEST — DUZZA LIMITED*\n\n` +
         `• Name: ${fullName}\n` +
@@ -77,36 +76,34 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[99999] overflow-y-auto bg-slate-950/75 backdrop-blur-md p-3 sm:p-6 font-sans animate-fade-in"
-      style={{ backgroundColor: "rgba(10, 17, 32, 0.75)" }}
+      className="fixed inset-0 z-[99999] overflow-y-auto bg-black/80 backdrop-blur-md p-3 sm:p-6 font-sans animate-fade-in"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="min-h-full flex items-center justify-center py-4 sm:py-10">
         <div
-          className="relative w-full max-w-2xl bg-white rounded-2xl sm:rounded-3xl border border-slate-200 shadow-2xl p-4 sm:p-8 space-y-5 sm:space-y-6 my-auto"
-          style={{ backgroundColor: "#FFFFFF" }}
+          className="relative w-full max-w-2xl bg-[#091224] rounded-2xl sm:rounded-3xl border border-[#1B325C] shadow-2xl p-4 sm:p-8 space-y-5 sm:space-y-6 my-auto text-white"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header Bar */}
-          <div className="flex items-start justify-between border-b border-slate-200 pb-4 sm:pb-5">
+          <div className="flex items-start justify-between border-b border-[#1B325C] pb-4 sm:pb-5">
             <div className="space-y-1.5 min-w-0">
-              <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-brandBlue-50 border border-brandBlue-200 text-[10px] sm:text-xs font-mono text-brandBlue-800 max-w-full">
-                <Sparkles className="w-3.5 h-3.5 text-brandBlue-600 shrink-0" />
+              <div className="inline-flex items-center space-x-2 px-2.5 sm:px-3 py-1 rounded-full bg-[#0E1B33] border border-[#D4AF37]/35 text-[10px] sm:text-xs font-mono text-[#D4AF37] max-w-full font-bold">
+                <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
                 <span className="truncate">SPECIAL CLIENT DESK • DUZZA LIMITED</span>
               </div>
-              <h3 className="font-display font-extrabold text-xl sm:text-3xl text-navy-950">
+              <h3 className="font-display font-extrabold text-xl sm:text-3xl text-white">
                 Submit a Special Client Request
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 font-light">
+              <p className="text-xs sm:text-sm text-[#CBD5E1]/90 font-light">
                 Direct institutional routing to DUZZA executive leadership. Response guaranteed within 4 hours.
               </p>
             </div>
 
             <button
               onClick={onClose}
-              className="p-2 rounded-xl text-slate-400 hover:text-navy-950 hover:bg-slate-100 transition-colors cursor-pointer shrink-0 ml-2"
+              className="p-2 rounded-xl text-[#94A3B8] hover:text-white hover:bg-[#0E1B33] transition-colors cursor-pointer shrink-0 ml-2"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
@@ -115,21 +112,21 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
 
         {submitted ? (
           <div className="py-10 text-center space-y-5">
-            <div className="w-16 h-16 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-600 flex items-center justify-center mx-auto">
+            <div className="w-16 h-16 rounded-full bg-[#0E1B33] border border-[#D4AF37]/40 text-[#D4AF37] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-9 h-9" />
             </div>
             <div className="space-y-2">
-              <h4 className="font-display font-bold text-2xl text-navy-950">
+              <h4 className="font-display font-bold text-2xl text-white">
                 Request Dispatched Successfully
               </h4>
-              <p className="text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+              <p className="text-sm text-[#CBD5E1] max-w-md mx-auto leading-relaxed">
                 Thank you, <strong>{fullName}</strong>. Your special request has been routed to our Warri Operations Desk and an email confirmation sent to <strong>{email}</strong>.
               </p>
             </div>
             <div className="pt-2 flex justify-center">
               <button
                 onClick={handleReset}
-                className="btn-brand-primary px-6 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
+                className="btn-brand-primary px-6 py-3 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-colors shadow-md cursor-pointer"
               >
                 Done
               </button>
@@ -139,7 +136,7 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+                <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                   Full Name *
                 </label>
                 <input
@@ -148,12 +145,12 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                   placeholder="e.g. Chief / Engr / Dr. Adebayo"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] placeholder-[#94A3B8]"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+                <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                   Organization / Entity
                 </label>
                 <input
@@ -161,14 +158,14 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
                   value={organization}
                   onChange={(e) => setOrganization(e.target.value)}
                   placeholder="Company, Ministry, or Private"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] placeholder-[#94A3B8]"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
-                <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+                <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                   Corporate Email Address *
                 </label>
                 <input
@@ -177,12 +174,12 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="director@organization.com"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] placeholder-[#94A3B8]"
                 />
               </div>
 
               <div>
-                <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+                <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                   WhatsApp / Phone Line *
                 </label>
                 <input
@@ -191,19 +188,19 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
                   placeholder="+234 803 000 0000"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] placeholder-[#94A3B8]"
                 />
               </div>
             </div>
 
             <div>
-              <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+              <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                 Nature of Special Engagement *
               </label>
               <select
                 value={requestType}
                 onChange={(e) => setRequestType(e.target.value)}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50 font-medium"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] font-medium"
               >
                 <option value="CROSS_VERTICAL_ENGAGEMENT">Multi-Sector Conglomerate Retainer (Cross-Vertical)</option>
                 <option value="MARINE_SURVEY_MOBILIZATION">Marine Hydrographic Survey & Offshore Vessel Mobilization</option>
@@ -216,7 +213,7 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
             </div>
 
             <div>
-              <label className="text-xs font-mono font-bold text-slate-700 block mb-1">
+              <label className="text-xs font-mono font-bold text-[#D4AF37] block mb-1">
                 Scope & Requirements Details *
               </label>
               <textarea
@@ -225,29 +222,29 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
                 value={details}
                 onChange={(e) => setDetails(e.target.value)}
                 placeholder="Please outline timeline, project site/region, estimated requirements, and any special confidentiality instructions..."
-                className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600 bg-slate-50/50 resize-none"
+                className="w-full px-3.5 py-2.5 rounded-xl border border-[#1B325C] text-xs text-white focus:outline-none focus:border-[#D4AF37] bg-[#0E1B33] placeholder-[#94A3B8] resize-none"
               />
             </div>
 
             {/* Confidentiality Notice */}
-            <div className="flex items-center space-x-2 text-[11px] font-mono text-slate-500 pt-1">
-              <Lock className="w-3.5 h-3.5 text-brandBlue-600 shrink-0" />
+            <div className="flex items-center space-x-2 text-[11px] font-mono text-[#94A3B8] pt-1">
+              <Lock className="w-3.5 h-3.5 text-[#38BDF8] shrink-0" />
               <span>Protected by NDPA 2023 Enterprise Confidentiality. Routed directly to duzzacontact@gmail.com</span>
             </div>
 
             {/* Submit Action */}
             <div className="pt-2 flex items-center justify-between">
-              <span className="text-xs text-slate-500">
+              <span className="text-xs text-[#CBD5E1]">
                 Direct Desk: <strong>+234 803 000 0000</strong>
               </span>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="btn-brand-primary px-7 py-3 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 cursor-pointer disabled:opacity-50"
+                className="btn-brand-primary px-7 py-3 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 cursor-pointer disabled:opacity-50"
               >
-                <span className="text-white font-bold">{loading ? "Transmitting..." : "Submit Special Request"}</span>
-                <Send className="w-3.5 h-3.5 text-[#F3C966]" />
+                <span>{loading ? "Transmitting..." : "Submit Special Request"}</span>
+                <Send className="w-3.5 h-3.5 text-[#050B18]" />
               </button>
             </div>
           </form>
@@ -258,4 +255,3 @@ export default function SpecialClientRequestModal({ isOpen, onClose }: SpecialCl
     document.body
   );
 }
-

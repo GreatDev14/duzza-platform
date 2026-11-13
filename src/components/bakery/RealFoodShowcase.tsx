@@ -71,9 +71,9 @@ export default function RealFoodShowcase() {
     <div className="space-y-6">
       {/* Main Interactive Real Food Stage */}
       <Tilt3DCard maxTilt={6} scale={1.01}>
-        <div className="rounded-3xl bg-white border border-amber-200 shadow-xl overflow-hidden flex flex-col lg:flex-row h-full">
+        <div className="rounded-3xl bg-[#091224] border border-[#1B325C] shadow-2xl overflow-hidden flex flex-col lg:flex-row h-full">
           {/* Real High-Resolution Food Photo */}
-          <div className="relative w-full lg:w-3/5 h-72 sm:h-96 lg:h-[440px] bg-slate-100 overflow-hidden">
+          <div className="relative w-full lg:w-3/5 h-72 sm:h-96 lg:h-[440px] bg-[#0E1B33] overflow-hidden">
             <Image
               src={activeFood.image}
               alt={activeFood.name}
@@ -82,15 +82,15 @@ export default function RealFoodShowcase() {
               className="object-cover transition-transform duration-700 hover:scale-105"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#050B18]/80 via-transparent to-black/30" />
 
             {/* Top Badge */}
             <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-white/95 text-amber-900 border border-amber-200 shadow-md backdrop-blur-md">
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#091224]/90 text-[#D4AF37] border border-[#D4AF37]/30 shadow-md backdrop-blur-md">
                 {activeFood.category}
               </span>
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-navy-950/80 text-amber-300 border border-amber-400/30 backdrop-blur-md flex items-center space-x-1.5">
-                <Clock className="w-3.5 h-3.5" />
+              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-[#050B18]/90 text-[#F5D77F] border border-[#1B325C] backdrop-blur-md flex items-center space-x-1.5">
+                <Clock className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>{activeFood.fermentation}</span>
               </span>
             </div>
@@ -100,34 +100,34 @@ export default function RealFoodShowcase() {
               <h3 className="font-display font-extrabold text-2xl sm:text-3xl drop-shadow-md">
                 {activeFood.name}
               </h3>
-              <p className="text-xs sm:text-sm text-amber-200 font-medium drop-shadow-sm">
+              <p className="text-xs sm:text-sm text-[#D4AF37] font-medium drop-shadow-sm">
                 {activeFood.subtitle}
               </p>
             </div>
           </div>
 
           {/* Food Details & Tasting Notes */}
-          <div className="p-6 sm:p-8 w-full lg:w-2/5 flex flex-col justify-between space-y-6 bg-amber-50/20">
+          <div className="p-6 sm:p-8 w-full lg:w-2/5 flex flex-col justify-between space-y-6 bg-[#091224]">
             <div className="space-y-4">
               <div className="space-y-1">
-                <span className="text-[10px] font-mono uppercase tracking-widest text-amber-700 font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                   Artisanal Provenance
                 </span>
-                <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-light">
+                <p className="text-xs sm:text-sm text-[#94A3B8] leading-relaxed font-light">
                   {activeFood.description}
                 </p>
               </div>
 
               {/* Tasting Notes */}
               <div className="space-y-2">
-                <span className="text-[10px] font-mono uppercase tracking-wider text-slate-500 font-bold block">
+                <span className="text-[10px] font-mono uppercase tracking-wider text-[#64748B] font-bold block">
                   Flavor & Texture Profile
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {activeFood.tastingNotes.map((note, idx) => (
                     <span
                       key={idx}
-                      className="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-[11px] font-medium text-amber-900 shadow-xs"
+                      className="px-2.5 py-1 rounded-lg bg-[#0E1B33] border border-[#1B325C] text-[11px] font-medium text-[#CBD5E1]"
                     >
                       ✓ {note}
                     </span>
@@ -137,8 +137,8 @@ export default function RealFoodShowcase() {
             </div>
 
             {/* Culinary Guarantee */}
-            <div className="p-3.5 rounded-2xl bg-white border border-amber-200 flex items-center space-x-3 text-xs text-amber-950 shadow-xs">
-              <Award className="w-5 h-5 text-amber-600 shrink-0" />
+            <div className="p-3.5 rounded-2xl bg-[#0E1B33] border border-[#1B325C] flex items-center space-x-3 text-xs text-[#CBD5E1]">
+              <Award className="w-5 h-5 text-[#D4AF37] shrink-0" />
               <span>Baked fresh daily in Warri. Zero artificial preservatives or industrial additives.</span>
             </div>
           </div>
@@ -151,14 +151,13 @@ export default function RealFoodShowcase() {
           <button
             key={item.id}
             onClick={() => setSelectedIdx(idx)}
-            style={selectedIdx === idx ? { backgroundColor: "#F59E0B", color: "#FFFFFF", borderColor: "#D97706" } : {}}
             className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-1 ${
               selectedIdx === idx
-                ? "bg-amber-500 text-white border-amber-600 shadow-md shadow-amber-500/25"
-                : "bg-white text-slate-700 border-slate-200 hover:bg-slate-50 hover:border-amber-300"
+                ? "bg-[#D4AF37] text-[#050B18] border-[#D4AF37] shadow-lg shadow-[#D4AF37]/20 font-bold"
+                : "bg-[#091224] text-[#CBD5E1] border-[#1B325C] hover:bg-[#0E1B33] hover:border-[#D4AF37]/40"
             }`}
           >
-            <span className={`text-[10px] font-mono uppercase font-bold ${selectedIdx === idx ? "text-amber-100" : "text-amber-700"}`}>
+            <span className={`text-[10px] font-mono uppercase font-bold ${selectedIdx === idx ? "text-[#050B18]" : "text-[#D4AF37]"}`}>
               0{idx + 1} • {item.category}
             </span>
             <span className="font-bold text-xs truncate block">

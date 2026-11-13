@@ -19,7 +19,6 @@ export default function DuzzaFashionPage() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
-  const [focusedField, setFocusedField] = useState<string | null>(null);
 
   const moodboardImages = [
     {
@@ -116,25 +115,28 @@ export default function DuzzaFashionPage() {
   };
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen text-slate-900 font-sans selection:bg-rose-500 selection:text-white">
+    <div ref={containerRef} className="bg-[#050B18] min-h-screen text-[#F1F5F9] font-sans selection:bg-[#D4AF37] selection:text-[#050B18]">
       {/* Editorial Textile Backdrop Header */}
-      <section className="relative py-20 lg:py-28 border-b border-slate-200 overflow-hidden bg-gradient-to-b from-rose-50/50 via-white to-white">
+      <section className="relative py-20 lg:py-28 border-b border-[#1B325C] overflow-hidden bg-gradient-to-b from-[#050B18] via-[#07132B] to-[#050B18]">
+        {/* Glow */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="gsap-fashion-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-xs font-mono text-rose-700 font-bold shadow-sm">
-                <Shirt className="w-3.5 h-3.5 text-rose-500" />
+              <div className="gsap-fashion-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224] border border-[#D4AF37]/35 text-xs font-mono text-[#D4AF37] font-bold shadow-sm">
+                <Shirt className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>DUZZA FASHION • COMING SOON TEASER</span>
               </div>
 
-              <h1 className="gsap-fashion-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-navy-950 tracking-tight leading-tight">
+              <h1 className="gsap-fashion-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-tight">
                 Artisanal Tailoring Meets{" "}
-                <span className="text-gradient-rose font-light block sm:inline">
+                <span className="text-gradient-gold font-light block sm:inline">
                   Contemporary African Luxury.
                 </span>
               </h1>
 
-              <p className="gsap-fashion-desc text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+              <p className="gsap-fashion-desc text-base sm:text-lg text-[#CBD5E1]/90 leading-relaxed font-light">
                 Curated English tailoring, bespoke contemporary Ankara couture, artisanal leather goods, 
                 and statement lifestyle wearables. Crafted in Nigeria for global runways and discerning wardrobes.
               </p>
@@ -142,7 +144,7 @@ export default function DuzzaFashionPage() {
               <div className="pt-2 flex flex-wrap gap-4">
                 <a
                   href="#waitlist-box"
-                  className="px-8 py-4 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-rose-700 transition-all shadow-md shadow-rose-600/25"
+                  className="btn-brand-primary px-8 py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-widest transition-all shadow-md cursor-pointer"
                 >
                   Reserve VIP Lookbook Access
                 </a>
@@ -150,7 +152,9 @@ export default function DuzzaFashionPage() {
             </div>
 
             <div className="lg:col-span-6">
-              <Fashion3DCouture />
+              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-2xl">
+                <Fashion3DCouture />
+              </div>
             </div>
           </div>
         </div>
@@ -158,25 +162,25 @@ export default function DuzzaFashionPage() {
 
       {/* Interactive Brand Mood Board */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#1B325C] pb-6">
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-rose-600 font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold">
               Aesthetic Direction
             </span>
-            <h2 className="text-3xl font-display font-bold text-navy-950">
+            <h2 className="text-3xl font-display font-bold text-white">
               The Inaugural Capsule Concept
             </h2>
           </div>
-          <p className="text-xs text-slate-500 font-mono">COLLECTION 01 • LAUNCHING 2026/2027</p>
+          <p className="text-xs text-[#94A3B8] font-mono">COLLECTION 01 • LAUNCHING 2026/2027</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {moodboardImages.map((item, idx) => (
             <div
               key={idx}
-              className="gsap-fashion-card rounded-2xl overflow-hidden bg-white border border-slate-200 group hover:border-rose-300 hover:shadow-xl transition-all shadow-sm"
+              className="gsap-fashion-card rounded-2xl overflow-hidden bg-[#091224] border border-[#1B325C] group hover:border-[#D4AF37]/50 hover:shadow-2xl transition-all shadow-md"
             >
-              <div className="relative h-72 w-full overflow-hidden bg-slate-100">
+              <div className="relative h-72 w-full overflow-hidden bg-[#050B18]">
                 <Image
                   src={item.src}
                   alt={item.title}
@@ -184,12 +188,12 @@ export default function DuzzaFashionPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <span className="absolute top-3 left-3 text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-white/90 text-navy-950 font-bold shadow-md">
+                <span className="absolute top-3 left-3 text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-[#050B18]/90 text-white font-bold shadow-md border border-[#1B325C]">
                   {item.tag}
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-display font-bold text-lg text-navy-950 group-hover:text-rose-600 transition-colors">
+                <h3 className="font-display font-bold text-lg text-white group-hover:text-[#D4AF37] transition-colors">
                   {item.title}
                 </h3>
               </div>
@@ -198,12 +202,12 @@ export default function DuzzaFashionPage() {
         </div>
 
         {/* Fabric Swatches Showcase */}
-        <div className="p-8 rounded-3xl bg-slate-50 border border-slate-200 space-y-6">
+        <div className="p-8 rounded-3xl bg-[#091224] border border-[#1B325C] space-y-6 shadow-xl">
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-rose-600 font-bold block">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
               Textile Archive
             </span>
-            <h3 className="text-2xl font-display font-bold text-navy-950">
+            <h3 className="text-2xl font-display font-bold text-white">
               Hand-Selected Indigenous & English Weaves
             </h3>
           </div>
@@ -212,15 +216,15 @@ export default function DuzzaFashionPage() {
             {fabricSwatches.map((swatch, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-white border border-slate-200 space-y-3 hover:border-rose-300 transition-colors shadow-sm"
+                className="p-4 rounded-xl bg-[#0E1B33] border border-[#1B325C] space-y-3 hover:border-[#D4AF37]/50 transition-colors shadow-md"
               >
                 <div
                   className="h-16 w-full rounded-lg shadow-inner"
                   style={{ backgroundColor: swatch.hex }}
                 />
                 <div>
-                  <span className="text-xs font-bold text-navy-950 block">{swatch.name}</span>
-                  <span className="text-[10px] font-mono text-slate-500 block">{swatch.tag}</span>
+                  <span className="text-xs font-bold text-white block">{swatch.name}</span>
+                  <span className="text-[10px] font-mono text-[#94A3B8] block">{swatch.tag}</span>
                 </div>
               </div>
             ))}
@@ -230,97 +234,97 @@ export default function DuzzaFashionPage() {
 
       {/* VIP Waitlist Box */}
       <section id="waitlist-box" className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-rose-200 shadow-xl space-y-6">
-          <div className="border-b border-slate-200 pb-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-rose-600 block">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#091224] border border-[#1B325C] shadow-2xl space-y-6">
+          <div className="border-b border-[#1B325C] pb-4">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D4AF37] block">
               VIP GUEST REGISTRATION
             </span>
-            <h3 className="text-2xl sm:text-3xl font-display font-bold text-navy-950 mt-1">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
               Join the Fashion Inaugural Waitlist
             </h3>
-            <p className="text-xs text-slate-600 mt-1 font-light">
+            <p className="text-xs text-[#CBD5E1]/80 mt-1 font-light">
               Receive the private digital lookbook and bespoke private fitting invitations 14 days before public release.
             </p>
           </div>
 
           {submitted ? (
-            <div className="p-8 rounded-2xl bg-rose-50 border border-rose-200 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-rose-600 text-white mx-auto flex items-center justify-center">
+            <div className="p-8 rounded-2xl bg-[#0E1B33] border border-[#D4AF37]/40 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#050B18] mx-auto flex items-center justify-center font-bold">
                 <Check className="w-6 h-6" />
               </div>
-              <h4 className="font-display font-bold text-xl text-navy-950">
+              <h4 className="font-display font-bold text-xl text-white">
                 You're on the Duzza Fashion Guestlist!
               </h4>
-              <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs text-[#CBD5E1] max-w-md mx-auto leading-relaxed">
                 Thank you, <strong>{name}</strong>. We will notify you at <strong>{email}</strong> when the private lookbook opens.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {errorMsg && (
-                <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700">
+                <div className="p-3 rounded-lg bg-red-950/50 border border-red-500/50 text-xs text-red-300">
                   {errorMsg}
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Full Name</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Full Name</label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. Amaka Williams"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-rose-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Email Address</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Email Address</label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="amaka@luxury.com"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-rose-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">WhatsApp Number</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">WhatsApp Number</label>
                   <input
                     type="tel"
                     required
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
                     placeholder="+234 803 123 4567"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-rose-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Primary Residence City</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Primary Residence City</label>
                   <input
                     type="text"
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Lagos, London, Abuja, Warri..."
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-rose-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-700 mb-1">Preferred Fashion Category</label>
+                <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Preferred Fashion Category</label>
                 <select
                   value={categoryPreference}
                   onChange={(e) => setCategoryPreference(e.target.value)}
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-rose-500"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                 >
                   <option value="BESPOKE_ANKARA_AND_ENGLISH">Bespoke Ankara Couture & English Tailoring</option>
                   <option value="EXECUTIVE_SUITING">Savile Row-Inspired Structured Suiting</option>
@@ -336,18 +340,18 @@ export default function DuzzaFashionPage() {
                   id="fashion-consent"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-0.5 rounded border-slate-300 text-rose-600 focus:ring-rose-500"
+                  className="mt-0.5 rounded border-[#1B325C] text-[#D4AF37] focus:ring-[#D4AF37]"
                 />
-                <label htmlFor="fashion-consent" className="text-[11px] text-slate-600">
+                <label htmlFor="fashion-consent" className="text-[11px] text-[#CBD5E1]">
                   I agree to receive communications regarding Duzza Fashion under the{" "}
-                  <strong className="text-navy-950">Nigeria Data Protection Act 2023</strong>.
+                  <strong className="text-white">Nigeria Data Protection Act 2023</strong>.
                 </label>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-xl bg-rose-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-rose-700 transition-all shadow-md shadow-rose-600/20 disabled:opacity-50"
+                className="btn-brand-primary w-full py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-widest transition-all shadow-md disabled:opacity-50 cursor-pointer"
               >
                 {loading ? "Registering VIP Access..." : "Request Exclusive Waitlist Access"}
               </button>

@@ -16,7 +16,7 @@ export default function EnterpriseOperationsGlobe3D() {
     let height = container.clientHeight || 460;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x140a05);
+    scene.background = new THREE.Color(0x050b18);
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 1000);
     camera.position.set(0, 1.5, 13.5);
@@ -49,7 +49,7 @@ export default function EnterpriseOperationsGlobe3D() {
     // 1. Inner Core Sphere (Translucent Dark Obsidian Bronze)
     const coreGeo = new THREE.IcosahedronGeometry(3.2, 2);
     const coreMat = new THREE.MeshStandardMaterial({
-      color: 0x26170e,
+      color: 0x0e1b33,
       roughness: 0.35,
       metalness: 0.4,
       transparent: true,
@@ -209,16 +209,16 @@ export default function EnterpriseOperationsGlobe3D() {
   }, []);
 
   return (
-    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl sm:rounded-3xl bg-[#140A05] border border-[#3D2415] shadow-2xl shadow-black/80 overflow-hidden select-none">
+    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl sm:rounded-3xl bg-[#050B18] border border-[#1B325C] shadow-2xl shadow-black/80 overflow-hidden select-none">
       {/* Centered 3D Canvas */}
       <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top Overlay Header */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 pointer-events-none">
-        <div className="px-3.5 py-2 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-md flex items-center space-x-2">
+        <div className="px-3.5 py-2 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-md flex items-center space-x-2">
           <Globe2 className="w-4 h-4 text-[#D4AF37]" />
           <div>
-            <span className="text-[11px] font-bold text-[#FFF6DE] block leading-tight">
+            <span className="text-[11px] font-bold text-[#FFFFFF] block leading-tight">
               Global Operations Network
             </span>
             <span className="text-[10px] font-mono text-[#D4AF37]/80 block">
@@ -227,53 +227,53 @@ export default function EnterpriseOperationsGlobe3D() {
           </div>
         </div>
 
-        <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-mono font-bold shadow-sm">
+        <div className="hidden sm:flex items-center space-x-1.5 px-3 py-1.5 rounded-full bg-[#0E1B33] border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-mono font-bold shadow-sm">
           <Radio className="w-3 h-3 text-[#D4AF37] animate-pulse" />
           <span>NETWORK ONLINE</span>
         </div>
       </div>
 
       {/* Bottom Interactive Telemetry Pills */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 grid grid-cols-3 gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
         <button
           type="button"
           onClick={() => setActiveSector("MARINE")}
-          style={activeSector === "MARINE" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeSector === "MARINE" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "MARINE"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#140A05]" />
+          <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#050B18]" />
           <span className="truncate">Marine Base</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveSector("CIVIL")}
-          style={activeSector === "CIVIL" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeSector === "CIVIL" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "CIVIL"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#140A05]" />
+          <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#050B18]" />
           <span className="truncate">ISO Standards</span>
         </button>
 
         <button
           type="button"
           onClick={() => setActiveSector("GLOBAL")}
-          style={activeSector === "GLOBAL" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
+          style={activeSector === "GLOBAL" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
           className={`min-w-0 py-1.5 sm:py-2 px-1.5 sm:px-2.5 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeSector === "GLOBAL"
-              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
-              : "text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
+              : "text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
-          <Globe2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#140A05]" />
+          <Globe2 className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0 text-[#050B18]" />
           <span className="truncate">Global Reach</span>
         </button>
       </div>

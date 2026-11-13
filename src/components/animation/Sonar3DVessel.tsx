@@ -28,7 +28,7 @@ export default function Sonar3DVessel() {
 
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8fafc); // Crisp light background
+    scene.background = new THREE.Color(0x050b18);
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(14, 10, 16);
@@ -273,45 +273,45 @@ export default function Sonar3DVessel() {
   }, []);
 
   return (
-    <div className="relative w-full h-[460px] sm:h-[520px] rounded-3xl bg-slate-50/80 border border-slate-200 overflow-hidden shadow-lg select-none">
+    <div className="relative w-full h-[460px] sm:h-[520px] rounded-3xl bg-[#050B18] border border-[#1B325C] overflow-hidden shadow-2xl select-none">
       {/* Three.js Canvas Container */}
       <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top HUD Telemetry Bar */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-brandBlue-200 text-xs font-mono text-brandBlue-800 shadow-md">
-          <Ship className="w-3.5 h-3.5 text-brandBlue-600" />
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] shadow-md">
+          <Ship className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span className="font-bold">DUZZA RV-1 HYDROSPATIAL</span>
-          <span className="text-slate-300">•</span>
-          <span className="text-emerald-600 font-semibold">MULTIBEAM ACTIVE</span>
+          <span className="text-[#1B325C]">•</span>
+          <span className="text-[#38BDF8] font-semibold">MULTIBEAM ACTIVE</span>
         </div>
 
-        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-slate-600 shadow-sm">
-          <Eye className="w-3 h-3 text-cyan-600 animate-pulse" />
+        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#091224]/90 backdrop-blur-md border border-[#1B325C] text-[11px] font-mono text-[#94A3B8] shadow-sm">
+          <Eye className="w-3 h-3 text-[#38BDF8] animate-pulse" />
           <span>Click & Drag to Orbit 360°</span>
         </div>
       </div>
 
       {/* Bottom Telemetry Overlay */}
       <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-        <div className="flex items-center space-x-3 bg-white/95 backdrop-blur-md border border-slate-200 px-4 py-2 rounded-2xl shadow-md text-xs font-mono">
+        <div className="flex items-center space-x-3 bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] px-4 py-2 rounded-2xl shadow-md text-xs font-mono">
           <div>
             <span className="text-[10px] text-slate-400 block uppercase">Sounding Depth</span>
-            <strong className="text-brandBlue-700 text-sm">{depthReading}m BSL</strong>
+            <strong className="text-[#D4AF37] text-sm">{depthReading}m BSL</strong>
           </div>
-          <div className="w-px h-6 bg-slate-200" />
+          <div className="w-px h-6 bg-[#1B325C]" />
           <div>
             <span className="text-[10px] text-slate-400 block uppercase">Ping Velocity</span>
             <strong className="text-cyan-600 text-sm">{pingRate} Hz</strong>
           </div>
-          <div className="w-px h-6 bg-slate-200" />
+          <div className="w-px h-6 bg-[#1B325C]" />
           <div>
             <span className="text-[10px] text-slate-400 block uppercase">Radar Azimuth</span>
-            <strong className="text-navy-950 text-sm">{radarAngle}°</strong>
+            <strong className="text-white text-sm">{radarAngle}°</strong>
           </div>
         </div>
 
-        <div className="bg-brandBlue-600 text-white px-3 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
+        <div className="bg-[#D4AF37] text-[#050B18] px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
           <Radio className="w-3.5 h-3.5 animate-pulse" />
           <span>WARRI CHANNEL SURVEY ZONE</span>
         </div>

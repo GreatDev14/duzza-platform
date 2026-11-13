@@ -90,45 +90,43 @@ export default function EquipmentEnquiryModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/75 backdrop-blur-md p-4 sm:p-6 animate-in fade-in duration-200"
-      style={{ backgroundColor: "rgba(10, 17, 32, 0.75)" }}
+      className="fixed inset-0 z-50 overflow-y-auto bg-black/80 backdrop-blur-md p-4 sm:p-6 animate-in fade-in duration-200"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div className="min-h-full flex items-center justify-center py-6 sm:py-10">
         <div
-          className="relative w-full max-w-xl rounded-2xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 text-slate-900 my-auto"
-          style={{ backgroundColor: "#FFFFFF" }}
+          className="relative w-full max-w-xl rounded-2xl bg-[#091224] border border-[#1B325C] shadow-2xl p-6 sm:p-8 text-white my-auto"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-lg text-slate-400 hover:text-navy-950 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="absolute top-4 right-4 p-2 rounded-lg text-[#94A3B8] hover:text-white hover:bg-[#0E1B33] transition-colors cursor-pointer"
             aria-label="Close dialog"
-        >
-          <X className="w-5 h-5" />
-        </button>
+          >
+            <X className="w-5 h-5" />
+          </button>
 
         {referenceCode ? (
           <div className="text-center py-6 space-y-4">
-            <div className="w-14 h-14 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto border border-emerald-300">
+            <div className="w-14 h-14 rounded-full bg-[#0E1B33] text-[#D4AF37] flex items-center justify-center mx-auto border border-[#D4AF37]/40">
               <Check className="w-8 h-8" />
             </div>
 
-            <h3 className="font-display font-bold text-2xl text-navy-950">
+            <h3 className="font-display font-bold text-2xl text-white">
               Enquiry Submitted Successfully
             </h3>
 
-            <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#CBD5E1] max-w-md mx-auto leading-relaxed">
               Your equipment mobilization request has been routed to our Warri Marine Logistics Desk. 
               A procurement officer will contact you within 2 hours.
             </p>
 
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 inline-block font-mono text-xs">
-              <span className="text-slate-500 block">Tracking Reference Code:</span>
-              <span className="text-base font-bold text-brandBlue-600 tracking-wider">
+            <div className="p-4 rounded-xl bg-[#0E1B33] border border-[#1B325C] inline-block font-mono text-xs">
+              <span className="text-[#94A3B8] block">Tracking Reference Code:</span>
+              <span className="text-base font-bold text-[#D4AF37] tracking-wider">
                 {referenceCode}
               </span>
             </div>
@@ -136,7 +134,7 @@ export default function EquipmentEnquiryModal({
             <div className="pt-4">
               <button
                 onClick={onClose}
-                className="px-6 py-2.5 rounded-lg bg-brandBlue-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-brandBlue-700 transition-colors"
+                className="btn-brand-primary px-6 py-2.5 rounded-lg text-[#050B18] font-bold text-xs uppercase tracking-wider transition-colors cursor-pointer"
               >
                 Close Window
               </button>
@@ -145,27 +143,27 @@ export default function EquipmentEnquiryModal({
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-brandBlue-600 font-bold block">
+              <span className="text-[10px] font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
                 Asset Leasehold Pipeline
               </span>
-              <h3 className="font-display font-bold text-2xl text-navy-950">
+              <h3 className="font-display font-bold text-2xl text-white">
                 Equipment Mobilization Inquiry
               </h3>
-              <p className="text-xs text-slate-500 font-mono">
-                Selected Unit: <strong className="text-brandBlue-700">{equipmentName} ({equipmentCode})</strong>
+              <p className="text-xs text-[#CBD5E1] font-mono">
+                Selected Unit: <strong className="text-[#D4AF37]">{equipmentName} ({equipmentCode})</strong>
               </p>
             </div>
 
             {errorMsg && (
-              <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs flex items-center space-x-2">
-                <AlertCircle className="w-4 h-4 shrink-0 text-red-600" />
+              <div className="p-3 rounded-lg bg-red-950/50 border border-red-500/50 text-red-300 text-xs flex items-center space-x-2">
+                <AlertCircle className="w-4 h-4 shrink-0 text-red-400" />
                 <span>{errorMsg}</span>
               </div>
             )}
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   Full Name *
                 </label>
                 <input
@@ -174,12 +172,12 @@ export default function EquipmentEnquiryModal({
                   placeholder="e.g. Engr. Tari West"
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   Corporate Email *
                 </label>
                 <input
@@ -188,14 +186,14 @@ export default function EquipmentEnquiryModal({
                   placeholder="tari.west@offshore.ng"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   WhatsApp Number *
                 </label>
                 <input
@@ -204,12 +202,12 @@ export default function EquipmentEnquiryModal({
                   placeholder="0803 123 4567"
                   value={whatsapp}
                   onChange={(e) => setWhatsapp(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   Company / Organization
                 </label>
                 <input
@@ -217,32 +215,32 @@ export default function EquipmentEnquiryModal({
                   placeholder="e.g. Chevron Nigeria Contractor"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   Mobilization Base Location
                 </label>
                 <input
                   type="text"
                   value={location}
                   onChange={(e) => setLocation(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                 />
               </div>
 
               <div className="space-y-1">
-                <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+                <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                   Deployment Timeline
                 </label>
                 <select
                   value={timeline}
                   onChange={(e) => setTimeline(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-xl px-4 py-2.5 text-xs text-navy-950 focus:outline-none focus:border-brandBlue-600"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl px-4 py-2.5 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                 >
                   <option value="IMMEDIATE_UNDER_30_DAYS">Immediate (&lt; 30 Days)</option>
                   <option value="ONE_TO_THREE_MONTHS">1 to 3 Months</option>
@@ -253,7 +251,7 @@ export default function EquipmentEnquiryModal({
             </div>
 
             <div className="space-y-1">
-              <label className="text-[11px] font-mono uppercase tracking-wider text-slate-600 font-semibold">
+              <label className="text-[11px] font-mono uppercase tracking-wider text-[#D4AF37] font-semibold">
                 Project Specifics / Vessel Requirements
               </label>
               <textarea
@@ -261,18 +259,18 @@ export default function EquipmentEnquiryModal({
                 placeholder="Specify survey duration, deployment depth, or required survey crew..."
                 value={notes}
                 onChange={(e) => setNotes(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-xs text-navy-950 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+                className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-xl p-3 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
               />
             </div>
 
-            <div className="flex items-start space-x-2 text-xs text-slate-600 pt-1">
+            <div className="flex items-start space-x-2 text-xs text-[#CBD5E1] pt-1">
               <input
                 type="checkbox"
                 id="modalConsent"
                 checked={consent}
                 onChange={(e) => setConsent(e.target.checked)}
                 required
-                className="mt-0.5 h-4 w-4 rounded border-slate-300 text-brandBlue-600 focus:ring-0"
+                className="mt-0.5 h-4 w-4 rounded border-[#1B325C] text-[#D4AF37] focus:ring-[#D4AF37]"
               />
               <label htmlFor="modalConsent" className="text-[11px] leading-relaxed">
                 I consent to Duzza Limited processing my details in accordance with the NDPA 2023.
@@ -282,9 +280,9 @@ export default function EquipmentEnquiryModal({
             <button
               type="submit"
               disabled={submitting}
-              className="btn-brand-primary w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-50 cursor-pointer"
+              className="btn-brand-primary w-full py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-50 cursor-pointer"
             >
-              <span className="text-white font-bold">{submitting ? "Transmitting Reservation..." : "Submit Lease Request"}</span>
+              <span>{submitting ? "Transmitting Reservation..." : "Submit Lease Request"}</span>
             </button>
           </form>
         )}

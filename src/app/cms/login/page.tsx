@@ -56,19 +56,19 @@ export default function CmsLoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#140A05] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
+    <div className="min-h-screen bg-[#050B18] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-md space-y-6">
         {/* Card */}
-        <div className="bg-[#1C110A] rounded-3xl border border-[#D4AF37]/35 shadow-2xl shadow-black/90 p-7 sm:p-9 space-y-6">
+        <div className="bg-[#091224] rounded-3xl border border-[#1B325C] shadow-2xl shadow-black/90 p-7 sm:p-9 space-y-6">
           <div className="space-y-2 text-center">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[11px] font-mono font-bold text-[#D4AF37]">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#0E1B33] border border-[#D4AF37]/40 text-[11px] font-mono font-bold text-[#D4AF37]">
               <ShieldCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>ZERO-TRUST IAM • DUZZA CMS</span>
             </div>
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FFF6DE]">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
               CMS Portal Sign In
             </h1>
-            <p className="text-xs sm:text-sm text-[#EED9B3]/80">
+            <p className="text-xs sm:text-sm text-[#CBD5E1]/80">
               Role-based access control for Admin, Manager, and Approved Contributors.
             </p>
           </div>
@@ -108,7 +108,7 @@ export default function CmsLoginPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="name@duzza.com.ng"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#3D2415] text-sm text-[#FFF6DE] bg-[#26170E]/80 placeholder-[#6B4429] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/30"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#1B325C] text-sm text-white bg-[#0E1B33] placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/30"
                 />
               </div>
             </div>
@@ -125,7 +125,7 @@ export default function CmsLoginPage() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#3D2415] text-sm text-[#FFF6DE] bg-[#26170E]/80 placeholder-[#6B4429] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/30"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#1B325C] text-sm text-white bg-[#0E1B33] placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/30"
                 />
               </div>
             </div>
@@ -133,20 +133,20 @@ export default function CmsLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="btn-brand-primary w-full py-3.5 rounded-xl text-[#140A05] font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+              className="btn-brand-primary w-full py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
             >
-              <span className="text-[#140A05] font-bold">
+              <span className="text-[#050B18] font-bold">
                 {loading ? "Verifying IAM Credentials..." : "Sign In to CMS Dashboard"}
               </span>
-              <ArrowRight className="w-4 h-4 text-[#140A05]" />
+              <ArrowRight className="w-4 h-4 text-[#050B18]" />
             </button>
           </form>
 
-          <div className="pt-2 text-center text-xs text-[#EED9B3]/70">
+          <div className="pt-2 text-center text-xs text-[#CBD5E1]/70">
             New contributor?{" "}
             <Link
               href="/cms/signup"
-              className="font-bold text-[#D4AF37] hover:text-[#FFF6DE] hover:underline inline-flex items-center space-x-1"
+              className="font-bold text-[#D4AF37] hover:text-white hover:underline inline-flex items-center space-x-1"
             >
               <UserCheck className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>Request Account Access</span>
@@ -157,4 +157,3 @@ export default function CmsLoginPage() {
     </div>
   );
 }
-

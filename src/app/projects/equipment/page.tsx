@@ -139,21 +139,21 @@ export default function MarineEquipmentHirePage() {
   });
 
   return (
-    <div className="bg-white min-h-screen text-slate-900 font-sans py-12 px-4 sm:px-6 lg:px-8 selection:bg-brandBlue-600 selection:text-white">
+    <div className="bg-[#050B18] min-h-screen text-[#F1F5F9] font-sans py-12 px-4 sm:px-6 lg:px-8 selection:bg-[#D4AF37] selection:text-[#050B18]">
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Breadcrumb & Header */}
         <div className="space-y-3">
-          <div className="flex items-center space-x-2 text-xs font-mono text-brandBlue-600">
+          <div className="flex items-center space-x-2 text-xs font-mono text-[#D4AF37]">
             <Link href="/projects" className="hover:underline font-semibold">DUZZA PROJECTS</Link>
             <span>/</span>
-            <span className="text-slate-500">MARINE EQUIPMENT HIRE</span>
+            <span className="text-[#94A3B8]">MARINE EQUIPMENT HIRE</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-navy-950">
+          <h1 className="text-3xl sm:text-4xl font-display font-extrabold text-white">
             Hydrospatial & Marine Survey Equipment Catalogue
           </h1>
 
-          <p className="text-sm text-slate-600 max-w-3xl leading-relaxed font-light">
+          <p className="text-sm text-[#CBD5E1]/90 max-w-3xl leading-relaxed font-light">
             All equipment is stationed at our <strong>Warri Marine Logistics Base</strong>, fully calibrated, 
             and ready for rapid mobilization across coastal waterways, riverine zones, and offshore oilfields.
           </p>
@@ -162,25 +162,27 @@ export default function MarineEquipmentHirePage() {
         {/* 3D Geomatics & Hydrospatial Scanner Hardware Inspection */}
         <div className="space-y-3">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-mono uppercase tracking-widest text-brandBlue-600 font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold">
               Interactive 3D Hardware Telemetry
             </span>
-            <span className="text-xs text-slate-500 font-mono">Total Station & Cadastral Array</span>
+            <span className="text-xs text-[#94A3B8] font-mono">Total Station & Cadastral Array</span>
           </div>
-          <Cadastral3DScanner />
+          <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-xl">
+            <Cadastral3DScanner />
+          </div>
         </div>
 
         {/* Filter and Search Bar */}
-        <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="p-4 rounded-2xl bg-[#091224] border border-[#1B325C] flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex flex-wrap items-center gap-2 w-full md:w-auto">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all ${
+                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold uppercase tracking-wider transition-all cursor-pointer ${
                   selectedCategory === cat
-                    ? "bg-brandBlue-600 text-white font-bold shadow-md shadow-brandBlue-600/20"
-                    : "bg-white text-slate-600 hover:text-navy-950 hover:bg-slate-100 border border-slate-200"
+                    ? "btn-brand-primary text-[#050B18] font-bold shadow-md"
+                    : "bg-[#0E1B33] text-[#CBD5E1] hover:text-white border border-[#1B325C] hover:border-[#D4AF37]"
                 }`}
               >
                 {cat}
@@ -194,9 +196,9 @@ export default function MarineEquipmentHirePage() {
               placeholder="Search code or model..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 pl-9 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-brandBlue-600"
+              className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 pl-9 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
             />
-            <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-3.5 h-3.5 text-[#94A3B8] absolute left-3 top-2.5" />
           </div>
         </div>
 
@@ -208,74 +210,74 @@ export default function MarineEquipmentHirePage() {
             return (
               <Tilt3DCard key={item.code} maxTilt={8} scale={1.02}>
                 <div
-                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden flex flex-col justify-between hover:border-brandBlue-400 hover:shadow-xl transition-all shadow-sm h-full"
+                  className="rounded-2xl bg-[#091224] border border-[#1B325C] overflow-hidden flex flex-col justify-between hover:border-[#D4AF37]/50 hover:shadow-2xl transition-all shadow-md h-full"
                 >
                   <div className="p-6 space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <span className="text-[11px] font-mono text-brandBlue-600 font-bold block">
-                        {item.code}
-                      </span>
-                      <h3 className="text-xl font-bold text-navy-950 mt-1">
-                        {item.name}
-                      </h3>
-                      <span className="text-xs text-slate-500 mt-0.5 block">
-                        Category: {item.category}
+                    <div className="flex items-start justify-between">
+                      <div>
+                        <span className="text-[11px] font-mono text-[#D4AF37] font-bold block">
+                          {item.code}
+                        </span>
+                        <h3 className="text-xl font-bold text-white mt-1">
+                          {item.name}
+                        </h3>
+                        <span className="text-xs text-[#94A3B8] mt-0.5 block">
+                          Category: {item.category}
+                        </span>
+                      </div>
+
+                      <span
+                        className={`text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border ${
+                          item.status === "AVAILABLE"
+                            ? "bg-emerald-950/60 text-emerald-400 border-emerald-500/40"
+                            : "bg-[#0E1B33] text-[#CBD5E1] border-[#1B325C]"
+                        }`}
+                      >
+                        {item.status}
                       </span>
                     </div>
 
-                    <span
-                      className={`text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full border ${
-                        item.status === "AVAILABLE"
-                          ? "bg-emerald-50 text-emerald-700 border-emerald-200"
-                          : "bg-amber-50 text-amber-700 border-amber-200"
-                      }`}
+                    {/* Specs Table */}
+                    <div className="rounded-xl bg-[#0E1B33] border border-[#1B325C] p-3 space-y-2 text-xs">
+                      <span className="text-[10px] uppercase font-mono tracking-wider text-[#38BDF8] block font-semibold">
+                        Technical Specifications
+                      </span>
+                      {Object.entries(item.specs).map(([specKey, specVal]) => (
+                        <div key={specKey} className="flex justify-between py-1 border-b border-[#1B325C]/60 last:border-none">
+                          <span className="text-[#94A3B8]">{specKey}:</span>
+                          <span className="text-white font-medium text-right">{specVal}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-2">
+                      <span className="text-xs text-[#94A3B8]">Indicative Lease Rate:</span>
+                      <span className="text-sm font-bold text-[#D4AF37] font-mono">
+                        {item.dailyRateNgn}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 bg-[#0E1B33] border-t border-[#1B325C] flex items-center justify-between gap-3">
+                    <span className="text-xs text-[#CBD5E1] flex items-center space-x-1 font-medium">
+                      <MapPin className="w-3.5 h-3.5 text-[#38BDF8]" />
+                      <span>Warri Base Mobilization</span>
+                    </span>
+
+                    <a
+                      href={hireWhatsappUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-brand-primary inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md cursor-pointer"
                     >
-                      {item.status}
-                    </span>
-                  </div>
-
-                  {/* Specs Table */}
-                  <div className="rounded-xl bg-slate-50 border border-slate-200 p-3 space-y-2 text-xs">
-                    <span className="text-[10px] uppercase font-mono tracking-wider text-brandBlue-600 block font-semibold">
-                      Technical Specifications
-                    </span>
-                    {Object.entries(item.specs).map(([specKey, specVal]) => (
-                      <div key={specKey} className="flex justify-between py-1 border-b border-slate-200/60 last:border-none">
-                        <span className="text-slate-500">{specKey}:</span>
-                        <span className="text-navy-950 font-medium text-right">{specVal}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="flex items-center justify-between pt-2">
-                    <span className="text-xs text-slate-500">Indicative Lease Rate:</span>
-                    <span className="text-sm font-bold text-brandBlue-700 font-mono">
-                      {item.dailyRateNgn}
-                    </span>
+                      <span>Enquire for Lease</span>
+                      <ArrowRight className="w-4 h-4 text-[#050B18]" />
+                    </a>
                   </div>
                 </div>
-
-                <div className="p-4 bg-slate-50 border-t border-slate-200 flex items-center justify-between gap-3">
-                  <span className="text-xs text-slate-600 flex items-center space-x-1 font-medium">
-                    <MapPin className="w-3.5 h-3.5 text-brandBlue-600" />
-                    <span>Warri Base Mobilization</span>
-                  </span>
-
-                  <a
-                    href={hireWhatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center space-x-1.5 px-4 py-2 rounded-lg bg-brandBlue-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-brandBlue-700 shadow-sm transition-all"
-                  >
-                    <span>Enquire for Lease</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </a>
-                </div>
-              </div>
-            </Tilt3DCard>
-          );
-        })}
+              </Tilt3DCard>
+            );
+          })}
         </div>
       </div>
     </div>

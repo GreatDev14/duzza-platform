@@ -76,7 +76,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#140A05",
+  themeColor: "#050B18",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -89,13 +89,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-[#140A05]`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable} ${jetbrainsMono.variable} bg-[#050B18]`} suppressHydrationWarning>
       <head>
         <meta httpEquiv="X-Content-Type-Options" content="nosniff" />
         <meta httpEquiv="X-Frame-Options" content="SAMEORIGIN" />
         <meta name="referrer" content="strict-origin-when-cross-origin" />
       </head>
-      <body className="min-h-screen max-w-full overflow-x-hidden bg-[#140A05] text-[#F5EBE1] flex flex-col selection:bg-[#D4AF37] selection:text-[#140A05] antialiased font-sans">
+      <body className="min-h-screen max-w-full overflow-x-hidden bg-[#050B18] text-[#F1F5F9] flex flex-col selection:bg-[#D4AF37] selection:text-[#050B18] antialiased font-sans">
         <BotIdClient
           protect={[
             { path: "/api/auth/login", method: "POST" },
@@ -105,7 +105,7 @@ export default function RootLayout({
         />
         <CorporateWelcomeScreen />
         <EnterpriseNavbar />
-        <main className="flex-1 pt-20 flex flex-col bg-[#140A05] max-w-full overflow-x-hidden">
+        <main className="flex-1 pt-20 flex flex-col bg-[#050B18] max-w-full overflow-x-hidden">
           {children}
         </main>
         <EnterpriseFooter />

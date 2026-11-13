@@ -9,77 +9,84 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Luxury Deep Earth Brown & Pale Gilded Gold (Gilded Obsidian Aesthetic)
+        // Prestige Dark Blue & Gilded Champagne Gold Palette
         brandBlue: {
-          50: "#1C110A",  // Deepest obsidian brown
-          100: "#26170E", // Dark umber base
-          200: "#382315", // Rich chocolate brown
-          300: "#4D311E", // Warm roasted coffee
-          400: "#6B4429", // Saddle bronze
-          500: "#B88E4F", // Pale burnished gold
-          600: "#D4AF37", // Iconic Glowing Pale Gold
-          700: "#EED9B3", // Soft pale champagne gold
-          800: "#F5EBE1", // Ivory pearl
-          900: "#FAF7F2", // Crisp light text highlight
+          50: "#091224",  // Deep elevated navy
+          100: "#0E1B33", // Sapphire navy card
+          200: "#142547", // Interactive navy
+          300: "#1B325C", // Crisp navy border
+          400: "#254882", // Vivid navy accent
+          500: "#0284C7", // Cyan azure
+          600: "#D4AF37", // Iconic Glowing Pale Gold (from Gilded Quiet Hours)
+          700: "#E5C378", // Champagne Gold
+          800: "#E2E8F0", // Slate pearl text
+          900: "#F8FAFC", // Crisp white-gold highlight
           950: "#FFFFFF",
         },
         navy: {
-          800: "#2B1A10",
-          900: "#1E110A",
-          950: "#140A05",
+          800: "#0E1B33",
+          900: "#091224",
+          950: "#050B18", // Deepest Midnight Navy
         },
-        seaTurquoise: "#D4AF37",
-        seaBlue: "#B88E4F",
-        sand: "#1A0F08",
+        seaTurquoise: "#00E5FF",
+        seaBlue: "#38BDF8",
+        sand: "#070E1E",
         theme: {
-          bg: "#140A05",        // Ultra-luxurious dark espresso/obsidian
-          surface: "#1C110A",   // Elevated dark card surface
-          card: "#26170E",      // Card container
-          cardHover: "#331E12", // Interactive hover card
-          border: "#3D2415",    // Subtle gilded border
-          borderHover: "#D4AF37",
+          bg: "#050B18",        // Deepest Midnight Dark Blue
+          surface: "#091224",   // Elevated Navy Surface
+          card: "#0E1B33",      // Midnight Navy Card
+          cardHover: "#142547", // Interactive Hover
+          border: "#1B325C",    // Navy Border
+          borderHover: "#D4AF37",// Glowing Gold Border Hover
         },
         gold: {
-          light: "#FFF6DE",
-          pale: "#EED9B3",
-          DEFAULT: "#D4AF37", // Glowing Pale Gold
-          glow: "#F3C966",
-          dark: "#99731C",
+          light: "#FFF8E7",
+          pale: "#F3E5AB",
+          DEFAULT: "#D4AF37",   // Glowing Pale Gold
+          glow: "#F5D77F",
+          dark: "#B88E28",
+        },
+        azure: {
+          light: "#BAE6FD",
+          DEFAULT: "#38BDF8",
+          glow: "#00E5FF",
+          dark: "#0284C7",
         },
         brown: {
-          50: "#FAF7F2",
-          100: "#F3ECE1",
-          200: "#E5D7C3",
-          300: "#CDB697",
-          400: "#B0926C",
-          500: "#8B5A2B",
-          600: "#6E431F",
-          700: "#543317",
-          800: "#382315",
-          900: "#26170E",
-          950: "#140A05",
+          // Re-mapped to harmonized deep navy for backward compatibility
+          50: "#F8FAFC",
+          100: "#F1F5F9",
+          200: "#E2E8F0",
+          300: "#CBD5E1",
+          400: "#94A3B8",
+          500: "#64748B",
+          600: "#334155",
+          700: "#1E293B",
+          800: "#0E1B33",
+          900: "#091224",
+          950: "#050B18",
         },
         projects: {
-          slate: "#1C110A",
+          slate: "#091224",
           orange: "#D4AF37",
-          orangeGlow: "#F3C966",
-          cyan: "#B88E4F",
+          orangeGlow: "#F5D77F",
+          cyan: "#38BDF8",
         },
         branding: {
-          obsidian: "#140A05",
+          obsidian: "#050B18",
           lime: "#D4AF37",
-          limeGlow: "#F3C966",
-          emerald: "#B88E4F",
+          limeGlow: "#00E5FF",
+          emerald: "#38BDF8",
         },
         fashion: {
-          burgundy: "#401812",
-          rose: "#B88E4F",
-          champagne: "#FAF5ED",
+          burgundy: "#0A1329",
+          rose: "#E5C378",
+          champagne: "#F8FAFC",
         },
         bakery: {
-          espresso: "#1A0F08",
+          espresso: "#070E1E",
           amber: "#D4AF37",
-          honey: "#B88E4F",
+          honey: "#E5C378",
         },
       },
       fontFamily: {
@@ -89,32 +96,46 @@ const config: Config = {
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "blue-glow": "radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.15) 0%, transparent 60%)",
-        "gold-glow": "radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.22) 0%, rgba(139, 90, 43, 0.08) 50%, transparent 75%)",
-        "ocean-pattern": "linear-gradient(180deg, #FDF7EB 0%, #FFFFFF 100%)",
+        "blue-glow": "radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.18) 0%, transparent 65%)",
+        "gold-glow": "radial-gradient(circle at 50% 30%, rgba(212, 175, 55, 0.25) 0%, rgba(14, 27, 51, 0.4) 50%, transparent 75%)",
+        "ocean-pattern": "linear-gradient(180deg, #050B18 0%, #0E1B33 100%)",
       },
       animation: {
         "pulse-glow": "pulse-glow 4s ease-in-out infinite",
         "float": "float 6s ease-in-out infinite",
         "shimmer": "shimmer 2.5s infinite",
         "water-ripple": "water-ripple 8s ease-in-out infinite",
+        "spin-slow": "spin 25s linear infinite",
       },
       keyframes: {
         "pulse-glow": {
-          "0%, 100%": { opacity: "0.5", transform: "scale(1)" },
-          "50%": { opacity: "0.9", transform: "scale(1.05)" },
+          "0%, 100%": { opacity: "0.4", transform: "scale(1)" },
+          "50%": { opacity: "0.8", transform: "scale(1.05)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
         },
         "shimmer": {
-          "100%": { transform: "translateX(100%)" },
+          "0%": { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "200% 0" },
         },
         "water-ripple": {
-          "0%, 100%": { transform: "scale(1) rotate(0deg)" },
-          "50%": { transform: "scale(1.03) rotate(0.5deg)" },
+          "0%": { transform: "scale(0.95)", opacity: "0.8" },
+          "50%": { transform: "scale(1.05)", opacity: "0.4" },
+          "100%": { transform: "scale(0.95)", opacity: "0.8" },
         },
+      },
+      boxShadow: {
+        "subtle": "0 2px 10px rgba(0,0,0,0.5)",
+        "card": "0 10px 30px -10px rgba(0, 0, 0, 0.6)",
+        "card-hover": "0 20px 40px -15px rgba(0, 0, 0, 0.8), 0 0 25px rgba(212, 175, 55, 0.2)",
+        "glow": "0 0 30px rgba(212, 175, 55, 0.25)",
+        "glow-cyan": "0 0 30px rgba(56, 189, 248, 0.25)",
+      },
+      screens: {
+        "xs": "375px",
+        "2xs": "320px",
       },
     },
   },

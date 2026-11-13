@@ -316,16 +316,16 @@ export default function Cadastral3DScanner() {
       />
 
       {/* Top HUD: Robotic Total Station Telemetry */}
-      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-lg space-y-1.5 pointer-events-none">
-        <div className="flex items-center space-x-2 text-xs font-bold text-navy-950">
-          <Crosshair className="w-4 h-4 text-amber-500 animate-spin-slow" />
+      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1.5 pointer-events-none">
+        <div className="flex items-center space-x-2 text-xs font-bold text-white">
+          <Crosshair className="w-4 h-4 text-[#D4AF37] animate-spin-slow" />
           <span>Robotic Total Station & 3D Scanner Array</span>
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-slate-600">
-          <div>E: <strong className="text-navy-950">{coords.easting} m</strong></div>
-          <div>N: <strong className="text-navy-950">{coords.northing} m</strong></div>
-          <div>Hz: <strong className="text-brandBlue-600">{coords.hzAngle}</strong></div>
-          <div>Elev: <strong className="text-emerald-700">{coords.elevation} m MSL</strong></div>
+        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
+          <div>E: <strong className="text-white">{coords.easting} m</strong></div>
+          <div>N: <strong className="text-white">{coords.northing} m</strong></div>
+          <div>Hz: <strong className="text-[#38BDF8]">{coords.hzAngle}</strong></div>
+          <div>Elev: <strong className="text-[#D4AF37]">{coords.elevation} m MSL</strong></div>
         </div>
       </div>
 
@@ -335,8 +335,8 @@ export default function Cadastral3DScanner() {
           onClick={() => setLaserActive(!laserActive)}
           className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase transition-all shadow-sm flex items-center space-x-1.5 ${
             laserActive
-              ? "bg-amber-500 text-white shadow-amber-500/20"
-              : "bg-white text-slate-600 border border-slate-200"
+              ? "bg-[#D4AF37] text-[#050B18] shadow-[#D4AF37]/20"
+              : "bg-[#091224] text-[#CBD5E1] border border-[#1B325C]"
           }`}
         >
           <Zap className="w-3.5 h-3.5" />
@@ -345,12 +345,12 @@ export default function Cadastral3DScanner() {
       </div>
 
       {/* Bottom Drag Instruction */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-slate-500 px-3 py-1.5 rounded-xl bg-white/80 backdrop-blur-md border border-slate-200">
+      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-[#94A3B8] px-3 py-1.5 rounded-xl bg-[#091224]/90 backdrop-blur-md border border-[#1B325C]">
         <span className="flex items-center space-x-1.5">
-          <RotateCcw className="w-3 h-3 text-brandBlue-600" />
+          <RotateCcw className="w-3 h-3 text-[#D4AF37]" />
           <span>Drag to orbit 3D station 360°</span>
         </span>
-        <span className="text-[10px] text-brandBlue-700 font-bold">UTM ZONE 31N/32N (WARRI BASE)</span>
+        <span className="text-[10px] text-[#D4AF37] font-bold">UTM ZONE 31N/32N (WARRI BASE)</span>
       </div>
     </div>
   );

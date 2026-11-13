@@ -4,13 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import {
   UserPlus,
+  ShieldAlert,
   Mail,
   Lock,
   User,
-  Clock,
   ArrowRight,
   AlertCircle,
-  ShieldAlert,
+  Clock,
 } from "lucide-react";
 
 export default function CmsSignupPage() {
@@ -35,7 +35,7 @@ export default function CmsSignupPage() {
 
       const data = await res.json();
       if (!res.ok) {
-        setErrorMsg(data.error || "Registration failed.");
+        setErrorMsg(data.error || "Failed to submit registration request.");
         setLoading(false);
         return;
       }
@@ -43,39 +43,39 @@ export default function CmsSignupPage() {
       setCreatedPending(true);
       setLoading(false);
     } catch {
-      setErrorMsg("Network error during registration.");
+      setErrorMsg("Network error connecting to IAM server.");
       setLoading(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#140A05] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
+    <div className="min-h-screen bg-[#050B18] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-md">
-        <div className="bg-[#1C110A] rounded-3xl border border-[#D4AF37]/35 shadow-2xl shadow-black/90 p-7 sm:p-9 space-y-6">
+        <div className="bg-[#091224] rounded-3xl border border-[#1B325C] shadow-2xl shadow-black/90 p-7 sm:p-9 space-y-6">
           <div className="space-y-2 text-center">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[11px] font-mono font-bold text-[#D4AF37]">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#0E1B33] border border-[#D4AF37]/40 text-[11px] font-mono font-bold text-[#D4AF37]">
               <UserPlus className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>NEW ACCOUNT REGISTRATION</span>
             </div>
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FFF6DE]">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-white">
               Request CMS Access
             </h1>
-            <p className="text-xs sm:text-sm text-[#EED9B3]/80">
+            <p className="text-xs sm:text-sm text-[#CBD5E1]/80">
               New signups default to <strong className="text-[#D4AF37]">CONTRIBUTOR</strong> with{" "}
-              <strong className="text-[#F3C966]">PENDING</strong> status until approved.
+              <strong className="text-[#38BDF8]">PENDING</strong> status until approved.
             </p>
           </div>
 
           {createdPending ? (
-            <div className="p-5 rounded-2xl bg-[#26170E] border border-[#D4AF37]/40 text-center space-y-4">
-              <div className="w-12 h-12 rounded-full bg-[#382315] text-[#D4AF37] flex items-center justify-center mx-auto border border-[#D4AF37]/50">
+            <div className="p-5 rounded-2xl bg-[#0E1B33] border border-[#D4AF37]/40 text-center space-y-4">
+              <div className="w-12 h-12 rounded-full bg-[#091224] text-[#D4AF37] flex items-center justify-center mx-auto border border-[#D4AF37]/50">
                 <Clock className="w-6 h-6" />
               </div>
               <div className="space-y-1.5">
-                <h2 className="font-display font-bold text-lg text-[#FFF6DE]">
+                <h2 className="font-display font-bold text-lg text-white">
                   Account Status: PENDING Approval
                 </h2>
-                <p className="text-xs text-[#EED9B3]/85 leading-relaxed">
+                <p className="text-xs text-[#CBD5E1]/85 leading-relaxed">
                   Your account for <strong>{email}</strong> has been created with role{" "}
                   <strong>CONTRIBUTOR</strong> and status <strong>PENDING</strong>. You do not
                   have dashboard access until an <strong>ADMIN</strong> or{" "}
@@ -84,10 +84,10 @@ export default function CmsSignupPage() {
               </div>
               <Link
                 href="/cms/login"
-                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-[#140A05] font-bold text-xs uppercase tracking-wider"
+                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider"
               >
-                <span className="text-[#140A05]">Return to Login</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#140A05]" />
+                <span>Return to Login</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#050B18]" />
               </Link>
             </div>
           ) : (
@@ -101,45 +101,45 @@ export default function CmsSignupPage() {
 
               <form onSubmit={handleSignup} className="space-y-4">
                 <div>
-                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#D4AF37] mb-1.5">
                     Full Name
                   </label>
                   <div className="relative">
-                    <User className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                    <User className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3" />
                     <input
                       type="text"
                       required
                       value={name}
                       onChange={(e) => setName(e.target.value)}
                       placeholder="e.g. Chinedu Okafor"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#1B325C] text-sm text-white bg-[#0E1B33] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 placeholder-[#94A3B8]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#D4AF37] mb-1.5">
                     Email Address
                   </label>
                   <div className="relative">
-                    <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                    <Mail className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3" />
                     <input
                       type="email"
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="staff@duzza.com.ng"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#1B325C] text-sm text-white bg-[#0E1B33] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 placeholder-[#94A3B8]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-mono font-bold text-[#6E431F] mb-1.5">
+                  <label className="block text-xs font-mono font-bold text-[#D4AF37] mb-1.5">
                     Password
                   </label>
                   <div className="relative">
-                    <Lock className="w-4 h-4 text-stone-400 absolute left-3.5 top-3" />
+                    <Lock className="w-4 h-4 text-[#94A3B8] absolute left-3.5 top-3" />
                     <input
                       type="password"
                       required
@@ -147,36 +147,36 @@ export default function CmsSignupPage() {
                       value={password}
                       onChange={(e) => setPassword(e.target.value)}
                       placeholder="Minimum 4 characters"
-                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-stone-300 text-sm text-[#241409] bg-stone-50/50 focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20"
+                      className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-[#1B325C] text-sm text-white bg-[#0E1B33] focus:outline-none focus:border-[#D4AF37] focus:ring-2 focus:ring-[#D4AF37]/20 placeholder-[#94A3B8]"
                     />
                   </div>
                 </div>
 
-                <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-200 flex items-start space-x-2 text-[11px] text-amber-900">
-                  <ShieldAlert className="w-4 h-4 text-[#8B5A2B] shrink-0 mt-0.5" />
+                <div className="p-3 rounded-xl bg-[#0E1B33] border border-[#1B325C] flex items-start space-x-2 text-[11px] text-[#CBD5E1]">
+                  <ShieldAlert className="w-4 h-4 text-[#D4AF37] shrink-0 mt-0.5" />
                   <span>
                     All new accounts are quarantined in <strong>PENDING</strong> state until
-                    approved by Executive Admin or Mr. Caleb (Manager).
+                    approved by Executive Admin or Manager.
                   </span>
                 </div>
 
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-brand-primary w-full py-3.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
+                  className="btn-brand-primary w-full py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider shadow-md flex items-center justify-center space-x-2 cursor-pointer disabled:opacity-50"
                 >
-                  <span className="text-white font-bold">
+                  <span className="text-[#050B18] font-bold">
                     {loading ? "Submitting Request..." : "Submit Access Request"}
                   </span>
-                  <ArrowRight className="w-4 h-4 text-[#F3C966]" />
+                  <ArrowRight className="w-4 h-4 text-[#050B18]" />
                 </button>
               </form>
             </>
           )}
 
-          <div className="pt-2 text-center text-xs text-stone-500">
+          <div className="pt-2 text-center text-xs text-[#94A3B8]">
             Already approved?{" "}
-            <Link href="/cms/login" className="font-bold text-[#8B5A2B] hover:text-[#6E431F] hover:underline">
+            <Link href="/cms/login" className="font-bold text-[#D4AF37] hover:text-white hover:underline">
               Sign In to CMS
             </Link>
           </div>
@@ -185,4 +185,3 @@ export default function CmsSignupPage() {
     </div>
   );
 }
-

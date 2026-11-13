@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState, useRef } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { UtensilsCrossed, Coffee, Check, ArrowRight, Cake, ChefHat, Sparkles } from "lucide-react";
+import { UtensilsCrossed, Check, ArrowRight, Wheat, Clock, Heart } from "lucide-react";
 import RealFoodShowcase from "@/components/bakery/RealFoodShowcase";
 import { gsap, useGSAP } from "@/lib/animations/gsap";
 
@@ -22,19 +21,19 @@ export default function DuzzaBakeryPage() {
 
   const bakeryMoodboard = [
     {
-      title: "Traditional Artisan Sourdough & Crusts",
-      tag: "Slow Fermentation",
-      src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85",
+      title: "Wild Yeast Country Sourdough Loaves",
+      tag: "48hr Cold Ferment",
+      src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200",
     },
     {
-      title: "Delicate French Patisserie & Viennoiserie",
-      tag: "Gourmet Pastries",
-      src: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=85",
+      title: "Artisan Butter Croissants & Viennoiserie",
+      tag: "French Patisserie",
+      src: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1200",
     },
     {
-      title: "Bespoke Celebratory & Wedding Cakes",
-      tag: "Confectionery",
-      src: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85",
+      title: "Bespoke Multi-Tier Celebration Cakes",
+      tag: "Celebration Cakes",
+      src: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200",
     },
   ];
 
@@ -96,7 +95,7 @@ export default function DuzzaBakeryPage() {
 
       const data = await res.json();
       if (!res.ok) {
-        throw new Error(data.error || "Failed to submit waitlist registration");
+        throw new Error(data.error || "Failed to submit tasting registration");
       }
 
       setSubmitted(true);
@@ -108,25 +107,28 @@ export default function DuzzaBakeryPage() {
   };
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen text-slate-900 font-sans selection:bg-amber-500 selection:text-white">
+    <div ref={containerRef} className="bg-[#050B18] min-h-screen text-[#F1F5F9] font-sans selection:bg-[#D4AF37] selection:text-[#050B18]">
       {/* Culinary Warm Header */}
-      <section className="relative py-20 lg:py-28 border-b border-slate-200 overflow-hidden bg-gradient-to-b from-amber-50/50 via-white to-white">
+      <section className="relative py-20 lg:py-28 border-b border-[#1B325C] overflow-hidden bg-gradient-to-b from-[#050B18] via-[#07132B] to-[#050B18]">
+        {/* Glow */}
+        <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none" />
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-5 space-y-6">
-              <div className="gsap-bakery-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-amber-50 border border-amber-200 text-xs font-mono text-amber-800 font-bold shadow-sm">
-                <UtensilsCrossed className="w-3.5 h-3.5 text-amber-600" />
+              <div className="gsap-bakery-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224] border border-[#D4AF37]/35 text-xs font-mono text-[#D4AF37] font-bold shadow-sm">
+                <UtensilsCrossed className="w-3.5 h-3.5 text-[#D4AF37]" />
                 <span>DUZZA BAKERY & EATERY • COMING SOON TEASER</span>
               </div>
 
-              <h1 className="gsap-bakery-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-navy-950 tracking-tight leading-tight">
+              <h1 className="gsap-bakery-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-white tracking-tight leading-tight">
                 Warm Culinary Craft &{" "}
-                <span className="text-gradient-amber font-light block sm:inline">
+                <span className="text-gradient-gold font-light block sm:inline">
                   Artisan Confectionery.
                 </span>
               </h1>
 
-              <p className="gsap-bakery-desc text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+              <p className="gsap-bakery-desc text-base sm:text-lg text-[#CBD5E1]/90 leading-relaxed font-light">
                 Slow-fermented artisan breads, delicate morning viennoiserie, celebratory custom cakes, 
                 and premium all-day dining experiences crafted with uncompromised hospitality.
               </p>
@@ -134,7 +136,7 @@ export default function DuzzaBakeryPage() {
               <div className="pt-2 flex flex-wrap gap-4">
                 <a
                   href="#waitlist-box"
-                  className="px-8 py-4 rounded-xl bg-amber-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-amber-700 transition-all shadow-md shadow-amber-600/25"
+                  className="btn-brand-primary px-8 py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-widest transition-all shadow-md cursor-pointer"
                 >
                   Reserve Private Tasting Invitation
                 </a>
@@ -142,7 +144,9 @@ export default function DuzzaBakeryPage() {
             </div>
 
             <div className="lg:col-span-7">
-              <RealFoodShowcase />
+              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-2 shadow-2xl">
+                <RealFoodShowcase />
+              </div>
             </div>
           </div>
         </div>
@@ -150,25 +154,25 @@ export default function DuzzaBakeryPage() {
 
       {/* Culinary Direction Showcase */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#1B325C] pb-6">
           <div className="space-y-1">
-            <span className="text-xs font-mono uppercase tracking-widest text-amber-600 font-bold">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold">
               Culinary Philosophy
             </span>
-            <h2 className="text-3xl font-display font-bold text-navy-950">
+            <h2 className="text-3xl font-display font-bold text-white">
               The Daily Hearth Concept
             </h2>
           </div>
-          <p className="text-xs text-slate-500 font-mono">FLAGSHIP LOCATION • WARRI, DELTA STATE</p>
+          <p className="text-xs text-[#94A3B8] font-mono">FLAGSHIP LOCATION • WARRI, DELTA STATE</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {bakeryMoodboard.map((item, idx) => (
             <div
               key={idx}
-              className="gsap-bakery-card rounded-2xl overflow-hidden bg-white border border-slate-200 group hover:border-amber-300 hover:shadow-xl transition-all shadow-sm"
+              className="gsap-bakery-card rounded-2xl overflow-hidden bg-[#091224] border border-[#1B325C] group hover:border-[#D4AF37]/50 hover:shadow-2xl transition-all shadow-md"
             >
-              <div className="relative h-72 w-full overflow-hidden bg-slate-100">
+              <div className="relative h-72 w-full overflow-hidden bg-[#050B18]">
                 <Image
                   src={item.src}
                   alt={item.title}
@@ -176,12 +180,12 @@ export default function DuzzaBakeryPage() {
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
-                <span className="absolute top-3 left-3 text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-white/90 text-navy-950 font-bold shadow-md">
+                <span className="absolute top-3 left-3 text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-[#050B18]/90 text-white font-bold shadow-md border border-[#1B325C]">
                   {item.tag}
                 </span>
               </div>
               <div className="p-6">
-                <h3 className="font-display font-bold text-lg text-navy-950 group-hover:text-amber-600 transition-colors">
+                <h3 className="font-display font-bold text-lg text-white group-hover:text-[#D4AF37] transition-colors">
                   {item.title}
                 </h3>
               </div>
@@ -192,97 +196,97 @@ export default function DuzzaBakeryPage() {
 
       {/* VIP Tasting Waitlist Box */}
       <section id="waitlist-box" className="py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl bg-white border border-amber-200 shadow-xl space-y-6">
-          <div className="border-b border-slate-200 pb-4">
-            <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-600 block">
+        <div className="p-8 sm:p-12 rounded-3xl bg-[#091224] border border-[#1B325C] shadow-2xl space-y-6">
+          <div className="border-b border-[#1B325C] pb-4">
+            <span className="text-xs font-mono font-bold uppercase tracking-widest text-[#D4AF37] block">
               PRIVATE TASTING GUESTLIST
             </span>
-            <h3 className="text-2xl sm:text-3xl font-display font-bold text-navy-950 mt-1">
+            <h3 className="text-2xl sm:text-3xl font-display font-bold text-white mt-1">
               Join the Bakery & Eatery Launch List
             </h3>
-            <p className="text-xs text-slate-600 mt-1 font-light">
+            <p className="text-xs text-[#CBD5E1]/80 mt-1 font-light">
               Receive invitations to our pre-opening chef table tastings and complimentary introductory bread boxes.
             </p>
           </div>
 
           {submitted ? (
-            <div className="p-8 rounded-2xl bg-amber-50 border border-amber-200 text-center space-y-3">
-              <div className="w-12 h-12 rounded-full bg-amber-600 text-white mx-auto flex items-center justify-center">
+            <div className="p-8 rounded-2xl bg-[#0E1B33] border border-[#D4AF37]/40 text-center space-y-3">
+              <div className="w-12 h-12 rounded-full bg-[#D4AF37] text-[#050B18] mx-auto flex items-center justify-center font-bold">
                 <Check className="w-6 h-6" />
               </div>
-              <h4 className="font-display font-bold text-xl text-navy-950">
+              <h4 className="font-display font-bold text-xl text-white">
                 You're on the Duzza Bakery Guestlist!
               </h4>
-              <p className="text-xs text-slate-600 max-w-md mx-auto leading-relaxed">
+              <p className="text-xs text-[#CBD5E1] max-w-md mx-auto leading-relaxed">
                 Thank you, <strong>{name}</strong>. We look forward to welcoming you at our Warri bistro doors.
               </p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {errorMsg && (
-                <div className="p-3 rounded-lg bg-red-50 border border-red-200 text-xs text-red-700">
+                <div className="p-3 rounded-lg bg-red-950/50 border border-red-500/50 text-xs text-red-300">
                   {errorMsg}
                 </div>
               )}
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Full Name</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Full Name</label>
                   <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="e.g. David Efe"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">Email Address</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Email Address</label>
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="david@company.com"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">WhatsApp Number</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">WhatsApp Number</label>
                   <input
                     type="tel"
                     required
                     value={whatsapp}
                     onChange={(e) => setWhatsapp(e.target.value)}
                     placeholder="+234 803 123 4567"
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-slate-700 mb-1">City / Neighborhood</label>
+                  <label className="block text-xs font-medium text-[#CBD5E1] mb-1">City / Neighborhood</label>
                   <input
                     type="text"
                     required
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                     placeholder="Warri, Effurun, Benin City, Lagos..."
-                    className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-amber-500"
+                    className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white placeholder-[#94A3B8] focus:outline-none focus:border-[#D4AF37]"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-slate-700 mb-1">Primary Interest</label>
+                <label className="block text-xs font-medium text-[#CBD5E1] mb-1">Primary Interest</label>
                 <select
                   value={diningInterest}
                   onChange={(e) => setDiningInterest(e.target.value)}
-                  className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-amber-500"
+                  className="w-full bg-[#0E1B33] border border-[#1B325C] rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-[#D4AF37]"
                 >
                   <option value="ARTISAN_BREAD_AND_PASTRIES">Artisan Sourdough & Morning Pastries</option>
                   <option value="CELEBRATION_CAKES">Bespoke Wedding & Milestone Celebration Cakes</option>
@@ -298,18 +302,18 @@ export default function DuzzaBakeryPage() {
                   id="bakery-consent"
                   checked={consent}
                   onChange={(e) => setConsent(e.target.checked)}
-                  className="mt-0.5 rounded border-slate-300 text-amber-600 focus:ring-amber-500"
+                  className="mt-0.5 rounded border-[#1B325C] text-[#D4AF37] focus:ring-[#D4AF37]"
                 />
-                <label htmlFor="bakery-consent" className="text-[11px] text-slate-600">
+                <label htmlFor="bakery-consent" className="text-[11px] text-[#CBD5E1]">
                   I agree to receive communications from Duzza Bakery under the{" "}
-                  <strong className="text-navy-950">Nigeria Data Protection Act 2023</strong>.
+                  <strong className="text-white">Nigeria Data Protection Act 2023</strong>.
                 </label>
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-4 rounded-xl bg-amber-600 text-white font-bold text-xs uppercase tracking-widest hover:bg-amber-700 transition-all shadow-md shadow-amber-600/20 disabled:opacity-50"
+                className="btn-brand-primary w-full py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-widest transition-all shadow-md disabled:opacity-50 cursor-pointer"
               >
                 {loading ? "Registering for Private Tasting..." : "Request Exclusive Tasting Invitation"}
               </button>

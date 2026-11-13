@@ -24,7 +24,7 @@ export default function Bakery3DArtisan() {
     const height = container.clientHeight || 460;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8fafc);
+    scene.background = new THREE.Color(0x050b18);
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(0, 3, 13);
@@ -231,33 +231,33 @@ export default function Bakery3DArtisan() {
   }, []);
 
   return (
-    <div className="relative w-full h-[440px] sm:h-[480px] rounded-3xl bg-slate-50/80 border border-slate-200 overflow-hidden shadow-lg select-none">
+    <div className="relative w-full h-[440px] sm:h-[480px] rounded-3xl bg-[#050B18] border border-[#1B325C] overflow-hidden shadow-2xl select-none">
       <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top HUD */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-amber-200 text-xs font-mono text-amber-800 shadow-md">
-          <UtensilsCrossed className="w-3.5 h-3.5 text-amber-600" />
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] shadow-md">
+          <UtensilsCrossed className="w-3.5 h-3.5 text-[#D4AF37]" />
           <span className="font-bold">DUZZA ARTISAN BAKERY & PATISSERIE</span>
-          <span className="text-slate-300">•</span>
-          <span className="text-emerald-600 font-semibold">SLOW FERMENTATION 3D LAB</span>
+          <span className="text-[#1B325C]">•</span>
+          <span className="text-[#38BDF8] font-semibold">SLOW FERMENTATION 3D LAB</span>
         </div>
 
-        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-slate-600 shadow-sm">
-          <Eye className="w-3 h-3 text-amber-600 animate-pulse" />
+        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#091224]/90 backdrop-blur-md border border-[#1B325C] text-[11px] font-mono text-[#94A3B8] shadow-sm">
+          <Eye className="w-3 h-3 text-[#D4AF37] animate-pulse" />
           <span>Interactive 3D Crumb & Crust • Drag to Rotate</span>
         </div>
       </div>
 
       {/* Bottom Telemetry */}
       <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-        <div className="flex items-center space-x-2 bg-white/95 backdrop-blur-md border border-slate-200 px-4 py-2 rounded-2xl shadow-md text-xs font-mono text-slate-700">
-          <Coffee className="w-4 h-4 text-amber-600" />
-          <span>Specialty: <strong className="text-navy-950 font-bold">48-Hr Wild Yeast Sourdough & French Viennoiserie</strong></span>
+        <div className="flex items-center space-x-2 bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] px-4 py-2 rounded-2xl shadow-md text-xs font-mono text-[#CBD5E1]">
+          <Coffee className="w-4 h-4 text-[#D4AF37]" />
+          <span>Specialty: <strong className="text-white font-bold">48-Hr Wild Yeast Sourdough & French Viennoiserie</strong></span>
         </div>
 
-        <div className="bg-amber-600 text-white px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="bg-[#D4AF37] text-[#050B18] px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
+          <Sparkles className="w-3.5 h-3.5 text-[#050B18]" />
           <span>WARRI FLAGSHIP GOURMET</span>
         </div>
       </div>

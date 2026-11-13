@@ -32,7 +32,7 @@ export default function CorporateLiveBackground() {
       color: string;
     }
 
-    const colors = ["#8B5A2B", "#D4AF37", "#F3C966", "#B88E4F", "#241409"];
+    const colors = ["#0284C7", "#D4AF37", "#38BDF8", "#F5D77F", "#00E5FF"];
 
     const points: Point[] = Array.from({ length: POINT_COUNT }, () => ({
       x: Math.random() * width,
@@ -46,11 +46,11 @@ export default function CorporateLiveBackground() {
       color: colors[Math.floor(Math.random() * colors.length)],
     }));
 
-    // Ambient floating glow orbs (Brown and Pale Gold Radiance)
+    // Ambient floating glow orbs (Midnight Blue & Pale Gold Radiance)
     const orbs = [
-      { x: width * 0.2, y: height * 0.3, r: 240, color: "rgba(212, 175, 55, 0.08)" },
-      { x: width * 0.8, y: height * 0.6, r: 280, color: "rgba(139, 90, 43, 0.06)" },
-      { x: width * 0.5, y: height * 0.85, r: 200, color: "rgba(243, 201, 102, 0.07)" },
+      { x: width * 0.2, y: height * 0.3, r: 260, color: "rgba(212, 175, 55, 0.08)" },
+      { x: width * 0.8, y: height * 0.6, r: 300, color: "rgba(56, 189, 248, 0.07)" },
+      { x: width * 0.5, y: height * 0.85, r: 220, color: "rgba(245, 215, 127, 0.06)" },
     ];
 
     let tick = 0;
@@ -93,7 +93,7 @@ export default function CorporateLiveBackground() {
           orb.r
         );
         grad.addColorStop(0, orb.color);
-        grad.addColorStop(1, "rgba(255, 255, 255, 0)");
+        grad.addColorStop(1, "rgba(5, 11, 24, 0)");
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(orb.x + driftX, orb.y + driftY, orb.r, 0, Math.PI * 2);
@@ -177,4 +177,3 @@ export default function CorporateLiveBackground() {
     />
   );
 }
-

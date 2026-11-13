@@ -25,7 +25,7 @@ export default function Branding3DPrism() {
     const height = container.clientHeight || 480;
 
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8fafc); // Clean light background
+    scene.background = new THREE.Color(0x050b18);
 
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(0, 0, 15);
@@ -245,34 +245,34 @@ export default function Branding3DPrism() {
   }, []);
 
   return (
-    <div className="relative w-full h-[460px] sm:h-[520px] rounded-3xl bg-slate-50/80 border border-slate-200 overflow-hidden shadow-lg select-none">
+    <div className="relative w-full h-[460px] sm:h-[520px] rounded-3xl bg-[#050B18] border border-[#1B325C] overflow-hidden shadow-2xl select-none">
       {/* Three.js Canvas */}
       <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
 
       {/* Top HUD */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">
-        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-brandBlue-200 text-xs font-mono text-brandBlue-800 shadow-md">
-          <Sparkles className="w-3.5 h-3.5 text-brandBlue-600 animate-spin" />
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] shadow-md">
+          <Sparkles className="w-3.5 h-3.5 text-[#D4AF37] animate-spin" />
           <span className="font-bold">DUZZA BRANDING PRISM</span>
-          <span className="text-slate-300">•</span>
-          <span className="text-emerald-600 font-semibold">3D HOLOGRAPHIC STUDIO</span>
+          <span className="text-[#1B325C]">•</span>
+          <span className="text-[#38BDF8] font-semibold">3D HOLOGRAPHIC STUDIO</span>
         </div>
 
-        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-white/90 backdrop-blur-md border border-slate-200 text-[11px] font-mono text-slate-600 shadow-sm">
-          <Eye className="w-3 h-3 text-brandBlue-600 animate-pulse" />
+        <div className="hidden sm:inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#091224]/90 backdrop-blur-md border border-[#1B325C] text-[11px] font-mono text-[#94A3B8] shadow-sm">
+          <Eye className="w-3 h-3 text-[#D4AF37] animate-pulse" />
           <span>Interactive 3D Gyro • Drag to Rotate</span>
         </div>
       </div>
 
       {/* Bottom Pillars Telemetry */}
       <div className="absolute bottom-4 left-4 right-4 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-        <div className="flex items-center space-x-2 bg-white/95 backdrop-blur-md border border-slate-200 px-4 py-2 rounded-2xl shadow-md text-xs font-mono text-slate-700">
-          <Crown className="w-4 h-4 text-brandBlue-600" />
-          <span>Focus: <strong className="text-brandBlue-700 font-bold">{activeFacet}</strong></span>
+        <div className="flex items-center space-x-2 bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] px-4 py-2 rounded-2xl shadow-md text-xs font-mono text-[#CBD5E1]">
+          <Crown className="w-4 h-4 text-[#D4AF37]" />
+          <span>Focus: <strong className="text-[#D4AF37] font-bold">{activeFacet}</strong></span>
         </div>
 
-        <div className="bg-brandBlue-600 text-white px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
-          <Globe2 className="w-3.5 h-3.5 animate-pulse" />
+        <div className="bg-[#D4AF37] text-[#050B18] px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold shadow-md flex items-center space-x-1.5">
+          <Globe2 className="w-3.5 h-3.5 animate-pulse text-[#050B18]" />
           <span>LAGOS • WARRI • LONDON REACH</span>
         </div>
       </div>

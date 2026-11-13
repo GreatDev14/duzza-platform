@@ -9,7 +9,6 @@ export default function CapabilityDownloadModule() {
   const handleDownload = () => {
     setDownloading(true);
 
-    // Dynamically generate structured Capability Statement PDF or text representation
     const rcNumber = process.env.NEXT_PUBLIC_CAC_RC_NUMBER || "RC-7149208";
     const content = `================================================================================
 DUZZA LIMITED - CORPORATE & ENGINEERING CAPABILITY STATEMENT
@@ -62,22 +61,22 @@ Generated from DUZZA LIMITED Enterprise Portal: ${new Date().toISOString()}
   };
 
   return (
-    <div className="rounded-2xl bg-slate-50 border border-slate-200 p-8 shadow-md flex flex-col md:flex-row items-center justify-between gap-6 hover:border-brandBlue-300 transition-colors duration-300">
+    <div className="rounded-2xl bg-[#091224] border border-[#1B325C] p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6 hover:border-[#D4AF37]/50 transition-colors duration-300">
       <div className="space-y-3 max-w-xl">
-        <div className="inline-flex items-center space-x-2 text-xs font-mono text-brandBlue-700 font-semibold">
-          <FileText className="w-4 h-4 text-brandBlue-600" />
+        <div className="inline-flex items-center space-x-2 text-xs font-mono text-[#D4AF37] font-semibold">
+          <FileText className="w-4 h-4 text-[#D4AF37]" />
           <span>PROCUREMENT ASSET DOSSIER</span>
         </div>
-        <h3 className="text-2xl font-display font-extrabold text-navy-950">
+        <h3 className="text-2xl font-display font-extrabold text-white">
           Download Official Capability Statement
         </h3>
-        <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-light">
+        <p className="text-xs sm:text-sm text-[#CBD5E1]/90 leading-relaxed font-light">
           Comprehensive dossier covering our CAC incorporation credentials, marine surveying assets, 
           equipment calibration sheets, HSE protocols, and key project track record in the Niger Delta.
         </p>
-        <div className="flex items-center space-x-4 text-xs font-mono text-slate-500 pt-1">
-          <span className="flex items-center space-x-1 text-slate-700 font-semibold">
-            <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+        <div className="flex items-center space-x-4 text-xs font-mono text-[#94A3B8] pt-1">
+          <span className="flex items-center space-x-1 text-[#CBD5E1] font-semibold">
+            <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
             <span>CAC CAMA 2020 Verified</span>
           </span>
           <span>•</span>
@@ -88,7 +87,7 @@ Generated from DUZZA LIMITED Enterprise Portal: ${new Date().toISOString()}
       <button
         onClick={handleDownload}
         disabled={downloading}
-        className="shrink-0 inline-flex items-center space-x-3 px-6 py-4 rounded-xl bg-brandBlue-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-brandBlue-700 transition-all shadow-md shadow-brandBlue-600/20 disabled:opacity-50 shimmer-button"
+        className="btn-brand-primary shrink-0 inline-flex items-center space-x-3 px-6 py-4 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md disabled:opacity-50 cursor-pointer"
       >
         <Download className={`w-4 h-4 ${downloading ? "animate-bounce" : ""}`} />
         <span>{downloading ? "Preparing Dossier..." : "Download Capability Dossier"}</span>
@@ -96,4 +95,3 @@ Generated from DUZZA LIMITED Enterprise Portal: ${new Date().toISOString()}
     </div>
   );
 }
-
