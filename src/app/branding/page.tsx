@@ -46,7 +46,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Energy Infrastructure CEO",
     pillar: "Executive Branding",
     country: "Nigeria / UAE",
-    imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85",
     metrics: "Speaker Kit, Bio Packaging, LinkedIn 3x Growth",
   },
   {
@@ -55,7 +55,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "West Africa Payments Operator",
     pillar: "Corporate Identity",
     country: "Nigeria",
-    imageUrl: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85",
     metrics: "Comprehensive Design Tokens & Brand Manual",
   },
   {
@@ -64,7 +64,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Championship Football Collective",
     pillar: "Merchandising",
     country: "United Kingdom",
-    imageUrl: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1200&q=85",
     metrics: "1,500 Units Produced with Custom Emblems",
   },
   {
@@ -82,7 +82,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Tech Venture Accelerator",
     pillar: "Executive Branding",
     country: "Kenya / UK",
-    imageUrl: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=85",
     metrics: "Keynote Visual Deck & International Press Kit",
   },
 ];

@@ -54,7 +54,7 @@ export async function POST(req: NextRequest) {
 
     if (!finalUrl) {
       finalUrl =
-        "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1000&q=80";
+        "https://images.unsplash.com/photo-1687876364441-899239a0157a?auto=format&fit=crop&w=1200&q=85";
     }
 
     const image = await createImage({

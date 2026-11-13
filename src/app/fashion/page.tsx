@@ -24,17 +24,17 @@ export default function DuzzaFashionPage() {
     {
       title: "Artisanal Ankara Silk Fusion",
       tag: "Couture Textiles",
-      src: "https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=1200",
+      src: "https://images.unsplash.com/photo-1687052057223-569192ffa74f?auto=format&fit=crop&w=1200&q=85",
     },
     {
       title: "Modern Savile Row x Lagos Tailoring",
       tag: "Structured Suiting",
-      src: "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
+      src: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85",
     },
     {
       title: "Handcrafted Leather & Luxury Accessories",
       tag: "Accessories",
-      src: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200",
+      src: "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=1200&q=85",
     },
   ];
 

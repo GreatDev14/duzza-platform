@@ -46,7 +46,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#38BDF8] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "Engineering and heavy construction, oil & gas field infrastructure, hydrospatial and marine survey support services, alongside certified hydrographic navigation and positioning equipment hire.",
-    image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85",
+    image: "https://images.unsplash.com/photo-1687876364441-899239a0157a?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "General Contracting & Civil Engineering Construction",
       "Oil & Gas Facility Modifications & Structural Pipeline Tie-Ins",
@@ -68,7 +68,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#D4AF37] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "Executive branding for companies and agency heads, creative media support, UGC & static promotional content for international sports brands, and global merchandising (Instagram @duzza_branding).",
-    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85",
+    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "Executive Personal Branding & Leadership Speaker Kits",
       "Corporate & Digital Brand Identity Guidelines & Design Systems",
@@ -90,7 +90,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#E5C378] border-[#1B325C]",
     borderColor: "hover:border-[#E5C378]",
     description: "Where bespoke Savile Row structure fuses with artisanal Nigerian brocade, hand-dyed cotton, and luxury leathercraft. Curated English suits, bespoke contemporary Ankara couture, and statement wearables.",
-    image: "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=1200&q=85",
+    image: "https://images.unsplash.com/photo-1687052057223-569192ffa74f?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
       "Bespoke English Tailoring & Structured Suiting",
       "Contemporary Artisanal Ankara Silk & Brocade Couture",

@@ -81,7 +81,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Use Cases": "Seafloor debris, shipwreck search, hazard clearance",
     },
     dailyRateNgn: "₦950,000 / day",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200",
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
   },
   {
     code: "EQ-SV-MINI",
