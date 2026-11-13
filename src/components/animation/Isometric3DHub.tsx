@@ -306,63 +306,67 @@ export default function Isometric3DHub() {
   }, []);
 
   return (
-    <div className="relative w-full h-[320px] sm:h-[420px] lg:h-[480px] rounded-2xl sm:rounded-3xl bg-gradient-to-b from-white via-slate-50/80 to-white border border-slate-200/90 shadow-2xl overflow-hidden group">
+    <div className="relative w-full h-[260px] sm:h-[380px] lg:h-[460px] rounded-2xl sm:rounded-3xl bg-[#050B18] border border-[#1B325C] shadow-2xl overflow-hidden group select-none">
       {/* 3D WebGL Canvas Mount */}
       <div
         ref={mountRef}
         className="w-full h-full cursor-grab active:cursor-grabbing"
+        style={{ touchAction: "pan-y" }}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       />
 
       {/* Floating 3D HUD Badges (Gilded Night Tone) */}
-      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
-        <div className="flex items-center space-x-2 text-xs font-bold text-[#FFFFFF]">
-          <Activity className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl space-y-0.5 sm:space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[11px] sm:text-xs font-bold text-[#FFFFFF]">
+          <Activity className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse shrink-0" />
           <span>Interactive Holding Architecture</span>
         </div>
-        <span className="text-[10px] font-mono text-[#D4AF37]/80 block">Move cursor to tilt 3D platform • Scroll to scrub</span>
+        <span className="text-[9px] sm:text-[10px] font-mono text-[#D4AF37]/80 block">Warri Base • 4 Operating Pillars</span>
       </div>
 
       {/* Interactive Division Pills (Bottom Overlay - Gilded Theme) */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
+      <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1 sm:p-2 rounded-xl sm:rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
         <button
           onClick={() => setActiveNode("PROJECTS")}
           style={activeNode === "PROJECTS" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
-          className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
+          className={`flex-1 min-w-0 py-1.5 px-1 sm:px-3 rounded-lg sm:rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "PROJECTS"
               ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
               : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
           <Compass className="w-3 h-3 shrink-0 text-[#050B18]" />
-          <span className="truncate">Duzza Projects</span>
+          <span className="truncate sm:hidden">Projects</span>
+          <span className="truncate hidden sm:inline">Duzza Projects</span>
         </button>
 
         <button
           onClick={() => setActiveNode("BRANDING")}
           style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
-          className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
+          className={`flex-1 min-w-0 py-1.5 px-1 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "BRANDING"
               ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
               : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
           <Sparkles className="w-3 h-3 shrink-0 text-[#050B18]" />
-          <span className="truncate">Duzza Branding</span>
+          <span className="truncate sm:hidden">Branding</span>
+          <span className="truncate hidden sm:inline">Duzza Branding</span>
         </button>
 
         <button
           onClick={() => setActiveNode("VENTURES")}
           style={activeNode === "VENTURES" ? { backgroundColor: "#D4AF37", color: "#050B18" } : {}}
-          className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
+          className={`flex-1 min-w-0 py-1.5 px-1 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "VENTURES"
               ? "bg-[#D4AF37] text-[#050B18] shadow-sm font-extrabold"
               : "bg-transparent text-[#CBD5E1]/80 hover:text-[#FFFFFF] hover:bg-[#0E1B33]"
           }`}
         >
           <Layers className="w-3 h-3 shrink-0 text-[#050B18]" />
-          <span className="truncate">Retail Ventures</span>
+          <span className="truncate sm:hidden">Ventures</span>
+          <span className="truncate hidden sm:inline">Retail Ventures</span>
         </button>
       </div>
 

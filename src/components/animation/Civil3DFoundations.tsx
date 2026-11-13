@@ -220,31 +220,38 @@ export default function Civil3DFoundations() {
   }, []);
 
   return (
-    <div className="relative w-full h-[400px] sm:h-[460px] rounded-3xl bg-gradient-to-b from-[#091224] via-[#050B18] to-[#091224] border border-[#1B325C] shadow-2xl overflow-hidden group">
+    <div className="relative w-full h-[280px] sm:h-[380px] md:h-[460px] rounded-2xl sm:rounded-3xl bg-gradient-to-b from-[#091224] via-[#050B18] to-[#091224] border border-[#1B325C] shadow-2xl overflow-hidden group select-none">
       {/* 3D Canvas */}
-      <div ref={mountRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
+      <div 
+        ref={mountRef} 
+        className="w-full h-full cursor-grab active:cursor-grabbing" 
+        style={{ touchAction: "pan-y" }}
+      />
 
       {/* Floating HUD Telemetry */}
-      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1.5 pointer-events-none">
-        <div className="flex items-center space-x-2 text-xs font-bold text-white">
-          <HardHat className="w-4 h-4 text-[#D4AF37] animate-bounce" />
-          <span>Structural Piling & Foundation Matrix</span>
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1 sm:space-y-1.5 pointer-events-none max-w-[85%] sm:max-w-none">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[11px] sm:text-xs font-bold text-white">
+          <HardHat className="w-3.5 h-3.5 text-[#D4AF37] animate-bounce shrink-0" />
+          <span className="truncate">Structural Piling & Foundation Matrix</span>
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
+        <div className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
           <div>Foundation Depth: <strong className="text-[#D4AF37]">-12.5m Piling</strong></div>
           <div>Bearing Capacity: <strong className="text-white">450 kN/m²</strong></div>
           <div>Concrete Grade: <strong className="text-[#38BDF8]">C35/45 Marine</strong></div>
           <div>Strata Density: <strong className="text-[#10B981]">1.95 g/cm³</strong></div>
         </div>
+        <div className="sm:hidden text-[9px] font-mono text-[#D4AF37] truncate">
+          C35/45 Marine Concrete • -12.5m Piling Depth
+        </div>
       </div>
 
       {/* Bottom Live Safety Badge */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-[#94A3B8] px-3 py-1.5 rounded-xl bg-[#091224]/85 backdrop-blur-md border border-[#1B325C]">
-        <span className="flex items-center space-x-1.5 text-[#D4AF37] font-bold">
-          <Layers className="w-3.5 h-3.5" />
-          <span>MULTI-TIER RIVERINE STRATA STABILIZED</span>
+      <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#94A3B8] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#091224]/85 backdrop-blur-md border border-[#1B325C]">
+        <span className="flex items-center space-x-1.5 text-[#D4AF37] font-bold truncate">
+          <Layers className="w-3.5 h-3.5 shrink-0" />
+          <span className="truncate">RIVERINE STRATA STABILIZED</span>
         </span>
-        <span className="text-[10px] text-[#64748B]">BS EN 1997 / EUROCODE 7</span>
+        <span className="text-[9px] sm:text-[10px] text-[#64748B] shrink-0 ml-2">EUROCODE 7 / BS EN</span>
       </div>
     </div>
   );

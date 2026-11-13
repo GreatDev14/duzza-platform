@@ -23,12 +23,13 @@ import {
   Waves,
   Zap,
   Activity,
-  Globe2
+  Globe2,
+  Instagram,
+  ExternalLink
 } from "lucide-react";
 import CorporateHero from "@/components/home/CorporateHero";
 import EnterpriseOperationsGlobe3D from "@/components/home/EnterpriseOperationsGlobe3D";
 import Cadastral3DScanner from "@/components/animation/Cadastral3DScanner";
-import Energy3DGrid from "@/components/animation/Energy3DGrid";
 import Civil3DFoundations from "@/components/animation/Civil3DFoundations";
 import Tilt3DCard from "@/components/animation/Tilt3DCard";
 import EquipmentEnquiryModal from "@/components/projects/EquipmentEnquiryModal";
@@ -234,56 +235,56 @@ export default function CorporateHomePage() {
               </div>
 
               {/* Exact Stats Block with 3D Tilt Cards */}
-              <div className="grid grid-cols-3 gap-3 pt-2">
+              <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-2">
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">
-                      7+
+                  <div className="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white">
+                      100%
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
-                      Years Active
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1 truncate">
+                      HSE Compliance
                     </span>
                   </div>
                 </Tilt3DCard>
 
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-[#D4AF37]">
-                      892+
+                  <div className="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-[#D4AF37]">
+                      Warri Base
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
-                      Surveys Done
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1 truncate">
+                      Rapid Mobilization
                     </span>
                   </div>
                 </Tilt3DCard>
 
                 <Tilt3DCard maxTilt={8} scale={1.03}>
-                  <div className="p-4 rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
-                    <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">
-                      650+
+                  <div className="p-2.5 sm:p-4 rounded-xl sm:rounded-2xl bg-[#0E1B33] border border-[#1B325C] text-center h-full flex flex-col justify-center">
+                    <span className="block text-xl sm:text-3xl lg:text-4xl font-display font-extrabold text-white">
+                      B2B RFQ
                     </span>
-                    <span className="text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1">
-                      Clients Served
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase text-[#94A3B8] font-semibold block mt-1 truncate">
+                      Direct Evaluation
                     </span>
                   </div>
                 </Tilt3DCard>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                 <button
                   onClick={() => handleOpenGearModal("EQ-SURV-TS16", "Robotic Total Station & 3D Scanning Array")}
-                  className="btn-brand-primary px-6 py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center space-x-2 cursor-pointer"
+                  className="btn-brand-primary w-full sm:w-auto px-6 py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider transition-all shadow-md flex items-center justify-center space-x-2 cursor-pointer"
                 >
-                  <span>Order Survey Services</span>
+                  <span>Request Survey Quote</span>
                   <ArrowRight className="w-4 h-4 text-[#050B18]" />
                 </button>
 
                 <Link
                   href="/projects/equipment"
-                  className="px-5 py-3.5 rounded-xl bg-[#0E1B33] hover:bg-[#142547] text-[#F1F5F9] font-semibold text-xs uppercase tracking-wider border border-[#1B325C] hover:border-[#D4AF37] transition-colors"
+                  className="w-full sm:w-auto text-center px-5 py-3.5 rounded-xl bg-[#0E1B33] hover:bg-[#142547] text-[#F1F5F9] font-semibold text-xs uppercase tracking-wider border border-[#1B325C] hover:border-[#D4AF37] transition-colors"
                 >
-                  View Equipment Fleet
+                  Hire Survey Equipment Fleet →
                 </Link>
               </div>
             </div>
@@ -377,110 +378,42 @@ export default function CorporateHomePage() {
       </section>
 
       {/* -------------------------------------------------------------------- */}
-      {/* 5. 3D ENERGY & SOLAR INFRASTRUCTURE GRID                             */}
-      {/* -------------------------------------------------------------------- */}
-      <section className="py-24 bg-[#050B18] border-b border-[#1B325C] overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left: 3D Interactive Energy & Solar Manifold Model */}
-            <div className="lg:col-span-6">
-              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-xl">
-                <Energy3DGrid />
-              </div>
-            </div>
-
-            {/* Right: Industrial Description & Scope */}
-            <div className="lg:col-span-6 space-y-6">
-              <span className="text-xs font-mono uppercase tracking-widest text-[#38BDF8] font-bold block">
-                Oil & Gas Infrastructure Support
-              </span>
-
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-white leading-tight">
-                Turnkey Energy Assets & Sustainable Power Deployments
-              </h2>
-
-              <p className="text-base text-[#CBD5E1]/90 leading-relaxed font-light">
-                Providing comprehensive facility support across the Niger Delta oilfields. 
-                From flowstation modifications, structural pipeline tie-in supports, and pressure testing, 
-                to industrial solar arrays and hybrid power systems for remote installations.
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <Tilt3DCard maxTilt={6} scale={1.02}>
-                  <div className="p-4 rounded-xl bg-[#091224] border border-[#1B325C] space-y-1 h-full">
-                    <span className="text-sm font-bold text-white flex items-center space-x-2">
-                      <CheckCircle2 className="w-4 h-4 text-[#38BDF8]" />
-                      <span>Flowstation Maintenance</span>
-                    </span>
-                    <p className="text-xs text-[#94A3B8] font-light">
-                      Corrosion mitigation, piping fabrication, and certified pressure inspections.
-                    </p>
-                  </div>
-                </Tilt3DCard>
-
-                <Tilt3DCard maxTilt={6} scale={1.02}>
-                  <div className="p-4 rounded-xl bg-[#091224] border border-[#1B325C] space-y-1 h-full">
-                    <span className="text-sm font-bold text-white flex items-center space-x-2">
-                      <Sun className="w-4 h-4 text-[#D4AF37]" />
-                      <span>Industrial Solar Arrays</span>
-                    </span>
-                    <p className="text-xs text-[#94A3B8] font-light">
-                      Grid-tied and off-grid hybrid power for remote telecommunication and field stations.
-                    </p>
-                  </div>
-                </Tilt3DCard>
-              </div>
-
-              <div className="pt-2">
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-[#D4AF37] hover:text-[#FFF8E7] transition-colors"
-                >
-                  <span>Explore Energy Division Capabilities</span>
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* -------------------------------------------------------------------- */}
-      {/* 6. 3D HEAVY CIVIL & STRUCTURAL FOUNDATIONS MATRIX                     */}
+      {/* 5. 3D HEAVY CIVIL, STRUCTURAL FOUNDATIONS & OIL/GAS ENGINEERING      */}
       {/* -------------------------------------------------------------------- */}
       <section className="py-24 bg-[#070E1E] border-b border-[#1B325C]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           {/* Header Banner: Building Strong Foundations */}
-          <div className="p-8 sm:p-12 rounded-3xl bg-[#091224] border border-[#1B325C] text-white shadow-xl relative overflow-hidden">
+          <div className="p-6 sm:p-10 lg:p-12 rounded-3xl bg-[#091224] border border-[#1B325C] text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10 max-w-2xl space-y-3">
               <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
-                General Civil Contracting
+                Duzza Projects • Engineering & Oilfield Support
               </span>
-              <h2 className="text-3xl sm:text-5xl font-display font-black tracking-tight leading-none uppercase text-white">
-                Building Strong Foundations
+              <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display font-black tracking-tight leading-tight uppercase text-white">
+                General Contracting & Oil & Gas Infrastructure
               </h2>
               <p className="text-sm sm:text-base text-[#CBD5E1]/90 font-light leading-relaxed">
-                Delivering industry-leading civil engineering, shoreline revetments, and heavy industrial concrete works with uncompromised safety and durability.
+                Delivering civil engineering construction, shoreline revetments, heavy industrial concrete piling, 
+                and oil & gas flowstation modifications across the Niger Delta oilfields.
               </p>
             </div>
 
             {/* Industrial Stat Strip */}
-            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-4 pt-8 mt-8 border-t border-[#1B325C]">
-              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">450+</span>
-                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Building Projects</span>
+            <div className="relative z-10 grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-6 sm:pt-8 mt-6 sm:mt-8 border-t border-[#1B325C]">
+              <div className="p-3 sm:p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-2xl sm:text-3xl font-display font-extrabold text-white">CAMA 2020</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase text-[#94A3B8] block mt-1">CAC RC-{rcNumber}</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-[#D4AF37]">29+</span>
-                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Years Heritage</span>
+              <div className="p-3 sm:p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-2xl sm:text-3xl font-display font-extrabold text-[#D4AF37]">Warri Base</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase text-[#94A3B8] block mt-1">Delta State HQ</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-white">7K+</span>
-                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Skilled Team</span>
+              <div className="p-3 sm:p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-2xl sm:text-3xl font-display font-extrabold text-white">100% HSE</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase text-[#94A3B8] block mt-1">Audited Compliance</span>
               </div>
-              <div className="p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
-                <span className="block text-3xl sm:text-4xl font-display font-extrabold text-emerald-400">4.9/5</span>
-                <span className="text-xs font-mono uppercase text-[#94A3B8] block mt-1">Client Score</span>
+              <div className="p-3 sm:p-3.5 rounded-xl bg-[#0E1B33] border border-[#1B325C] text-center">
+                <span className="block text-2xl sm:text-3xl font-display font-extrabold text-[#38BDF8]">B2B Direct</span>
+                <span className="text-[10px] sm:text-xs font-mono uppercase text-[#94A3B8] block mt-1">Rapid RFQ Dispatch</span>
               </div>
             </div>
           </div>
@@ -488,33 +421,43 @@ export default function CorporateHomePage() {
           {/* 3D Foundation Model & Scope */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             <div className="lg:col-span-6">
-              <div className="rounded-3xl border border-[#1B325C] bg-[#091224] p-4 shadow-xl">
+              <div className="rounded-2xl sm:rounded-3xl border border-[#1B325C] bg-[#091224] p-3 sm:p-4 shadow-xl">
                 <Civil3DFoundations />
               </div>
             </div>
 
             <div className="lg:col-span-6 space-y-6">
               <h3 className="text-2xl sm:text-3xl font-display font-extrabold text-white">
-                Turnkey Civil Fabrication & Ground Stabilization
+                Turnkey Civil Fabrication & Field Pipeline Support
               </h3>
               <p className="text-sm text-[#CBD5E1]/90 leading-relaxed font-light">
-                Our heavy civil division handles complex soil stabilization across riverine delta terrain, 
-                retaining bulkheads for port terminals, and heavy structural foundation slabs for industrial warehouses.
+                Our heavy civil & mechanical contracting division handles complex soil stabilization across riverine delta terrain, 
+                retaining bulkheads for port terminals, flowstation piping modifications, and structural pipeline tie-in supports.
               </p>
 
               <div className="space-y-3 font-mono text-xs text-[#CBD5E1]">
                 <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
-                  <span>✓ Shore Protection & Deep Piling</span>
+                  <span>✓ Shore Protection & Deep Piling Matrix</span>
                   <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
-                  <span>✓ Industrial Concrete Slabs & Footings</span>
+                  <span>✓ Flowstation Modification & Pressure Testing</span>
                   <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-[#091224] border border-[#1B325C] flex items-center justify-between shadow-sm">
-                  <span>✓ Turnkey Commercial Facilities</span>
+                  <span>✓ Structural Pipeline Tie-In Supports</span>
                   <span className="text-[#D4AF37] font-bold">ACTIVE</span>
                 </div>
+              </div>
+
+              <div className="pt-2">
+                <Link
+                  href="/projects"
+                  className="btn-brand-primary inline-flex items-center space-x-2 px-6 py-3.5 rounded-xl text-[#050B18] font-bold text-xs uppercase tracking-wider shadow-md"
+                >
+                  <span>Request Engineering Project Quote</span>
+                  <ArrowRight className="w-4 h-4 text-[#050B18]" />
+                </Link>
               </div>
             </div>
           </div>
@@ -603,6 +546,28 @@ export default function CorporateHomePage() {
                 </div>
               </div>
             </Tilt3DCard>
+          </div>
+
+          {/* Social-First Instagram Showcase Banner */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-[#091224] border border-[#D4AF37]/40 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-xl">
+            <div className="flex items-center space-x-3 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-amber-500 via-rose-500 to-purple-600 flex items-center justify-center text-white shrink-0 shadow-md">
+                <Instagram className="w-5 h-5 text-white" />
+              </div>
+              <div>
+                <span className="text-sm font-bold text-white block">Follow Our Creative Production on Instagram</span>
+                <span className="text-xs font-mono text-[#D4AF37]">@duzza_branding • Sports content, UGC reels & executive portfolio</span>
+              </div>
+            </div>
+            <a
+              href="https://www.instagram.com/duzza_branding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto justify-center px-5 py-2.5 rounded-xl bg-[#0E1B33] hover:bg-[#142547] text-[#D4AF37] border border-[#D4AF37]/50 font-bold text-xs font-mono uppercase tracking-wider transition-all shrink-0 inline-flex items-center space-x-2"
+            >
+              <span>Visit @duzza_branding</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
           </div>
         </div>
       </section>

@@ -308,49 +308,54 @@ export default function Cadastral3DScanner() {
   }, [laserActive]);
 
   return (
-    <div className="relative w-full h-[440px] sm:h-[500px] rounded-3xl bg-gradient-to-b from-white via-slate-50 to-white border border-slate-200/90 shadow-2xl overflow-hidden group">
+    <div className="relative w-full h-[280px] sm:h-[400px] md:h-[480px] rounded-2xl sm:rounded-3xl bg-[#050B18] border border-[#1B325C] shadow-2xl overflow-hidden group select-none">
       {/* 3D WebGL Canvas */}
       <div
         ref={mountRef}
         className="w-full h-full cursor-grab active:cursor-grabbing"
+        style={{ touchAction: "pan-y" }}
       />
 
       {/* Top HUD: Robotic Total Station Telemetry */}
-      <div className="absolute top-4 left-4 p-3.5 rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1.5 pointer-events-none">
-        <div className="flex items-center space-x-2 text-xs font-bold text-white">
-          <Crosshair className="w-4 h-4 text-[#D4AF37] animate-spin-slow" />
-          <span>Robotic Total Station & 3D Scanner Array</span>
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-[#091224]/95 backdrop-blur-md border border-[#1B325C] shadow-xl space-y-1 sm:space-y-1.5 pointer-events-none max-w-[65%] sm:max-w-none">
+        <div className="flex items-center space-x-1.5 sm:space-x-2 text-[11px] sm:text-xs font-bold text-white">
+          <Crosshair className="w-3.5 h-3.5 text-[#D4AF37] animate-spin-slow shrink-0" />
+          <span className="truncate">Robotic Total Station & 3D Scanner</span>
         </div>
-        <div className="grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
+        {/* Full Coordinates on SM+, compact on mobile */}
+        <div className="hidden sm:grid grid-cols-2 gap-x-4 gap-y-0.5 text-[10px] font-mono text-[#94A3B8]">
           <div>E: <strong className="text-white">{coords.easting} m</strong></div>
           <div>N: <strong className="text-white">{coords.northing} m</strong></div>
           <div>Hz: <strong className="text-[#38BDF8]">{coords.hzAngle}</strong></div>
           <div>Elev: <strong className="text-[#D4AF37]">{coords.elevation} m MSL</strong></div>
         </div>
+        <div className="sm:hidden text-[9px] font-mono text-[#D4AF37] truncate">
+          Hz: {coords.hzAngle} • Elev: {coords.elevation}m
+        </div>
       </div>
 
       {/* Top Right: Status Badge & Controls */}
-      <div className="absolute top-4 right-4 flex items-center space-x-2">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex items-center space-x-2">
         <button
           onClick={() => setLaserActive(!laserActive)}
-          className={`px-3 py-1.5 rounded-xl text-xs font-mono font-bold uppercase transition-all shadow-sm flex items-center space-x-1.5 ${
+          className={`px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl text-[10px] sm:text-xs font-mono font-bold uppercase transition-all shadow-sm flex items-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             laserActive
               ? "bg-[#D4AF37] text-[#050B18] shadow-[#D4AF37]/20"
               : "bg-[#091224] text-[#CBD5E1] border border-[#1B325C]"
           }`}
         >
-          <Zap className="w-3.5 h-3.5" />
+          <Zap className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           <span>{laserActive ? "Laser On" : "Laser Off"}</span>
         </button>
       </div>
 
       {/* Bottom Drag Instruction */}
-      <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-[#94A3B8] px-3 py-1.5 rounded-xl bg-[#091224]/90 backdrop-blur-md border border-[#1B325C]">
-        <span className="flex items-center space-x-1.5">
-          <RotateCcw className="w-3 h-3 text-[#D4AF37]" />
-          <span>Drag to orbit 3D station 360°</span>
+      <div className="absolute bottom-2.5 left-2.5 right-2.5 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-[#94A3B8] px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-lg sm:rounded-xl bg-[#091224]/90 backdrop-blur-md border border-[#1B325C]">
+        <span className="flex items-center space-x-1.5 truncate">
+          <RotateCcw className="w-3 h-3 text-[#D4AF37] shrink-0" />
+          <span className="truncate">Drag 360° to inspect</span>
         </span>
-        <span className="text-[10px] text-[#D4AF37] font-bold">UTM ZONE 31N/32N (WARRI BASE)</span>
+        <span className="text-[9px] sm:text-[10px] text-[#D4AF37] font-bold shrink-0 ml-2">WARRI SURVEY BASE</span>
       </div>
     </div>
   );

@@ -41,17 +41,17 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
   {
     id: "projects",
     name: "DUZZA PROJECTS",
-    tagline: "Marine Hydrospatial Survey & Heavy Civil Engineering",
-    category: "B2B Infrastructure & Geomatics",
+    tagline: "General Contracting, Oil & Gas Projects & Marine Survey",
+    category: "General Contracting & Marine Survey (B2B)",
     badgeColor: "bg-[#0E1B33] text-[#38BDF8] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
-    description: "Delivering mission-critical bathymetric charting, multibeam sonar surveys, DGPS hydrospatial positioning, oil & gas facility maintenance, and turnkey civil foundations across the Niger Delta.",
+    description: "Engineering and heavy construction, oil & gas field infrastructure, hydrospatial and marine survey support services, alongside certified hydrographic navigation and positioning equipment hire.",
     image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
-      "Multibeam Sonar & Acoustic Seabed Mapping",
-      "Marine Survey Vessel & Hydrographic Equipment Hire",
-      "Subsea Pipeline Burial Depth & Geotechnical Profiling",
-      "Turnkey Civil Foundations, Concrete & Shore Protection"
+      "General Contracting & Civil Engineering Construction",
+      "Oil & Gas Facility Modifications & Structural Pipeline Tie-Ins",
+      "Marine Hydrospatial Survey & Seabed Bathymetric Mapping",
+      "Hydrographic Navigation & Positioning Equipment Hire Fleet"
     ],
     primaryLink: "/projects",
     primaryLinkText: "Enter Duzza Projects",
@@ -63,17 +63,17 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
   {
     id: "branding",
     name: "DUZZA BRANDING",
-    tagline: "Digital, Merchandising & Executive Branding Agency",
-    category: "..a subsidiary of Duzza Limited ®",
+    tagline: "Executive Branding, Digital Media & Sports Merchandising",
+    category: "Creative Agency & Sports Media",
     badgeColor: "bg-[#0E1B33] text-[#D4AF37] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
-    description: "High-octane creative production studio engineering magnetic executive identity, scalable corporate design systems, Meta/IG sponsored advertisement pipelines, and global sports merchandise drops.",
+    description: "Executive branding for companies and agency heads, creative media support, UGC & static promotional content for international sports brands, and global merchandising (Instagram @duzza_branding).",
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=85",
     capabilities: [
-      "Executive Personal Identity & Speaker Kit Architecture",
-      "Digital Design Systems & High-Converting Web UI/UX",
-      "Instagram & Facebook Sponsored Ads & Performance Media",
-      "Custom Sports Apparel, Kits & Merchandising Production"
+      "Executive Personal Branding & Leadership Speaker Kits",
+      "Corporate & Digital Brand Identity Guidelines & Design Systems",
+      "UGC Video, Promotional Assets & Media Content for Sports Brands",
+      "Custom Apparel, Branded Team Kits & International Merchandising"
     ],
     primaryLink: "/branding",
     primaryLinkText: "Enter Duzza Branding",

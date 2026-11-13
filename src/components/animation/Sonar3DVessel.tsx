@@ -273,9 +273,13 @@ export default function Sonar3DVessel() {
   }, []);
 
   return (
-    <div className="relative w-full h-[460px] sm:h-[520px] rounded-3xl bg-[#050B18] border border-[#1B325C] overflow-hidden shadow-2xl select-none">
+    <div className="relative w-full h-[280px] sm:h-[400px] md:h-[500px] rounded-2xl sm:rounded-3xl bg-[#050B18] border border-[#1B325C] overflow-hidden shadow-2xl select-none">
       {/* Three.js Canvas Container */}
-      <div ref={containerRef} className="w-full h-full cursor-grab active:cursor-grabbing" />
+      <div 
+        ref={containerRef} 
+        className="w-full h-full cursor-grab active:cursor-grabbing" 
+        style={{ touchAction: "pan-y" }}
+      />
 
       {/* Top HUD Telemetry Bar */}
       <div className="absolute top-4 left-4 right-4 flex items-center justify-between pointer-events-none">

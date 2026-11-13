@@ -277,7 +277,7 @@ export default function DuzzaProjectsPage() {
             </div>
           </Tilt3DCard>
 
-          {/* Card 2: Oil & Gas Energy Infrastructure 3D Tilt Card */}
+          {/* Card 2: Oil & Gas Projects 3D Tilt Card */}
           <Tilt3DCard maxTilt={10} scale={1.03}>
             <div className="gsap-parallax-card rounded-2xl overflow-hidden bg-[#091224] border border-[#1B325C] group hover:border-[#D4AF37]/50 hover:shadow-2xl transition-all duration-300 shadow-md h-full flex flex-col justify-between">
               <div>
@@ -285,7 +285,7 @@ export default function DuzzaProjectsPage() {
                   <div className="absolute inset-0 opacity-25 pointer-events-none bg-[radial-gradient(#38BDF8_1px,transparent_1px)] [background-size:16px_16px]" />
                   <div className="flex items-center justify-between relative z-10">
                     <span className="text-[10px] font-mono uppercase px-2.5 py-1 rounded bg-[#0E1B33] text-[#38BDF8] border border-[#1B325C] font-bold">
-                      Energy & Flowstations
+                      Oil & Gas Projects
                     </span>
                     <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
                   </div>
@@ -298,8 +298,8 @@ export default function DuzzaProjectsPage() {
                         <div className="bg-sky-400/40 rounded border border-sky-300/60" />
                         <div className="bg-sky-400/20 rounded border border-sky-300/40" />
                       </div>
-                      <div className="absolute -bottom-2 px-2 py-0.5 rounded-full bg-[#D4AF37] text-[#050B18] text-[8px] font-mono font-bold">
-                        4.28 MW SOLAR
+                      <div className="absolute -bottom-2 px-2 py-0.5 rounded-full bg-[#D4AF37] text-[#050B18] text-[8px] font-mono font-bold whitespace-nowrap">
+                        NUPRC / NIPEX
                       </div>
                     </div>
                   </div>
@@ -312,11 +312,11 @@ export default function DuzzaProjectsPage() {
 
                 <div className="p-6 space-y-2">
                   <h3 className="font-display font-bold text-lg text-white group-hover:text-[#D4AF37] transition-colors">
-                    Oil & Gas Infrastructure
+                    Oil & Gas Projects & Infrastructure
                   </h3>
                   <p className="text-xs text-[#CBD5E1]/80 leading-relaxed font-light">
-                    Flow station modification, structural pipeline tie-in supports, pressure testing, 
-                    and corrosion control across swamp and land assets.
+                    Flowstation modifications, structural pipeline tie-in supports, certified hydrostatic pressure testing, 
+                    and corrosion control across swamp and land fields in the Niger Delta.
                   </p>
                 </div>
               </div>
