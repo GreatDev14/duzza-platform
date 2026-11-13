@@ -264,7 +264,7 @@ export default function CmsDashboardPage() {
 
   if (loadingAuth || !currentUser) {
     return (
-      <div className="min-h-screen bg-slate-50 pt-32 flex items-center justify-center">
+      <div className="min-h-screen bg-[#140A05] pt-32 flex items-center justify-center">
         <div className="text-sm font-mono text-slate-600 flex items-center space-x-2">
           <RefreshCw className="w-4 h-4 animate-spin text-[#8B5A2B]" />
           <span>Verifying Zero-Trust IAM Session...</span>
@@ -293,7 +293,7 @@ export default function CmsDashboardPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#140A05] pt-24 pb-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* Toast Feedback */}
         {toast && (
@@ -314,7 +314,7 @@ export default function CmsDashboardPage() {
         )}
 
         {/* Top IAM Identity Header */}
-        <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div className="bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div className="space-y-1">
             <div className="flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center space-x-1.5 px-2.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-[11px] font-mono font-bold text-[#8B5A2B]">
@@ -332,7 +332,7 @@ export default function CmsDashboardPage() {
                 STATUS: {currentUser.status}
               </span>
             </div>
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FFF6DE]">
               Welcome, {currentUser.name}
             </h1>
             <p className="text-xs font-mono text-slate-500">{currentUser.email}</p>
@@ -351,7 +351,7 @@ export default function CmsDashboardPage() {
 
             <button
               onClick={handleLogout}
-              className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-slate-200 text-xs font-bold uppercase tracking-wider flex items-center space-x-2 cursor-pointer"
+              className="px-4 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 border border-[#3D2415] text-xs font-bold uppercase tracking-wider flex items-center space-x-2 cursor-pointer"
             >
               <LogOut className="w-3.5 h-3.5" />
               <span>Sign Out</span>
@@ -374,7 +374,7 @@ export default function CmsDashboardPage() {
         )}
 
         {/* Navigation Tabs */}
-        <div className="flex flex-wrap gap-2 bg-white p-2 rounded-2xl border border-slate-200 shadow-xs">
+        <div className="flex flex-wrap gap-2 bg-[#1C110A] p-2 rounded-2xl border border-[#3D2415] shadow-xs">
           <button
             onClick={() => setActiveTab("projects")}
             style={activeTab === "projects" ? { backgroundColor: "#8B5A2B", color: "#FFFFFF" } : {}}
@@ -448,8 +448,8 @@ export default function CmsDashboardPage() {
         {/* ==================== TAB 1: PROJECTS ==================== */}
         {activeTab === "projects" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-6 shadow-sm h-fit space-y-4">
-              <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+            <div className="lg:col-span-4 bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm h-fit space-y-4">
+              <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                 <FolderPlus className="w-5 h-5 text-[#8B5A2B]" />
                 <span>Upload New Project</span>
               </h2>
@@ -460,12 +460,12 @@ export default function CmsDashboardPage() {
                   value={prjTitle}
                   onChange={(e) => setPrjTitle(e.target.value)}
                   placeholder="Project Title *"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <select
                   value={prjDivision}
                   onChange={(e) => setPrjDivision(e.target.value as CmsProject["division"])}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 >
                   <option value="Duzza Projects">Duzza Projects</option>
                   <option value="Duzza Branding">Duzza Branding</option>
@@ -478,14 +478,14 @@ export default function CmsDashboardPage() {
                   value={prjLocation}
                   onChange={(e) => setPrjLocation(e.target.value)}
                   placeholder="Location *"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <input
                   type="url"
                   value={prjImgUrl}
                   onChange={(e) => setPrjImgUrl(e.target.value)}
                   placeholder="Cover Image URL (optional)"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <textarea
                   required
@@ -493,7 +493,7 @@ export default function CmsDashboardPage() {
                   value={prjDesc}
                   onChange={(e) => setPrjDesc(e.target.value)}
                   placeholder="Project Scope & Summary *"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50 resize-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50 resize-none"
                 />
                 <button
                   type="submit"
@@ -509,7 +509,7 @@ export default function CmsDashboardPage() {
               {projects.map((p) => (
                 <div
                   key={p.id}
-                  className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex flex-col sm:flex-row justify-between gap-4"
+                  className="bg-[#1C110A] rounded-2xl border border-[#3D2415] p-5 shadow-xs flex flex-col sm:flex-row justify-between gap-4"
                 >
                   <div className="space-y-1.5">
                     <div className="flex flex-wrap items-center gap-2">
@@ -518,7 +518,7 @@ export default function CmsDashboardPage() {
                       </span>
                       <span className="text-[11px] font-mono text-slate-500">{p.location}</span>
                     </div>
-                    <h3 className="font-display font-bold text-base text-slate-900">{p.title}</h3>
+                    <h3 className="font-display font-bold text-base text-[#FFF6DE]">{p.title}</h3>
                     <p className="text-xs text-slate-600 leading-relaxed">{p.description}</p>
                     <p className="text-[10px] font-mono text-slate-400">
                       Uploaded by {p.createdBy} ({p.createdByEmail}) •{" "}
@@ -544,8 +544,8 @@ export default function CmsDashboardPage() {
         {/* ==================== TAB 2: IMAGES ==================== */}
         {activeTab === "images" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-6 shadow-sm h-fit space-y-4">
-              <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+            <div className="lg:col-span-4 bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm h-fit space-y-4">
+              <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                 <ImagePlus className="w-5 h-5 text-[#8B5A2B]" />
                 <span>Upload Media Image</span>
               </h2>
@@ -556,14 +556,14 @@ export default function CmsDashboardPage() {
                   value={imgTitle}
                   onChange={(e) => setImgTitle(e.target.value)}
                   placeholder="Image Title *"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <input
                   type="text"
                   value={imgCategory}
                   onChange={(e) => setImgCategory(e.target.value)}
                   placeholder="Category (e.g. Marine Geomatics)"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <div>
                   <label className="block text-[11px] font-mono font-bold text-slate-600 mb-1">
@@ -581,7 +581,7 @@ export default function CmsDashboardPage() {
                   value={imgUrl}
                   onChange={(e) => setImgUrl(e.target.value)}
                   placeholder="Or Image URL (https://...)"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <button
                   type="submit"
@@ -597,7 +597,7 @@ export default function CmsDashboardPage() {
               {images.map((img) => (
                 <div
                   key={img.id}
-                  className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs flex flex-col justify-between"
+                  className="bg-[#1C110A] rounded-2xl border border-[#3D2415] overflow-hidden shadow-xs flex flex-col justify-between"
                 >
                   <div className="h-44 bg-slate-100 relative overflow-hidden">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -612,7 +612,7 @@ export default function CmsDashboardPage() {
                       <span className="text-[10px] font-mono font-bold text-[#8B5A2B] uppercase">
                         {img.category}
                       </span>
-                      <h3 className="font-bold text-sm text-slate-900">{img.title}</h3>
+                      <h3 className="font-bold text-sm text-[#FFF6DE]">{img.title}</h3>
                       <p className="text-[10px] font-mono text-slate-400">
                         By {img.uploadedBy}
                       </p>
@@ -636,8 +636,8 @@ export default function CmsDashboardPage() {
         {/* ==================== TAB 3: NOTIFICATIONS ==================== */}
         {activeTab === "notifications" && (
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
-            <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-6 shadow-sm h-fit space-y-4">
-              <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+            <div className="lg:col-span-4 bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm h-fit space-y-4">
+              <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                 <BellPlus className="w-5 h-5 text-[#8B5A2B]" />
                 <span>Add Notification</span>
               </h2>
@@ -648,12 +648,12 @@ export default function CmsDashboardPage() {
                   value={ntfTitle}
                   onChange={(e) => setNtfTitle(e.target.value)}
                   placeholder="Notification Title *"
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 />
                 <select
                   value={ntfPriority}
                   onChange={(e) => setNtfPriority(e.target.value as CmsNotification["priority"])}
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                 >
                   <option value="INFO">INFO</option>
                   <option value="IMPORTANT">IMPORTANT</option>
@@ -665,7 +665,7 @@ export default function CmsDashboardPage() {
                   value={ntfMessage}
                   onChange={(e) => setNtfMessage(e.target.value)}
                   placeholder="Notification message..."
-                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50 resize-none"
+                  className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50 resize-none"
                 />
                 <button
                   type="submit"
@@ -681,7 +681,7 @@ export default function CmsDashboardPage() {
               {notifications.map((n) => (
                 <div
                   key={n.id}
-                  className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs flex justify-between items-start gap-4"
+                  className="bg-[#1C110A] rounded-2xl border border-[#3D2415] p-5 shadow-xs flex justify-between items-start gap-4"
                 >
                   <div className="space-y-1">
                     <span
@@ -695,7 +695,7 @@ export default function CmsDashboardPage() {
                     >
                       {n.priority}
                     </span>
-                    <h3 className="font-bold text-sm text-slate-900">{n.title}</h3>
+                    <h3 className="font-bold text-sm text-[#FFF6DE]">{n.title}</h3>
                     <p className="text-xs text-slate-600">{n.message}</p>
                     <p className="text-[10px] font-mono text-slate-400">
                       Posted by {n.createdBy} • {new Date(n.createdAt).toLocaleString()}
@@ -720,9 +720,9 @@ export default function CmsDashboardPage() {
         {activeTab === "users" && isPrivileged && (
           <div className="space-y-6">
             {/* Pending Approval Queue */}
-            <div className="bg-white rounded-3xl border border-amber-200 p-6 shadow-sm space-y-4">
+            <div className="bg-[#1C110A] rounded-3xl border border-amber-200 p-6 shadow-sm space-y-4">
               <div className="flex items-center justify-between">
-                <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+                <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                   <Clock className="w-5 h-5 text-amber-600" />
                   <span>Pending Account Approvals ({pendingUsers.length})</span>
                 </h2>
@@ -740,7 +740,7 @@ export default function CmsDashboardPage() {
                       className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200 flex items-center justify-between gap-3"
                     >
                       <div>
-                        <div className="font-bold text-sm text-slate-900">{u.name}</div>
+                        <div className="font-bold text-sm text-[#FFF6DE]">{u.name}</div>
                         <div className="text-xs font-mono text-slate-600">{u.email}</div>
                         <div className="text-[10px] font-mono text-amber-800 mt-1">
                           Role: {u.role} • Status: {u.status}
@@ -769,8 +769,8 @@ export default function CmsDashboardPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
               {/* Invite / Add New Person */}
-              <div className="lg:col-span-4 bg-white rounded-3xl border border-slate-200 p-6 shadow-sm h-fit space-y-4">
-                <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+              <div className="lg:col-span-4 bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm h-fit space-y-4">
+                <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                   <UserPlus className="w-5 h-5 text-[#8B5A2B]" />
                   <span>Invite / Add Person</span>
                 </h2>
@@ -781,7 +781,7 @@ export default function CmsDashboardPage() {
                     value={invName}
                     onChange={(e) => setInvName(e.target.value)}
                     placeholder="Full Name *"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                   />
                   <input
                     type="email"
@@ -789,7 +789,7 @@ export default function CmsDashboardPage() {
                     value={invEmail}
                     onChange={(e) => setInvEmail(e.target.value)}
                     placeholder="Email Address *"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                   />
                   <input
                     type="text"
@@ -797,12 +797,12 @@ export default function CmsDashboardPage() {
                     value={invPassword}
                     onChange={(e) => setInvPassword(e.target.value)}
                     placeholder="Initial Password *"
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50"
                   />
                   <select
                     value={invRole}
                     onChange={(e) => setInvRole(e.target.value as Role)}
-                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-slate-50/50 font-semibold"
+                    className="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 text-xs bg-[#140A05]/50 font-semibold"
                   >
                     <option value="CONTRIBUTOR">CONTRIBUTOR (Upload Only)</option>
                     <option value="MANAGER">MANAGER (Approve & Manage)</option>
@@ -821,13 +821,13 @@ export default function CmsDashboardPage() {
               </div>
 
               {/* All Users & Permissions Table */}
-              <div className="lg:col-span-8 bg-white rounded-3xl border border-slate-200 p-6 shadow-sm overflow-x-auto">
-                <h2 className="font-display font-bold text-lg text-slate-900 mb-4">
+              <div className="lg:col-span-8 bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm overflow-x-auto">
+                <h2 className="font-display font-bold text-lg text-[#FFF6DE] mb-4">
                   Manage Directory & Permissions
                 </h2>
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="border-b border-slate-200 text-[11px] font-mono uppercase text-slate-500">
+                    <tr className="border-b border-[#3D2415] text-[11px] font-mono uppercase text-slate-500">
                       <th className="py-2.5 pr-4">User</th>
                       <th className="py-2.5 pr-4">Role</th>
                       <th className="py-2.5 pr-4">Status</th>
@@ -840,7 +840,7 @@ export default function CmsDashboardPage() {
                       return (
                         <tr key={u.id}>
                           <td className="py-3 pr-4">
-                            <div className="font-bold text-slate-900">{u.name}</div>
+                            <div className="font-bold text-[#FFF6DE]">{u.name}</div>
                             <div className="font-mono text-[11px] text-slate-500">{u.email}</div>
                           </td>
                           <td className="py-3 pr-4">
@@ -853,7 +853,7 @@ export default function CmsDashboardPage() {
                               onChange={(e) =>
                                 handleUpdateUser(u.id, { role: e.target.value as Role })
                               }
-                              className="px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs font-mono font-bold bg-slate-50 disabled:opacity-60"
+                              className="px-2.5 py-1.5 rounded-lg border border-slate-300 text-xs font-mono font-bold bg-[#140A05] disabled:opacity-60"
                             >
                               <option value="CONTRIBUTOR">CONTRIBUTOR</option>
                               <option value="MANAGER">MANAGER</option>
@@ -915,10 +915,10 @@ export default function CmsDashboardPage() {
 
         {/* ==================== TAB 5: LOGIN AUDIT LOGS (ADMIN & MANAGER ONLY) ==================== */}
         {activeTab === "audit" && isPrivileged && (
-          <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-sm space-y-5">
+          <div className="bg-[#1C110A] rounded-3xl border border-[#3D2415] p-6 shadow-sm space-y-5">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h2 className="font-display font-bold text-lg text-slate-900 flex items-center space-x-2">
+                <h2 className="font-display font-bold text-lg text-[#FFF6DE] flex items-center space-x-2">
                   <FileClock className="w-5 h-5 text-[#8B5A2B]" />
                   <span>Authentication & Login Audit Logs</span>
                 </h2>
@@ -935,13 +935,13 @@ export default function CmsDashboardPage() {
                     value={auditSearch}
                     onChange={(e) => setAuditSearch(e.target.value)}
                     placeholder="Search email or name..."
-                    className="pl-8 pr-3 py-2 rounded-xl border border-slate-300 text-xs bg-slate-50"
+                    className="pl-8 pr-3 py-2 rounded-xl border border-slate-300 text-xs bg-[#140A05]"
                   />
                 </div>
                 <select
                   value={auditStatusFilter}
                   onChange={(e) => setAuditStatusFilter(e.target.value)}
-                  className="px-3 py-2 rounded-xl border border-slate-300 text-xs bg-slate-50 font-mono"
+                  className="px-3 py-2 rounded-xl border border-slate-300 text-xs bg-[#140A05] font-mono"
                 >
                   <option value="ALL">ALL STATUSES</option>
                   <option value="SUCCESS">SUCCESS</option>
@@ -951,7 +951,7 @@ export default function CmsDashboardPage() {
                 </select>
                 <button
                   onClick={() => fetchAllData(currentUser)}
-                  className="p-2 rounded-xl border border-slate-200 bg-slate-50 hover:bg-slate-100 cursor-pointer"
+                  className="p-2 rounded-xl border border-[#3D2415] bg-[#140A05] hover:bg-slate-100 cursor-pointer"
                   title="Refresh Audit Logs"
                 >
                   <RefreshCw className="w-4 h-4 text-slate-600" />
@@ -962,7 +962,7 @@ export default function CmsDashboardPage() {
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse">
                 <thead>
-                  <tr className="border-b border-slate-200 text-[11px] font-mono uppercase text-slate-500">
+                  <tr className="border-b border-[#3D2415] text-[11px] font-mono uppercase text-slate-500">
                     <th className="py-2.5 pr-4">Timestamp</th>
                     <th className="py-2.5 pr-4">User / Email</th>
                     <th className="py-2.5 pr-4">Role</th>
@@ -979,12 +979,12 @@ export default function CmsDashboardPage() {
                     </tr>
                   ) : (
                     filteredLogs.map((log) => (
-                      <tr key={log.id} className="hover:bg-slate-50/70">
+                      <tr key={log.id} className="hover:bg-[#140A05]/70">
                         <td className="py-3 pr-4 font-mono text-[11px] text-slate-600 whitespace-nowrap">
                           {new Date(log.timestamp).toLocaleString()}
                         </td>
                         <td className="py-3 pr-4">
-                          <div className="font-bold text-slate-900">{log.name}</div>
+                          <div className="font-bold text-[#FFF6DE]">{log.name}</div>
                           <div className="font-mono text-[11px] text-slate-500">{log.email}</div>
                         </td>
                         <td className="py-3 pr-4">

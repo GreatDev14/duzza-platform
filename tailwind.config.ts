@@ -9,42 +9,42 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Luxury Warm Earth & Pale Gold Theme Mapping
+        // Luxury Deep Earth Brown & Pale Gilded Gold (Gilded Obsidian Aesthetic)
         brandBlue: {
-          50: "#FDFBF7",
-          100: "#F7F2E7",
-          200: "#EFE5CE",
-          300: "#E2CFAB",
-          400: "#D4B37F",
+          50: "#1C110A",  // Deepest obsidian brown
+          100: "#26170E", // Dark umber base
+          200: "#382315", // Rich chocolate brown
+          300: "#4D311E", // Warm roasted coffee
+          400: "#6B4429", // Saddle bronze
           500: "#B88E4F", // Pale burnished gold
-          600: "#8B5A2B", // Signature Deep Warm Saddle Brown
-          700: "#6E431F", // Rich Espresso Earth
-          800: "#523117", // Dark Roast Umber
-          900: "#3B2210", // Deepest Warm Mahogany
-          950: "#241409", // Deep Obsidian Brown
+          600: "#D4AF37", // Iconic Glowing Pale Gold
+          700: "#EED9B3", // Soft pale champagne gold
+          800: "#F5EBE1", // Ivory pearl
+          900: "#FAF7F2", // Crisp light text highlight
+          950: "#FFFFFF",
         },
         navy: {
-          800: "#3E2718",
-          900: "#2A180E",
-          950: "#1C1008",
+          800: "#2B1A10",
+          900: "#1E110A",
+          950: "#140A05",
         },
-        seaTurquoise: "#D4AF37", // Harmonized metallic accents
-        seaBlue: "#A67C37",
-        sand: "#F5EBE1",
+        seaTurquoise: "#D4AF37",
+        seaBlue: "#B88E4F",
+        sand: "#1A0F08",
         theme: {
-          bg: "#FFFFFF",
-          surface: "#FAF8F5",
-          card: "#FFFFFF",
-          cardHover: "#F6F2EC",
-          border: "#EADCCB",
-          borderHover: "#D8C3A5",
+          bg: "#140A05",        // Ultra-luxurious dark espresso/obsidian
+          surface: "#1C110A",   // Elevated dark card surface
+          card: "#26170E",      // Card container
+          cardHover: "#331E12", // Interactive hover card
+          border: "#3D2415",    // Subtle gilded border
+          borderHover: "#D4AF37",
         },
         gold: {
-          light: "#FDF4DC",
+          light: "#FFF6DE",
           pale: "#EED9B3",
-          DEFAULT: "#D4AF37", // Iconic Glowing Pale Gold
+          DEFAULT: "#D4AF37", // Glowing Pale Gold
           glow: "#F3C966",
-          dark: "#AA8022",
+          dark: "#99731C",
         },
         brown: {
           50: "#FAF7F2",
@@ -52,34 +52,34 @@ const config: Config = {
           200: "#E5D7C3",
           300: "#CDB697",
           400: "#B0926C",
-          500: "#8B5A2B", // Warm saddle brown
+          500: "#8B5A2B",
           600: "#6E431F",
           700: "#543317",
-          800: "#3D2310",
-          900: "#2A180B",
-          950: "#1B0E06",
+          800: "#382315",
+          900: "#26170E",
+          950: "#140A05",
         },
         projects: {
-          slate: "#FDFBF7",
-          orange: "#C2782A",
-          orangeGlow: "#E0933C",
-          cyan: "#8B5A2B",
+          slate: "#1C110A",
+          orange: "#D4AF37",
+          orangeGlow: "#F3C966",
+          cyan: "#B88E4F",
         },
         branding: {
-          obsidian: "#1C1008",
+          obsidian: "#140A05",
           lime: "#D4AF37",
           limeGlow: "#F3C966",
-          emerald: "#8B5A2B",
+          emerald: "#B88E4F",
         },
         fashion: {
-          burgundy: "#5E2519",
-          rose: "#9E5338",
+          burgundy: "#401812",
+          rose: "#B88E4F",
           champagne: "#FAF5ED",
         },
         bakery: {
-          espresso: "#2A180B",
+          espresso: "#1A0F08",
           amber: "#D4AF37",
-          honey: "#8B5A2B",
+          honey: "#B88E4F",
         },
       },
       fontFamily: {

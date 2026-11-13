@@ -49,33 +49,33 @@ export default function CmsSignupPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
+    <div className="min-h-screen bg-[#140A05] pt-28 pb-16 px-4 sm:px-6 flex items-center justify-center">
       <div className="w-full max-w-md">
-        <div className="bg-white rounded-3xl border border-slate-200 shadow-2xl p-7 sm:p-9 space-y-6">
+        <div className="bg-[#1C110A] rounded-3xl border border-[#D4AF37]/35 shadow-2xl shadow-black/90 p-7 sm:p-9 space-y-6">
           <div className="space-y-2 text-center">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[11px] font-mono font-bold text-amber-800">
-              <UserPlus className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[11px] font-mono font-bold text-[#D4AF37]">
+              <UserPlus className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>NEW ACCOUNT REGISTRATION</span>
             </div>
-            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-slate-900">
+            <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-[#FFF6DE]">
               Request CMS Access
             </h1>
-            <p className="text-xs sm:text-sm text-slate-500">
-              New signups default to <strong className="text-slate-700">CONTRIBUTOR</strong> with{" "}
-              <strong className="text-amber-700">PENDING</strong> status until approved.
+            <p className="text-xs sm:text-sm text-[#EED9B3]/80">
+              New signups default to <strong className="text-[#D4AF37]">CONTRIBUTOR</strong> with{" "}
+              <strong className="text-[#F3C966]">PENDING</strong> status until approved.
             </p>
           </div>
 
           {createdPending ? (
-            <div className="p-5 rounded-2xl bg-amber-50 border border-amber-200 text-center space-y-4">
-              <div className="w-12 h-12 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mx-auto border border-amber-300">
+            <div className="p-5 rounded-2xl bg-[#26170E] border border-[#D4AF37]/40 text-center space-y-4">
+              <div className="w-12 h-12 rounded-full bg-[#382315] text-[#D4AF37] flex items-center justify-center mx-auto border border-[#D4AF37]/50">
                 <Clock className="w-6 h-6" />
               </div>
               <div className="space-y-1.5">
-                <h2 className="font-display font-bold text-lg text-amber-950">
+                <h2 className="font-display font-bold text-lg text-[#FFF6DE]">
                   Account Status: PENDING Approval
                 </h2>
-                <p className="text-xs text-amber-900 leading-relaxed">
+                <p className="text-xs text-[#EED9B3]/85 leading-relaxed">
                   Your account for <strong>{email}</strong> has been created with role{" "}
                   <strong>CONTRIBUTOR</strong> and status <strong>PENDING</strong>. You do not
                   have dashboard access until an <strong>ADMIN</strong> or{" "}
@@ -84,17 +84,17 @@ export default function CmsSignupPage() {
               </div>
               <Link
                 href="/cms/login"
-                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-white font-bold text-xs uppercase tracking-wider"
+                className="btn-brand-primary inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl text-[#140A05] font-bold text-xs uppercase tracking-wider"
               >
-                <span className="text-white">Return to Login</span>
-                <ArrowRight className="w-3.5 h-3.5 text-[#F3C966]" />
+                <span className="text-[#140A05]">Return to Login</span>
+                <ArrowRight className="w-3.5 h-3.5 text-[#140A05]" />
               </Link>
             </div>
           ) : (
             <>
               {errorMsg && (
-                <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-800 flex items-start space-x-2">
-                  <AlertCircle className="w-4 h-4 text-rose-600 shrink-0 mt-0.5" />
+                <div className="p-3 rounded-xl bg-rose-950/40 border border-rose-500/50 text-xs text-rose-200 flex items-start space-x-2">
+                  <AlertCircle className="w-4 h-4 text-rose-400 shrink-0 mt-0.5" />
                   <span>{errorMsg}</span>
                 </div>
               )}

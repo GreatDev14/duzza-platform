@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #0F172A;
+  --background: #140A05;
+  --foreground: #F5EBE1;
   --font-inter: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-clash: "Space Grotesk", "Inter", sans-serif;
   --font-jetbrains-mono: "JetBrains Mono", Consolas, monospace;
@@ -12,8 +12,8 @@
 
 html {
   scroll-behavior: smooth;
-  background-color: #FFFFFF;
-  color: #0F172A;
+  background-color: #140A05;
+  color: #F5EBE1;
   max-width: 100%;
   overflow-x: hidden;
   -webkit-text-size-adjust: 100%;
@@ -32,15 +32,15 @@ body {
 
 /* Rich Brown & Glowing Gold Selection Highlight */
 ::selection {
-  background-color: #8B5A2B;
-  color: #FFFDF8;
+  background-color: #D4AF37;
+  color: #140A05;
 }
 
 /* Accessible High-Contrast Glowing Gold Focus Rings */
 *:focus-visible {
   outline: 2px solid #D4AF37;
   outline-offset: 3px;
-  box-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
 }
 
 /* Ultra-Slim Clean Luxury Scrollbar */
@@ -49,129 +49,134 @@ body {
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #1C110A;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D8C3A5;
+  background: #4D311E;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #8B5A2B;
+  background: #D4AF37;
 }
 
-/* Light Glass Panel with Warm Ambient Gold Shimmer */
+/* Dark Gilded Glass Panel (Inspired by Gilded Waterside Retreat) */
 .glass-panel-light {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(234, 220, 203, 0.9);
-  box-shadow: 0 10px 30px -10px rgba(139, 90, 43, 0.08), 0 0 20px -5px rgba(212, 175, 55, 0.1);
+  background: rgba(28, 17, 10, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 20px -5px rgba(212, 175, 55, 0.12);
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel-light:hover {
-  background: rgba(255, 255, 255, 0.99);
-  border-color: rgba(212, 175, 55, 0.5);
+  background: rgba(38, 23, 14, 0.92);
+  border-color: rgba(212, 175, 55, 0.55);
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px -15px rgba(139, 90, 43, 0.15), 0 0 25px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.25);
 }
 
-/* High-Visibility Corporate Button Utilities & Brown/Gold Fallbacks */
+/* High-Visibility Corporate Button Utilities & Gilded Fallbacks */
 .mega-menu-solid {
-  background-color: #FFFFFF !important;
-  background: #FFFFFF !important;
+  background-color: #1C110A !important;
+  background: #1C110A !important;
   opacity: 1 !important;
+  border-color: rgba(212, 175, 55, 0.3) !important;
 }
 
 .btn-brand-primary {
-  background: linear-gradient(135deg, #8B5A2B 0%, #6E431F 100%) !important;
-  color: #FFFFFF !important;
-  border-color: #8B5A2B !important;
-  box-shadow: 0 4px 16px rgba(139, 90, 43, 0.25), 0 0 12px rgba(212, 175, 55, 0.2) !important;
+  background: linear-gradient(135deg, #D4AF37 0%, #B88E4F 50%, #8B5A2B 100%) !important;
+  color: #140A05 !important;
+  border: 1px solid #D4AF37 !important;
+  font-weight: 700 !important;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.35), 0 0 15px rgba(243, 201, 102, 0.3) !important;
 }
 .btn-brand-primary:hover {
-  background: linear-gradient(135deg, #6E431F 0%, #523117 100%) !important;
-  border-color: #D4AF37 !important;
-  box-shadow: 0 6px 22px rgba(139, 90, 43, 0.35), 0 0 20px rgba(212, 175, 55, 0.45) !important;
+  background: linear-gradient(135deg, #F3C966 0%, #D4AF37 50%, #99731C 100%) !important;
+  border-color: #FFF6DE !important;
+  color: #140A05 !important;
+  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.6), 0 0 25px rgba(243, 201, 102, 0.5) !important;
 }
 
 .btn-gold-glow {
   background: linear-gradient(135deg, #D4AF37 0%, #B88E4F 100%) !important;
-  color: #241409 !important;
+  color: #140A05 !important;
   border-color: #D4AF37 !important;
   font-weight: 700;
-  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.4), 0 0 25px rgba(243, 201, 102, 0.45) !important;
+  box-shadow: 0 4px 20px rgba(212, 175, 55, 0.45), 0 0 25px rgba(243, 201, 102, 0.45) !important;
 }
 .btn-gold-glow:hover {
-  background: linear-gradient(135deg, #E0BC48 0%, #C89C57 100%) !important;
-  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.55), 0 0 35px rgba(243, 201, 102, 0.65) !important;
+  background: linear-gradient(135deg, #F3C966 0%, #D4AF37 100%) !important;
+  box-shadow: 0 6px 28px rgba(212, 175, 55, 0.65), 0 0 35px rgba(243, 201, 102, 0.7) !important;
 }
 
 /* Utility overrides for consistency across legacy markup */
 .bg-brandBlue-600 {
-  background-color: #8B5A2B !important;
+  background-color: #D4AF37 !important;
+  color: #140A05 !important;
 }
 .hover\:bg-brandBlue-700:hover {
-  background-color: #6E431F !important;
+  background-color: #B88E4F !important;
 }
 .text-brandBlue-600 {
-  color: #8B5A2B !important;
+  color: #D4AF37 !important;
 }
 .border-brandBlue-600 {
-  border-color: #8B5A2B !important;
+  border-color: #D4AF37 !important;
 }
 .bg-brandBlue-50 {
-  background-color: #FDFBF7 !important;
+  background-color: #1C110A !important;
 }
 .bg-brandBlue-100 {
-  background-color: #F7F2E7 !important;
+  background-color: #26170E !important;
 }
 .text-brandBlue-700 {
-  color: #6E431F !important;
+  color: #EED9B3 !important;
 }
 .text-brandBlue-800 {
-  color: #523117 !important;
+  color: #FAF7F2 !important;
 }
 
 /* Dynamic Luxury Gradient Text Helpers */
 .text-gradient-blue {
-  background: linear-gradient(135deg, #8B5A2B 0%, #B88E4F 50%, #D4AF37 100%);
+  background: linear-gradient(135deg, #FFF6DE 0%, #F3C966 35%, #D4AF37 70%, #B88E4F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.35));
 }
 
 .text-gradient-navy {
-  background: linear-gradient(135deg, #241409 0%, #523117 50%, #8B5A2B 100%);
+  background: linear-gradient(135deg, #FAF7F2 0%, #EED9B3 50%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-cyan {
-  background: linear-gradient(135deg, #D4AF37 0%, #B88E4F 50%, #8B5A2B 100%);
+  background: linear-gradient(135deg, #F3C966 0%, #D4AF37 50%, #B88E4F 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-orange {
-  background: linear-gradient(135deg, #D4AF37 0%, #C2782A 50%, #8B5A2B 100%);
+  background: linear-gradient(135deg, #FFF6DE 0%, #F3C966 40%, #D4AF37 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #FFF3D1 0%, #F3C966 30%, #D4AF37 70%, #AA8022 100%);
+  background: linear-gradient(135deg, #FFF6DE 0%, #F3C966 30%, #D4AF37 70%, #99731C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 14px rgba(212, 175, 55, 0.45));
+  filter: drop-shadow(0 0 16px rgba(212, 175, 55, 0.55));
 }
 
 .gold-glow-border {
   border-color: #D4AF37;
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.35), inset 0 0 15px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.4), inset 0 0 15px rgba(212, 175, 55, 0.15);
 }
 
 .gold-glow-box {
-  box-shadow: 0 10px 30px -5px rgba(139, 90, 43, 0.12), 0 0 25px 2px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 10px 35px -5px rgba(0, 0, 0, 0.6), 0 0 30px 2px rgba(212, 175, 55, 0.35);
 }
 
 /* Subtle Animated Shimmer Ray */

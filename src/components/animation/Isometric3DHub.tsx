@@ -29,6 +29,7 @@ export default function Isometric3DHub() {
 
     // 1. Scene, Camera, Renderer
     const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x140a05);
 
     // Isometric Orthographic or Telephoto Perspective Camera
     const camera = new THREE.PerspectiveCamera(38, width / height, 0.1, 1000);
@@ -42,20 +43,20 @@ export default function Isometric3DHub() {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     container.appendChild(renderer.domElement);
 
-    // 2. Lighting Setup (Luxury Warm Saddle Brown & Pale Gold aesthetic)
-    const ambientLight = new THREE.AmbientLight(0xfffdf5, 1.3);
+    // 2. Lighting Setup (Luxury Gilded Night Waterside aesthetic)
+    const ambientLight = new THREE.AmbientLight(0xfff6de, 0.9);
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0xd4af37, 1.8);
+    const dirLight = new THREE.DirectionalLight(0xd4af37, 2.2);
     dirLight.position.set(20, 30, 15);
     dirLight.castShadow = true;
     scene.add(dirLight);
 
-    const goldPointLight = new THREE.PointLight(0xf3c966, 2.5, 50);
+    const goldPointLight = new THREE.PointLight(0xf3c966, 3.0, 50);
     goldPointLight.position.set(-15, 12, 10);
     scene.add(goldPointLight);
 
-    const softFillLight = new THREE.DirectionalLight(0x8b5a2b, 0.9);
+    const softFillLight = new THREE.DirectionalLight(0x8b5a2b, 1.2);
     softFillLight.position.set(-10, -10, -10);
     scene.add(softFillLight);
 
@@ -63,12 +64,12 @@ export default function Isometric3DHub() {
     const baseGroup = new THREE.Group();
     scene.add(baseGroup);
 
-    // Main Floating Island (Chamfered Cylinder or Box)
+    // Main Floating Island (Chamfered Cylinder or Box in Dark Bronze Obsidian)
     const islandGeo = new THREE.CylinderGeometry(14, 15, 1.2, 48);
     const islandMat = new THREE.MeshStandardMaterial({
-      color: 0xfaf7f2,
-      roughness: 0.25,
-      metalness: 0.1,
+      color: 0x1c110a,
+      roughness: 0.35,
+      metalness: 0.3,
     });
     const islandMesh = new THREE.Mesh(islandGeo, islandMat);
     islandMesh.position.y = -1;
@@ -81,28 +82,28 @@ export default function Isometric3DHub() {
       color: 0xd4af37,
       side: THREE.DoubleSide,
       transparent: true,
-      opacity: 0.8,
+      opacity: 0.85,
     });
     const ringMesh = new THREE.Mesh(ringGeo, ringMat);
     ringMesh.rotation.x = Math.PI / 2;
     ringMesh.position.y = -0.9;
     baseGroup.add(ringMesh);
 
-    // Coordinate Grid Overlay on Platform (Brown & Gold grid)
-    const gridHelper = new THREE.GridHelper(24, 16, 0xd4af37, 0xeadccb);
+    // Coordinate Grid Overlay on Platform (Gilded Grid Lines)
+    const gridHelper = new THREE.GridHelper(24, 16, 0xd4af37, 0x3d2415);
     gridHelper.position.y = -0.38;
     baseGroup.add(gridHelper);
 
     // 4. Central Corporate Core (Prism Tower)
     const coreGeo = new THREE.BoxGeometry(4.5, 7.5, 4.5);
     const coreMat = new THREE.MeshPhysicalMaterial({
-      color: 0xfffcf5,
-      metalness: 0.2,
-      roughness: 0.1,
-      transmission: 0.6,
+      color: 0x26170e,
+      metalness: 0.4,
+      roughness: 0.15,
+      transmission: 0.5,
       transparent: true,
-      opacity: 0.9,
-      reflectivity: 0.8,
+      opacity: 0.95,
+      reflectivity: 0.9,
       clearcoat: 1.0,
     });
     const coreMesh = new THREE.Mesh(coreGeo, coreMat);
@@ -314,59 +315,59 @@ export default function Isometric3DHub() {
         onMouseLeave={() => setIsHovered(false)}
       />
 
-      {/* Floating 3D HUD Badges (Warm Saddle Brown & Pale Gold) */}
-      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-lg shadow-[#8B5A2B]/10 space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
-        <div className="flex items-center space-x-2 text-xs font-bold text-[#241409]">
+      {/* Floating 3D HUD Badges (Gilded Night Tone) */}
+      <div className="absolute top-4 left-4 p-3 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl space-y-1 pointer-events-none transition-transform duration-300 group-hover:translate-y-1">
+        <div className="flex items-center space-x-2 text-xs font-bold text-[#FFF6DE]">
           <Activity className="w-3.5 h-3.5 text-[#D4AF37] animate-pulse" />
           <span>Interactive Holding Architecture</span>
         </div>
-        <span className="text-[10px] font-mono text-[#8B5A2B]/80 block">Move cursor to tilt 3D platform • Scroll to scrub</span>
+        <span className="text-[10px] font-mono text-[#D4AF37]/80 block">Move cursor to tilt 3D platform • Scroll to scrub</span>
       </div>
 
-      {/* Interactive Division Pills (Bottom Overlay - Warm Saddle Brown & Pale Gold Glow) */}
-      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-white/95 backdrop-blur-md border border-[#EADCCB] shadow-md shadow-[#8B5A2B]/10">
+      {/* Interactive Division Pills (Bottom Overlay - Gilded Theme) */}
+      <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 flex items-center justify-between gap-1 sm:gap-2 p-1.5 sm:p-2 rounded-2xl bg-[#1C110A]/95 backdrop-blur-md border border-[#D4AF37]/30 shadow-xl">
         <button
           onClick={() => setActiveNode("PROJECTS")}
-          style={activeNode === "PROJECTS" ? { backgroundColor: "#8B5A2B", color: "#FFFFFF" } : {}}
+          style={activeNode === "PROJECTS" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "PROJECTS"
-              ? "bg-[#8B5A2B] text-white shadow-sm"
-              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
+              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
+              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
           }`}
         >
-          <Compass className="w-3 h-3 shrink-0 text-[#F3C966]" />
+          <Compass className="w-3 h-3 shrink-0 text-[#140A05]" />
           <span className="truncate">Duzza Projects</span>
         </button>
 
         <button
           onClick={() => setActiveNode("BRANDING")}
-          style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#241409" } : {}}
+          style={activeNode === "BRANDING" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "BRANDING"
-              ? "bg-[#D4AF37] text-[#241409] shadow-sm font-extrabold"
-              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
+              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
+              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
           }`}
         >
-          <Sparkles className="w-3 h-3 shrink-0 text-[#8B5A2B]" />
+          <Sparkles className="w-3 h-3 shrink-0 text-[#140A05]" />
           <span className="truncate">Duzza Branding</span>
         </button>
 
         <button
           onClick={() => setActiveNode("VENTURES")}
-          style={activeNode === "VENTURES" ? { backgroundColor: "#B88E4F", color: "#FFFFFF" } : {}}
+          style={activeNode === "VENTURES" ? { backgroundColor: "#D4AF37", color: "#140A05" } : {}}
           className={`flex-1 min-w-0 py-1.5 px-1.5 sm:px-3 rounded-xl text-[10px] sm:text-[11px] font-bold transition-all flex items-center justify-center space-x-1 sm:space-x-1.5 cursor-pointer ${
             activeNode === "VENTURES"
-              ? "bg-[#B88E4F] text-white shadow-sm"
-              : "bg-transparent text-stone-600 hover:text-stone-900 hover:bg-[#FAF8F5]"
+              ? "bg-[#D4AF37] text-[#140A05] shadow-sm font-extrabold"
+              : "bg-transparent text-[#EED9B3]/80 hover:text-[#FFF6DE] hover:bg-[#26170E]"
           }`}
         >
-          <Layers className="w-3 h-3 shrink-0 text-white" />
+          <Layers className="w-3 h-3 shrink-0 text-[#140A05]" />
           <span className="truncate">Retail Ventures</span>
         </button>
       </div>
 
       {/* Floating Precision Tag */}
-      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200 text-[#8B5A2B] text-[10px] font-mono font-bold shadow-sm">
+      <div className="absolute top-4 right-4 hidden sm:flex items-center space-x-1.5 px-3 py-1 rounded-full bg-[#26170E] border border-[#D4AF37]/40 text-[#D4AF37] text-[10px] font-mono font-bold shadow-sm">
         <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
         <span>LIVE TELEMETRY</span>
       </div>

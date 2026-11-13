@@ -175,27 +175,27 @@ export default function DuzzaProjectsPage() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Duzza%20Projects,%20I%20would%20like%20to%20request%20an%20engineering%20quotation.`;
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen text-slate-900 font-sans selection:bg-brandBlue-600 selection:text-white">
+    <div ref={containerRef} className="bg-[#140A05] min-h-screen text-[#F5EBE1] font-sans selection:bg-[#D4AF37] selection:text-[#140A05]">
       {/* -------------------------------------------------------------------- */}
-      {/* 1. SECTOR HERO (CLEAN LIGHT BLUE & WHITE)                            */}
+      {/* 1. SECTOR HERO (GILDED LUXURY OBSIDIAN & GOLD)                       */}
       {/* -------------------------------------------------------------------- */}
-      <section className="relative py-20 lg:py-28 border-b border-slate-200 bg-gradient-to-b from-brandBlue-50/40 via-white to-white overflow-hidden">
+      <section className="relative py-20 lg:py-28 border-b border-[#3D2415] bg-gradient-to-b from-[#1C110A] via-[#140A05] to-[#140A05] overflow-hidden">
         <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#D4AF37_1px,transparent_1px)] [background-size:28px_28px]" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="gsap-proj-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brandBlue-50 border border-brandBlue-200 text-xs font-mono text-brandBlue-700 font-bold shadow-sm">
-                <Compass className="w-4 h-4 text-brandBlue-600" />
+              <div className="gsap-proj-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#1C110A] border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] font-bold shadow-sm">
+                <Compass className="w-4 h-4 text-[#D4AF37]" />
                 <span>DUZZA PROJECTS • B2B HEAVY INDUSTRY & MARINE OPERATIONS</span>
               </div>
 
-              <h1 className="gsap-proj-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-navy-950 tracking-tight leading-[1.08]">
+              <h1 className="gsap-proj-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#FFF6DE] tracking-tight leading-[1.08]">
                 Engineering Precision,{" "}
                 <span className="text-gradient-blue block sm:inline">Hydrospatial Survey</span> & Infrastructure.
               </h1>
 
-              <p className="gsap-proj-desc text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+              <p className="gsap-proj-desc text-base sm:text-lg text-[#EED9B3]/80 leading-relaxed font-light">
                 Executing mission-critical civil construction, oil & gas facility maintenance, and specialized 
                 marine bathymetric mapping for offshore operators, state infrastructure, and port authorities across the Niger Delta.
               </p>
@@ -203,7 +203,7 @@ export default function DuzzaProjectsPage() {
               <div className="flex flex-wrap items-center gap-4 pt-2">
                 <a
                   href="#equipment-catalog"
-                  className="gsap-proj-action px-6 py-4 rounded-xl bg-brandBlue-600 text-white font-bold text-xs uppercase tracking-wider hover:bg-brandBlue-700 transition-all shadow-md shadow-brandBlue-600/20"
+                  className="btn-brand-primary gsap-proj-action px-6 py-4 rounded-xl text-[#140A05] font-bold text-xs uppercase tracking-wider transition-all shadow-md"
                 >
                   Browse Marine Equipment Catalogue
                 </a>
@@ -211,9 +211,9 @@ export default function DuzzaProjectsPage() {
                   href={whatsappUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="gsap-proj-action px-5 py-4 rounded-xl bg-slate-100 text-slate-800 font-semibold text-xs uppercase tracking-wider hover:bg-slate-200 border border-slate-300 transition-colors inline-flex items-center space-x-2"
+                  className="gsap-proj-action px-5 py-4 rounded-xl bg-[#1C110A] text-[#EED9B3] font-semibold text-xs uppercase tracking-wider hover:bg-[#26170E] border border-[#3D2415] hover:border-[#D4AF37]/40 transition-colors inline-flex items-center space-x-2"
                 >
-                  <PhoneCall className="w-4 h-4 text-emerald-600" />
+                  <PhoneCall className="w-4 h-4 text-emerald-400" />
                   <span>Warri Marine Operations Desk</span>
                 </a>
               </div>
@@ -231,16 +231,16 @@ export default function DuzzaProjectsPage() {
       {/* 2. REAL-WORLD ENGINEERING ENVIRONMENTS & FIELD ASSETS                */}
       {/* -------------------------------------------------------------------- */}
       <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-6">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#3D2415] pb-6">
           <div>
-            <span className="text-xs font-mono uppercase tracking-widest text-brandBlue-600 font-bold block">
+            <span className="text-xs font-mono uppercase tracking-widest text-[#D4AF37] font-bold block">
               Field Execution Track Record
             </span>
-            <h2 className="text-3xl font-display font-bold text-navy-950 mt-1">
+            <h2 className="text-3xl font-display font-bold text-[#FFF6DE] mt-1">
               Industrial Environments & Operational Assets
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-slate-500 max-w-md font-light">
+          <p className="text-xs sm:text-sm text-[#EED9B3]/75 max-w-md font-light">
             Stationed in Warri, Delta State with rapid deployment capability across coastal creeks, riverine terminals, and offshore installations.
           </p>
         </div>

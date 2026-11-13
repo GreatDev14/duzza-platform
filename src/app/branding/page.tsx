@@ -159,20 +159,20 @@ export default function DuzzaBrandingPage() {
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=Hello%20Duzza%20Branding,%20I%20would%20like%20to%20discuss%20a%20creative%20branding%20project.`;
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen text-slate-900 font-sans selection:bg-brandBlue-600 selection:text-white">
+    <div ref={containerRef} className="bg-[#140A05] min-h-screen text-[#F5EBE1] font-sans selection:bg-[#D4AF37] selection:text-[#140A05]">
       {/* -------------------------------------------------------------------- */}
-      {/* 1. CINEMATIC HERO SECTION (LIGHT BLUE & EMERALD)                     */}
+      {/* 1. CINEMATIC HERO SECTION (GILDED OBSIDIAN & GOLD)                   */}
       {/* -------------------------------------------------------------------- */}
-      <section className="relative py-20 lg:py-28 border-b border-slate-200 overflow-hidden bg-gradient-to-b from-slate-50 via-white to-white">
+      <section className="relative py-20 lg:py-28 border-b border-[#3D2415] overflow-hidden bg-gradient-to-b from-[#1C110A] via-[#140A05] to-[#140A05]">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
-              <div className="gsap-brand-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-mono text-emerald-800 font-bold shadow-sm">
-                <Sparkles className="w-4 h-4 text-emerald-600" />
+              <div className="gsap-brand-badge inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#1C110A] border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] font-bold shadow-sm">
+                <Sparkles className="w-4 h-4 text-[#D4AF37]" />
                 <span>DUZZA BRANDING • A SUBSIDIARY OF DUZZA LIMITED ®</span>
               </div>
 
-              <h1 className="gsap-brand-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-navy-950 tracking-tight leading-[1.05]">
+              <h1 className="gsap-brand-title text-4xl sm:text-5xl lg:text-6xl font-display font-extrabold text-[#FFF6DE] tracking-tight leading-[1.05]">
                 Digital & Merchandising Agency.{" "}
                 <span className="text-gradient-blue font-light block sm:inline">
                   Executive Branding Authority.

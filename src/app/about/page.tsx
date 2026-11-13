@@ -14,24 +14,24 @@ export default function AboutPage() {
   const registeredOffice = process.env.NEXT_PUBLIC_REGISTERED_OFFICE || "KM 4 DSC Expressway, Warri, Delta State, Nigeria";
 
   return (
-    <div className="bg-white min-h-screen text-slate-900 font-sans py-16 px-4 sm:px-6 lg:px-8 selection:bg-brandBlue-600 selection:text-white">
+    <div className="bg-[#140A05] min-h-screen text-[#F5EBE1] font-sans py-16 px-4 sm:px-6 lg:px-8 selection:bg-[#D4AF37] selection:text-[#140A05]">
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header & 3D Model Stage */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-slate-200 pb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center border-b border-[#3D2415] pb-12">
           <div className="lg:col-span-6 space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-brandBlue-50 border border-brandBlue-200 text-xs font-mono text-brandBlue-700 shadow-sm">
-              <Building2 className="w-3.5 h-3.5 text-brandBlue-600" />
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-[#1C110A] border border-[#D4AF37]/30 text-xs font-mono text-[#D4AF37] shadow-sm">
+              <Building2 className="w-3.5 h-3.5 text-[#D4AF37]" />
               <span>CORPORATE HOLDING PROFILE & GOVERNANCE</span>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-navy-950 tracking-tight leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-display font-extrabold text-[#FFF6DE] tracking-tight leading-tight">
               Building Sustainable Enterprise Across{" "}
               <span className="text-gradient-blue font-light block sm:inline">
                 Nigerian & Global Markets.
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-light">
+            <p className="text-base sm:text-lg text-[#EED9B3]/80 leading-relaxed font-light">
               DUZZA LIMITED was incorporated under the Companies and Allied Matters Act (CAMA 2020) by the Corporate 
               Affairs Commission, Federal Republic of Nigeria. We serve as a strategic conglomerate platform incubating 
               and scaling specialized operating subsidiaries.
@@ -45,8 +45,8 @@ export default function AboutPage() {
 
         {/* Corporate Objects & Legal Baseline */}
         <section className="space-y-4">
-          <h2 className="text-xl font-display font-bold text-navy-950 flex items-center space-x-2">
-            <Award className="w-5 h-5 text-brandBlue-600" />
+          <h2 className="text-xl font-display font-bold text-[#FFF6DE] flex items-center space-x-2">
+            <Award className="w-5 h-5 text-[#D4AF37]" />
             <span>1. Corporate Governance & Legal Standing</span>
           </h2>
           <div className="p-6 sm:p-8 rounded-2xl bg-slate-50 border border-slate-200 text-xs sm:text-sm text-slate-700 space-y-3 font-mono shadow-sm">
