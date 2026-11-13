@@ -1,4 +1,5 @@
 import fs from "fs";
+import os from "os";
 import path from "path";
 import crypto from "crypto";
 import { hashPassword } from "./crypto";
@@ -14,7 +15,10 @@ import {
   Role,
 } from "./types";
 
-const DATA_DIR = path.join(process.cwd(), "data");
+const BUNDLED_DATA_DIR = path.join(process.cwd(), "data");
+const BUNDLED_DB_FILE = path.join(BUNDLED_DATA_DIR, "iam-cms-db.json");
+const IS_SERVERLESS = Boolean(process.env.VERCEL || process.env.AWS_LAMBDA_FUNCTION_NAME);
+const DATA_DIR = IS_SERVERLESS ? path.join(os.tmpdir(), "duzza-iam-data") : BUNDLED_DATA_DIR;
 const DB_FILE = path.join(DATA_DIR, "iam-cms-db.json");
 
 function createSeedDatabase(): IamDatabaseSchema {
@@ -120,6 +124,17 @@ function ensureDbFile(): IamDatabaseSchema {
     fs.mkdirSync(DATA_DIR, { recursive: true });
   }
   if (!fs.existsSync(DB_FILE)) {
+    // On serverless (/tmp), seed from bundled data/iam-cms-db.json if available
+    if (IS_SERVERLESS && fs.existsSync(BUNDLED_DB_FILE)) {
+      try {
+        const bundledRaw = fs.readFileSync(BUNDLED_DB_FILE, "utf8");
+        const bundledParsed = JSON.parse(bundledRaw) as IamDatabaseSchema;
+        fs.writeFileSync(DB_FILE, JSON.stringify(bundledParsed, null, 2), "utf8");
+        return bundledParsed;
+      } catch {
+        // fall through to createSeedDatabase()
+      }
+    }
     const seed = createSeedDatabase();
     fs.writeFileSync(DB_FILE, JSON.stringify(seed, null, 2), "utf8");
     return seed;
