@@ -37,7 +37,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "UK Football League Franchise",
     pillar: "Sports & Media",
     country: "United Kingdom",
-    imageUrl: "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200",
+    imageUrl: "https://images.unsplash.com/photo-1686484527934-6e49abf574be?auto=format&fit=crop&w=1200&q=85",
     metrics: "1.2M+ Views, 48hr Turnaround on UGC Motion",
   },
   {
