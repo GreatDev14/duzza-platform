@@ -23,17 +23,17 @@ export default function DuzzaBakeryPage() {
     {
       title: "Wild Yeast Country Sourdough Loaves",
       tag: "48hr Cold Ferment",
-      src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200",
+      src: "/images/bakery/sourdough-bread.jpg",
     },
     {
       title: "Artisan Butter Croissants & Viennoiserie",
       tag: "French Patisserie",
-      src: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=1200",
+      src: "/images/bakery/butter-croissant.jpg",
     },
     {
       title: "Bespoke Multi-Tier Celebration Cakes",
       tag: "Celebration Cakes",
-      src: "https://images.unsplash.com/photo-1535141192574-5d4897c13136?q=80&w=1200",
+      src: "/images/bakery/celebration-cake.jpg",
     },
   ];
 

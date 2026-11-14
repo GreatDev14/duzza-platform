@@ -37,7 +37,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "UK Football League Franchise",
     pillar: "Sports & Media",
     country: "United Kingdom",
-    imageUrl: "https://images.unsplash.com/photo-1686484527934-6e49abf574be?auto=format&fit=crop&w=1200&q=85",
+    imageUrl: "/images/branding/stadium-matchday.jpg",
     metrics: "1.2M+ Views, 48hr Turnaround on UGC Motion",
   },
   {
@@ -46,7 +46,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Energy Infrastructure CEO",
     pillar: "Executive Branding",
     country: "Nigeria / UAE",
-    imageUrl: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85",
+    imageUrl: "/images/branding/executive-keynote.jpg",
     metrics: "Speaker Kit, Bio Packaging, LinkedIn 3x Growth",
   },
   {
@@ -55,7 +55,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "West Africa Payments Operator",
     pillar: "Corporate Identity",
     country: "Nigeria",
-    imageUrl: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1200&q=85",
+    imageUrl: "/images/branding/fintech-identity.jpg",
     metrics: "Comprehensive Design Tokens & Brand Manual",
   },
   {
@@ -64,7 +64,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Championship Football Collective",
     pillar: "Merchandising",
     country: "United Kingdom",
-    imageUrl: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=1200&q=85",
+    imageUrl: "/images/branding/athleisure-merch.jpg",
     metrics: "1,500 Units Produced with Custom Emblems",
   },
   {
@@ -73,7 +73,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Fitness & Lifestyle App",
     pillar: "Sports & Media",
     country: "United States",
-    imageUrl: "https://images.unsplash.com/photo-1513828583688-c52646db42da?q=80&w=1200",
+    imageUrl: "/images/branding/digital-campaign.jpg",
     metrics: "42 Dynamic Story & Feed Static Creative Assets",
   },
   {
@@ -82,7 +82,7 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     client: "Tech Venture Accelerator",
     pillar: "Executive Branding",
     country: "Kenya / UK",
-    imageUrl: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=1200&q=85",
+    imageUrl: "/images/branding/founder-authority.jpg",
     metrics: "Keynote Visual Deck & International Press Kit",
   },
 ];

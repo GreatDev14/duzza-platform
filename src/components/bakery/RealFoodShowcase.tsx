@@ -24,7 +24,7 @@ const REAL_FOOD_ITEMS: FoodItem[] = [
     category: "Artisan Bread",
     fermentation: "48 Hours Cold Proof",
     // Ultra-high definition real photo of crusty golden artisan sourdough loaf
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/bakery/sourdough-bread.jpg",
     tastingNotes: ["Caramelized Blistered Crust", "Custardy Open Crumb", "Mild Lactic Tang", "Flour Dusting"],
     description: "Baked daily on refractory stone hearths using stone-ground unbleached wheat flour, water, sea salt, and a 5-year-old living wild sourdough starter."
   },
@@ -35,7 +35,7 @@ const REAL_FOOD_ITEMS: FoodItem[] = [
     category: "Morning Pastry",
     fermentation: "24 Hours Lamintation",
     // Ultra-high definition real photo of golden flaky French butter croissants
-    image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/bakery/butter-croissant.jpg",
     tastingNotes: ["Golden Honeycomb Interior", "Crisp Shatter Crust", "Rich Cultured Butter", "Airy Flakes"],
     description: "Hand-rolled and laminated with 84% fat European butter. Each croissant shatters gently on first bite, yielding a featherlight honeycomb crumb."
   },
@@ -46,7 +46,7 @@ const REAL_FOOD_ITEMS: FoodItem[] = [
     category: "Confectionery",
     fermentation: "Fresh Artisanal Bake",
     // Ultra-high definition real photo of luxury handcrafted celebration cake
-    image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/bakery/celebration-cake.jpg",
     tastingNotes: ["Velvety Swiss Meringue", "Fresh Berry Coulis", "Valrhona Ganache", "Floral Accents"],
     description: "Custom celebratory and wedding confectionery crafted to order. Layered with infused cordials, delicate fruit compotes, and hand-sculpted botanical accents."
   },

@@ -39,7 +39,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Sounding Rate": "Up to 50 pings / sec",
     },
     dailyRateNgn: "₦1,850,000 / day",
-    image: "https://images.unsplash.com/photo-1551244072-5d12893278ab?q=80&w=1200",
+    image: "/images/projects/multibeam-sonar.jpg",
   },
   {
     code: "EQ-GNSS-R12I",
@@ -53,7 +53,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Data Logging": "Internal 6 GB memory + NTRIP cellular modem",
     },
     dailyRateNgn: "₦450,000 / day",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200",
+    image: "/images/projects/gnss-rover.jpg",
   },
   {
     code: "EQ-SBP-3000",
@@ -67,7 +67,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Applications": "Pipeline burial depth & seabed geological stratification",
     },
     dailyRateNgn: "₦1,250,000 / day",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/projects/subsea-profiler.jpg",
   },
   {
     code: "EQ-SSS-4200",
@@ -81,7 +81,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Use Cases": "Seafloor debris, shipwreck search, hazard clearance",
     },
     dailyRateNgn: "₦950,000 / day",
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/projects/sonar-seabed.jpg",
   },
   {
     code: "EQ-SV-MINI",
@@ -95,7 +95,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Export Formats": "Hypack, CARIS, QINSy, NaviSound profile compatible",
     },
     dailyRateNgn: "₦180,000 / day",
-    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=1200",
+    image: "/images/projects/gnss-rover.jpg",
   },
   {
     code: "EQ-MAG-G882",
@@ -109,7 +109,7 @@ const EQUIPMENT_CATALOGUE: EquipmentItem[] = [
       "Tow Cable": "100m Kevlar-reinforced low-noise marine cable",
     },
     dailyRateNgn: "₦850,000 / day",
-    image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/projects/subsea-profiler.jpg",
   },
 ];
 

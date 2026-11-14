@@ -46,7 +46,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#38BDF8] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "Engineering and heavy construction, oil & gas field infrastructure, hydrospatial and marine survey support services, alongside certified hydrographic navigation and positioning equipment hire.",
-    image: "https://images.unsplash.com/photo-1687876364441-899239a0157a?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/projects/offshore-platform.jpg",
     capabilities: [
       "General Contracting & Civil Engineering Construction",
       "Oil & Gas Facility Modifications & Structural Pipeline Tie-Ins",
@@ -68,7 +68,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#D4AF37] border-[#1B325C]",
     borderColor: "hover:border-[#D4AF37] hover:shadow-[0_0_25px_rgba(212,175,55,0.25)]",
     description: "Executive branding for companies and agency heads, creative media support, UGC & static promotional content for international sports brands, and global merchandising (Instagram @duzza_branding).",
-    image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/branding/executive-keynote.jpg",
     capabilities: [
       "Executive Personal Branding & Leadership Speaker Kits",
       "Corporate & Digital Brand Identity Guidelines & Design Systems",
@@ -90,7 +90,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#E5C378] border-[#1B325C]",
     borderColor: "hover:border-[#E5C378]",
     description: "Where bespoke Savile Row structure fuses with artisanal Nigerian brocade, hand-dyed cotton, and luxury leathercraft. Curated English suits, bespoke contemporary Ankara couture, and statement wearables.",
-    image: "https://images.unsplash.com/photo-1687052057223-569192ffa74f?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/fashion/ankara-silk.jpg",
     capabilities: [
       "Bespoke English Tailoring & Structured Suiting",
       "Contemporary Artisanal Ankara Silk & Brocade Couture",
@@ -112,7 +112,7 @@ const OPERATING_DIVISIONS: DivisionItem[] = [
     badgeColor: "bg-[#0E1B33] text-[#E5C378] border-[#1B325C]",
     borderColor: "hover:border-[#E5C378]",
     description: "Dedicated to the art of traditional European breadmaking and Nigerian hospitality. Slow-fermented golden sourdough boules, flaky butter viennoiserie, custom celebration cakes, and casual bistro dining.",
-    image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=85",
+    image: "/images/bakery/sourdough-bread.jpg",
     capabilities: [
       "48-Hour Cold-Fermented Country Sourdough Crusts",
       "Fresh Daily French Viennoiserie & Flaky Croissants",
